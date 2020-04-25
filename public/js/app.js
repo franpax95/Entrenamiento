@@ -6534,7 +6534,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\nhtml, body, #app{ height: 100%; }\r\n.body{ height: 90%; }\r\n.Navbar{ height: 10%; }\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }", ""]);
 
 // exports
 
@@ -6553,7 +6553,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".Navbar{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #253a46;\r\n}\r\n\r\n\r\n.Navbar a{\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color: white;\r\n}\r\n.Navbar a:last-of-type{ \r\n    margin-right: auto; \r\n}\r\n.Navbar a:not(.logo){\r\n    width: 20%;\r\n    font-size: 1.5em;\r\n}\r\n.Navbar a:not(.logo):hover{ \r\n    background-color: #3e6175; \r\n}\r\n\r\n\r\n.Navbar .logo{\r\n    float: left;\r\n    margin: 0 auto 0 20px;\r\n    z-index: 2;\r\n    width: 10%;\r\n\r\n    border: solid 1px whitesmoke;\r\n\r\n    font-size: 2em;\r\n    text-transform: uppercase;\r\n}", ""]);
 
 // exports
 
@@ -73132,7 +73132,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Index = function Index() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Index");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "body flex justifyc alignc"
+  }, "Index");
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
@@ -73150,9 +73152,9 @@ var Index = function Index() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_Navbar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/Navbar.css */ "./resources/js/components/General/styles/Navbar.css");
-/* harmony import */ var _styles_Navbar_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_Navbar_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _styles_Navbar_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/Navbar.css */ "./resources/js/components/General/styles/Navbar.css");
+/* harmony import */ var _styles_Navbar_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_Navbar_css__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -73160,23 +73162,23 @@ __webpack_require__.r(__webpack_exports__);
 var Navbar = function Navbar(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "Navbar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     exact: true,
     to: "/",
     className: "logo"
-  }, "Inicio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+  }, "Inicio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     to: "/categories",
     activeClassName: "active",
     isActive: function isActive(match, location) {
       if (location.pathname.includes("category") || location.pathname.includes("categories")) return true;
     }
-  }, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+  }, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     to: "/exercises",
     activeClassName: "active",
     isActive: function isActive(match, location) {
       if (location.pathname.includes("exercise")) return true;
     }
-  }, "Ejercicios"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
+  }, "Ejercicios"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     to: "/routines",
     activeClassName: "active",
     isActive: function isActive(match, location) {
@@ -73203,7 +73205,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NotFound = function NotFound() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "NotFound");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "body"
+  }, "NotFound");
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NotFound);

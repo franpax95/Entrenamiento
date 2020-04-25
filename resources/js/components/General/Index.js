@@ -2,7 +2,7 @@ import React from 'react';
 
 const Index = () => {
     return(
-        <div>Index</div>
+        <div className="body flex justifyc alignc">Index</div>
     )
 }
 

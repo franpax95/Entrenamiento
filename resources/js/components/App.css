@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+html, body, #app{ height: 100%; }
+.body{ height: 90%; }
+.Navbar{ height: 10%; }
+
+.body{ background-color: whitesmoke; }
+a{ text-decoration: none; }
+input[type=submit]{ cursor: pointer; }
+
+.flex{ display: flex; }
+.flex-col{ flex-direction: column; }
+.flex-row{ flex-direction: row; }
+.justifyc{ justify-content: center; }
+.alignc{ align-items: center; }
+.bold{ font-weight: bold; }
