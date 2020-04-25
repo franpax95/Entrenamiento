@@ -2,12 +2,12 @@ import axios from 'axios';
 import { GET, LOADING, ERROR } from '../types/categoriesTypes';
 
 export const get = () => async (dispatch) => {
-    dispatch({
-        type: LOADING
+    dispatch({ 
+        type: LOADING 
     });
 
     try{
-        const response = await axios.get('');
+        const response = await axios.get('/api/categories');
         dispatch({
             type: GET,
             payload: response.data

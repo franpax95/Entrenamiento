@@ -10,6 +10,7 @@ html, body, #app{ height: 100%; }
 .body{ background-color: whitesmoke; }
 a{ text-decoration: none; }
 input[type=submit]{ cursor: pointer; }
+button{ cursor: pointer; }
 
 .flex{ display: flex; }
 .flex-col{ flex-direction: column; }
@@ -17,3 +18,11 @@ input[type=submit]{ cursor: pointer; }
 .justifyc{ justify-content: center; }
 .alignc{ align-items: center; }
 .bold{ font-weight: bold; }
+
+
+/* list scroll styles */
+.scrollable{ overflow-y: scroll; }
+.scrollable::-webkit-scrollbar { width: 15px; }
+.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */
+.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */
+.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */

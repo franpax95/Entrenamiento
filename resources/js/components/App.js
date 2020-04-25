@@ -13,7 +13,7 @@ import Navbar from './General/Navbar';
 import Index from './General/Index';
 import NotFound from './General/NotFound';
 
-// import Categories from './Categories/Categories';
+import Categories from './Categories';
 // import Category from './Categories/Category';
 // import AddCategory from './Categories/AddCategory';
 // import EditCategory from './Categories/EditCategory';
@@ -32,8 +32,8 @@ const App = (props) => (
         <Switch>
             <Route exact path='/' component={Index} />
 
-            {/* <Route exact path='/categories' component={Categories} />
-            <Route exact path='/category/:id' component={Category} />
+            <Route exact path='/categories' component={Categories} />
+            {/* <Route exact path='/category/:id' component={Category} />
             <Route exact path='/addcategory' component={AddCategory} />
             <Route exact path='/editcategory/:id' component={EditCategory} />
 
@@ -52,6 +52,8 @@ const App = (props) => (
 )
 
 export default App;
+
+
 
 const store = createStore(
     reducers,
