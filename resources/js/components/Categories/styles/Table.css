@@ -1,13 +1,13 @@
-.table-cat{
-    width: 70%;
+.table-cat, .table-ex{
     max-height: 90vw;
     border: solid 2px gray;
 }
-.table-cat .elem:hover{
+
+.table-cat .elem:hover, .table-ex .elem:hover{
     background-color: lightgray;
 }
 
-
+.table-cat{ width: 70%; }
 .table-cat .elem .name{ 
     width: 80%;
     height: 100%;
@@ -18,3 +18,20 @@
 }
 .table-cat .elem .edit{ width: 10%; z-index: 2; }
 .table-cat .elem .delete{ width: 10%; z-index: 2; }
+
+
+
+.table-ex{ width: 90%; }
+.table-ex .elem .img{
+    width: 15%;
+}
+.table-ex .elem .name{
+    width: 55%;
+    height: 100%;
+    z-index: 1; 
+    color: black;
+    padding: 2%;
+    cursor: pointer;
+}
+.table-ex .elem .edit{ width: 15%; z-index: 2; }
+.table-ex .elem .delete{ width: 15%; z-index: 2; }

@@ -12,22 +12,37 @@ import './styles/index.css';
 
 
 const Category = (props) => {
+    //const id = props.match.params.id;
+    //const category = props.categories.filter(cat => cat.id == id)[0];
+
     //componentDidMount
     useEffect(() => {
-        if(!props.categories.length) props.get();
+        async function fetchData(){
+            const id = props.match.params.id;
+            if(!props.categories.length) await props.get();
+
+            if((!props.exercises.length) || (props.exercises[0].category_id != props.match.params.id)){
+                const category = props.categories.filter(cat => cat.id == id)[0];
+                await props.getExercises(category);
+            }
+        }
+        fetchData();
     }, []);
 
     const renderTable = () => {
         if(props.loading) return <Spinner />;
         if(props.error) return <Fatal message={props.error} />
-        return(<Table isCategories={true} />)
+        if(props.exercises.length) return <Table isExercises={true} catId={props.match.params.id} />
+        return;
     }
 
     return(
         <div className="body Categories flex justifyc alignc">
             <div className="title">
-                <h1>Category</h1>
+                <h1>Categoría <i>{props.categories.filter(cat => cat.id == props.match.params.id)[0].name}</i></h1>
             </div>
+
+            {renderTable()}
         </div>
     )
 }

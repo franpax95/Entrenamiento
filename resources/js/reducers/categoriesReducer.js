@@ -1,7 +1,8 @@
-import { GET, LOADING, ERROR, CHANGE_NAME, SAVE, RESET } from '../types/categoriesTypes';
+import { GET, LOADING, ERROR, CHANGE_NAME, SAVE, RESET, SHOW } from '../types/categoriesTypes';
 
 const INITIAL_STATE = {
     categories: [],
+    exercises: [],
     loading: false,
     error: '',
     catName: '',
@@ -17,6 +18,15 @@ export default (state = INITIAL_STATE, action) => {
                 loading: false,
                 error: '',
                 goBack: false
+            }
+
+        case SHOW:
+            return {
+                ...state,
+                exercises: action.payload,
+                loading: false,
+                error: '',
+                //goBack: false
             }
 
         case LOADING:

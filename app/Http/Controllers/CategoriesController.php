@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Exercise;
 
 class CategoriesController extends Controller
 {
@@ -13,11 +14,10 @@ class CategoriesController extends Controller
     }
 
     public function show(Category $category){
-        // $exercises = Exercise::orderBy('name', 'asc')
-        //     ->where('category_id', $category->id)
-        //     ->get();
-        // return $exercises;
-        return $category;
+        $exercises = Exercise::orderBy('name', 'asc')
+            ->where('category_id', $category->id)
+            ->get();
+        return $exercises;
     }
 
     public function store(Request $request){
