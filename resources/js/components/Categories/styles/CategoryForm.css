@@ -1,0 +1,52 @@
+.CategoryForm{
+    width: 100%;
+}
+
+.CategoryForm .form{
+    border: solid 2px #253a46;
+    border-radius: 10px;
+
+    width: 60%;
+}
+.CategoryForm .form h1{
+    width: 100%;
+    padding: 20px;
+
+    border-radius: 5px 5px 0 0;
+    background-color: #253a46;
+    color: white;
+
+    text-align: center;
+}
+
+.CategoryForm .form .content{
+    padding: 8% 5%;
+    width: 100%;
+}
+
+.CategoryForm .form .content label{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.CategoryForm .form .content input[type=text]{
+    width: 70%;
+    padding: 1px;
+
+    font-size: 1.1em;
+}
+.CategoryForm .form .content button{
+    padding: 4px 8px;
+    margin-top: 30px;
+
+    border: solid 1.5px #253a46;
+    border-radius: 5px;
+    color: #253a46;
+    
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.CategoryForm .form .content button:hover{
+    border: solid 1.5px gray;
+    color: gray;
+}

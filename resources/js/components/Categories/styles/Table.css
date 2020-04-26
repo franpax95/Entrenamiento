@@ -3,40 +3,18 @@
     max-height: 90vw;
     border: solid 2px gray;
 }
-.table-cat .elem{
-    padding: 2%;
-    cursor: pointer;
-}
 .table-cat .elem:hover{
     background-color: lightgray;
 }
+
+
 .table-cat .elem .name{ 
-    width: 80%; 
+    width: 80%;
+    height: 100%;
     z-index: 1; 
     color: black;
+    padding: 2%;
+    cursor: pointer;
 }
-
 .table-cat .elem .edit{ width: 10%; z-index: 2; }
-.table-cat .elem .edit button{
-    outline: none;
-    border: solid 1.5px gray;
-    border-radius: 5px;
-    background-color: white;
-    color: gray;
-
-    font-size: 16px;
-    font-weight: bold;
-}
-.table-cat .elem .edit button:hover{ border: solid 1.5px darkgray; color: darkgray; }
 .table-cat .elem .delete{ width: 10%; z-index: 2; }
-.table-cat .elem .delete button{
-    outline: none;
-    border: solid 1.5px red;
-    border-radius: 5px;
-    background-color: white;
-    color: red;
-
-    font-size: 16px;
-    font-weight: bold;
-}
-.table-cat .elem .delete button:hover{ border: solid 1.5px salmon; color: salmon; }

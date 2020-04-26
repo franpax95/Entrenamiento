@@ -5,3 +5,15 @@
     align-items: center;
     padding: 5%;
 }
+.Categories .title{
+    width: 70%;
+}
+
+.Categories .title h1{
+    text-align: center;
+    margin: auto;
+}
+.Categories .title a{
+    float: right;
+    margin-left: auto;
+}

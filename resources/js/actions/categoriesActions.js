@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET, LOADING, ERROR } from '../types/categoriesTypes';
+import { GET, LOADING, ERROR, CHANGE_NAME, ADD } from '../types/categoriesTypes';
 
 export const get = () => async (dispatch) => {
     dispatch({ 
@@ -18,5 +18,50 @@ export const get = () => async (dispatch) => {
             type: ERROR,
             payload: 'No es posible acceder a categorías en este momento.'
         });
+    }
+}
+
+export const erase = (category_id) => async (dispatch) => {
+    dispatch({
+        type: LOADING
+    });
+
+    try{
+        await axios.delete(`/api/categories/${category_id}`);
+        dispatch({
+            type: GET,
+            payload: {}
+        });
+    }catch(error){
+        dispatch({
+            type: ERROR,
+            error: error.message
+        });
+    }
+}
+
+export const changeName = (newName) => (dispatch) => {
+    dispatch({
+        type: CHANGE_NAME,
+        payload: newName
+    });
+}
+
+export const addCategory = (category) => async (dispatch) => {
+    dispatch({
+        type: LOADING
+    });
+
+    try{
+        await axios.post('/api/categories', category);
+
+        dispatch({
+            type: ADD
+        });
+    }catch(error){
+        dispatch({
+            type: ERROR,
+            payload: 'No se puedo agregar la categoría.'
+        })
     }
 }

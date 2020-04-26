@@ -26,3 +26,51 @@ button{ cursor: pointer; }
 .scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */
 .scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */
 .scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */
+
+
+/* general buttons */
+.add-btn{
+    padding: 4px 8px;
+    background-color: white;
+    color: green;
+    border: solid 1.5px green;
+    border-radius: 5px;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.add-btn:hover{
+    border: solid 1.5px lightgreen;
+    color: lightgreen; 
+}
+
+.edit-btn{
+    outline: none;
+    border: solid 1.5px gray;
+    border-radius: 5px;
+    background-color: white;
+    color: gray;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+.edit-btn:hover{ 
+    border: solid 1.5px darkgray; 
+    color: darkgray; 
+}
+
+.delete-btn{
+    outline: none;
+    border: solid 1.5px red;
+    border-radius: 5px;
+    background-color: white;
+    color: red;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+.delete-btn:hover{ 
+    border: solid 1.5px salmon; 
+    color: salmon; 
+}

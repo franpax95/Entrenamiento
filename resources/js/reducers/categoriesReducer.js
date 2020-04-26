@@ -1,9 +1,11 @@
-import { GET, LOADING, ERROR } from '../types/categoriesTypes';
+import { GET, LOADING, ERROR, CHANGE_NAME, ADD } from '../types/categoriesTypes';
 
 const INITIAL_STATE = {
     categories: [],
     loading: false,
-    error: ''
+    error: '',
+    catName: '',
+    goBack: false,
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -13,7 +15,8 @@ export default (state = INITIAL_STATE, action) => {
                 ...state,
                 categories: action.payload,
                 loading: false,
-                error: ''
+                error: '',
+                goBack: false
             }
 
         case LOADING:
@@ -28,6 +31,23 @@ export default (state = INITIAL_STATE, action) => {
                 error: action.payload,
                 loading: false
             }
+
+        case CHANGE_NAME:
+            return {
+                ...state,
+                catName: action.payload
+            }
+
+        case ADD:
+            return {
+                ...state, 
+                categories: {}, //Reseteo las tareas para buscarlas nuevamente
+                loading: false,
+                error: '',
+                catName: '',
+                goBack: true
+            }
+
 
         default:
             return state;

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import * as categoriesActions from '../../actions/categoriesActions';
@@ -12,7 +11,7 @@ import './styles/index.css';
 
 
 
-const Categories = (props) => {
+const Category = (props) => {
     //componentDidMount
     useEffect(() => {
         if(!props.categories.length) props.get();
@@ -26,16 +25,13 @@ const Categories = (props) => {
 
     return(
         <div className="body Categories flex justifyc alignc">
-            <div className="title flex flex-row jutifyc alignc">
-                <h1>Categorías</h1>
-                <Link to="/addcategory" className="add-btn">Crear Categoría</Link>
+            <div className="title">
+                <h1>Category</h1>
             </div>
-
-            {renderTable()}
         </div>
     )
 }
 
 
 const mapStateToProps = ({categoriesReducer}) => categoriesReducer;
-export default connect(mapStateToProps, categoriesActions)(Categories);
+export default connect(mapStateToProps, categoriesActions)(Category);

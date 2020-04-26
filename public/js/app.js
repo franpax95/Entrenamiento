@@ -6546,7 +6546,26 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\nhtml, body, #app{ height: 100%; }\r\n.body{ height: 90%; }\r\n.Navbar{ height: 10%; }\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */", ""]);
+exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\nhtml, body, #app{ height: 100%; }\r\n.body{ height: 90%; }\r\n.Navbar{ height: 10%; }\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */\r\n\r\n\r\n/* general buttons */\r\n.add-btn{\r\n    padding: 4px 8px;\r\n    background-color: white;\r\n    color: green;\r\n    border: solid 1.5px green;\r\n    border-radius: 5px;\r\n\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    font-size: 1.2em;\r\n}\r\n.add-btn:hover{\r\n    border: solid 1.5px lightgreen;\r\n    color: lightgreen; \r\n}\r\n\r\n.edit-btn{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.edit-btn:hover{ \r\n    border: solid 1.5px darkgray; \r\n    color: darkgray; \r\n}\r\n\r\n.delete-btn{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.delete-btn:hover{ \r\n    border: solid 1.5px salmon; \r\n    color: salmon; \r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Categories/styles/CategoryForm.css":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Categories/styles/CategoryForm.css ***!
+  \****************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".CategoryForm{\r\n    width: 100%;\r\n}\r\n\r\n.CategoryForm .form{\r\n    border: solid 2px #253a46;\r\n    border-radius: 10px;\r\n\r\n    width: 60%;\r\n}\r\n.CategoryForm .form h1{\r\n    width: 100%;\r\n    padding: 20px;\r\n\r\n    border-radius: 5px 5px 0 0;\r\n    background-color: #253a46;\r\n    color: white;\r\n\r\n    text-align: center;\r\n}\r\n\r\n.CategoryForm .form .content{\r\n    padding: 8% 5%;\r\n    width: 100%;\r\n}\r\n\r\n.CategoryForm .form .content label{\r\n    font-size: 1.5em;\r\n    font-weight: bold;\r\n}\r\n.CategoryForm .form .content input[type=text]{\r\n    width: 70%;\r\n    padding: 1px;\r\n\r\n    font-size: 1.1em;\r\n}\r\n.CategoryForm .form .content button{\r\n    padding: 4px 8px;\r\n    margin-top: 30px;\r\n\r\n    border: solid 1.5px #253a46;\r\n    border-radius: 5px;\r\n    color: #253a46;\r\n    \r\n    font-size: 1.1em;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n}\r\n.CategoryForm .form .content button:hover{\r\n    border: solid 1.5px gray;\r\n    color: gray;\r\n}", ""]);
 
 // exports
 
@@ -6565,7 +6584,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".table-cat{\r\n    width: 70%;\r\n    max-height: 90vw;\r\n    border: solid 2px gray;\r\n}\r\n.table-cat .elem{\r\n    padding: 2%;\r\n    cursor: pointer;\r\n}\r\n.table-cat .elem:hover{\r\n    background-color: lightgray;\r\n}\r\n.table-cat .elem .name{ \r\n    width: 80%; \r\n    z-index: 1; \r\n    color: black;\r\n}\r\n\r\n.table-cat .elem .edit{ width: 10%; z-index: 2; }\r\n.table-cat .elem .edit button{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.table-cat .elem .edit button:hover{ border: solid 1.5px darkgray; color: darkgray; }\r\n.table-cat .elem .delete{ width: 10%; z-index: 2; }\r\n.table-cat .elem .delete button{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.table-cat .elem .delete button:hover{ border: solid 1.5px salmon; color: salmon; }", ""]);
+exports.push([module.i, ".table-cat{\r\n    width: 70%;\r\n    max-height: 90vw;\r\n    border: solid 2px gray;\r\n}\r\n.table-cat .elem:hover{\r\n    background-color: lightgray;\r\n}\r\n\r\n\r\n.table-cat .elem .name{ \r\n    width: 80%;\r\n    height: 100%;\r\n    z-index: 1; \r\n    color: black;\r\n    padding: 2%;\r\n    cursor: pointer;\r\n}\r\n.table-cat .elem .edit{ width: 10%; z-index: 2; }\r\n.table-cat .elem .delete{ width: 10%; z-index: 2; }", ""]);
 
 // exports
 
@@ -6584,7 +6603,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".Categories{\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    padding: 5%;\r\n}\r\n", ""]);
+exports.push([module.i, ".Categories{\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    padding: 5%;\r\n}\r\n.Categories .title{\r\n    width: 70%;\r\n}\r\n\r\n.Categories .title h1{\r\n    text-align: center;\r\n    margin: auto;\r\n}\r\n.Categories .title a{\r\n    float: right;\r\n    margin-left: auto;\r\n}", ""]);
 
 // exports
 
@@ -73768,12 +73787,15 @@ module.exports = function(module) {
 /*!***************************************************!*\
   !*** ./resources/js/actions/categoriesActions.js ***!
   \***************************************************/
-/*! exports provided: get */
+/*! exports provided: get, erase, changeName, addCategory */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "get", function() { return get; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "erase", function() { return erase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeName", function() { return changeName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCategory", function() { return addCategory; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -73830,6 +73852,99 @@ var get = function get() {
 
     return function (_x) {
       return _ref.apply(this, arguments);
+    };
+  }();
+};
+var erase = function erase(category_id) {
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context2.prev = 1;
+              _context2.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("/api/categories/".concat(category_id));
+
+            case 4:
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["GET"],
+                payload: {}
+              });
+              _context2.next = 10;
+              break;
+
+            case 7:
+              _context2.prev = 7;
+              _context2.t0 = _context2["catch"](1);
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
+                error: _context2.t0.message
+              });
+
+            case 10:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 7]]);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+};
+var changeName = function changeName(newName) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["CHANGE_NAME"],
+      payload: newName
+    });
+  };
+};
+var addCategory = function addCategory(category) {
+  return /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context3.prev = 1;
+              _context3.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/categories', category);
+
+            case 4:
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["ADD"]
+              });
+              _context3.next = 10;
+              break;
+
+            case 7:
+              _context3.prev = 7;
+              _context3.t0 = _context3["catch"](1);
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
+                payload: 'No se puedo agregar la categoría.'
+              });
+
+            case 10:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 7]]);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
     };
   }();
 };
@@ -73959,6 +74074,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _General_Index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./General/Index */ "./resources/js/components/General/Index.js");
 /* harmony import */ var _General_NotFound__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./General/NotFound */ "./resources/js/components/General/NotFound.js");
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Categories */ "./resources/js/components/Categories/index.js");
+/* harmony import */ var _Categories_category__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Categories/category */ "./resources/js/components/Categories/category.js");
+/* harmony import */ var _Categories_CategoryForm__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Categories/CategoryForm */ "./resources/js/components/Categories/CategoryForm.js");
 
 
 
@@ -73970,9 +74087,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import Category from './Categories/Category';
-// import AddCategory from './Categories/AddCategory';
-// import EditCategory from './Categories/EditCategory';
+
+
+ // import EditCategory from './Categories/EditCategory';
 // import Exercises from './Exercises/Exercises';
 // import Exercise from './Exercises/Exercise';
 // import AddExercise from './Exercises/AddExercise';
@@ -73989,6 +74106,18 @@ var App = function App(props) {
     path: "/categories",
     component: _Categories__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/categories/:id",
+    component: _Categories_category__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/addcategory",
+    component: function component() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Categories_CategoryForm__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        title: 'Añadir Categoría'
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _General_NotFound__WEBPACK_IMPORTED_MODULE_10__["default"]
   })));
 };
@@ -74001,6 +74130,81 @@ if (document.getElementById('app')) {
     store: store
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null)), document.getElementById('app'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Categories/CategoryForm.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/Categories/CategoryForm.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/categoriesActions */ "./resources/js/actions/categoriesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _styles_CategoryForm_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/CategoryForm.css */ "./resources/js/components/Categories/styles/CategoryForm.css");
+/* harmony import */ var _styles_CategoryForm_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_CategoryForm_css__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+
+var CategoryForm = function CategoryForm(props) {
+  var handleNameChange = function handleNameChange(e) {
+    props.changeName(e.target.value);
+  };
+
+  var save = function save() {
+    if (!props.catName) {
+      alert('Inserta un nombre antes de enviar, por favor.');
+    } else {
+      var category = {
+        name: props.catName
+      };
+      props.addCategory(category);
+    }
+  };
+
+  var showAction = function showAction() {
+    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: props.error
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "body CategoryForm flex justifyc alignc"
+  }, props.goBack ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+    to: "/categories"
+  }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form flex flex-col justifyc alignc"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "content flex flex-col justifyc alignc"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Nombre de la categor\xEDa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    value: props.catName,
+    onChange: handleNameChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: save
+  }, props.title), showAction())));
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var categoriesReducer = _ref.categoriesReducer;
+  return categoriesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__)(CategoryForm));
 
 /***/ }),
 
@@ -74018,8 +74222,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/categoriesActions */ "./resources/js/actions/categoriesActions.js");
-/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/Table.css */ "./resources/js/components/Categories/styles/Table.css");
-/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_Table_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/Table.css */ "./resources/js/components/Categories/styles/Table.css");
+/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_Table_css__WEBPACK_IMPORTED_MODULE_6__);
+
+
 
 
 
@@ -74027,20 +74235,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Table = function Table(props) {
+  //componentDidMount
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!props.categories.length) props.get(); //console.log(props.categories);
+  }, [props]);
+
   var renderCategories = function renderCategories() {
     return props.categories.map(function (cat) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "elem flex flex-row justifyc alignc",
         key: cat.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "",
+        to: "/categories/".concat(cat.id),
         className: "name"
       }, cat.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Editar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "edit-btn"
+      }, "Editar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Eliminar")));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "delete-btn",
+        onClick: function onClick() {
+          return props.erase(cat.id);
+        }
+      }, "Eliminar")));
     });
+  };
+
+  var renderCategoriesTable = function renderCategoriesTable() {
+    if (props.cargando) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: error
+    });
+
+    if (props.categories.length) {
+      //console.log('rerender!');
+      return renderCategories();
+    }
   };
 
   var renderExercises = function renderExercises() {
@@ -74050,7 +74282,7 @@ var Table = function Table(props) {
   if (props.isCategories) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "table-cat scrollable"
-    }, renderCategories());
+    }, renderCategoriesTable());
   }
 
   if (props.isExercises) {
@@ -74069,10 +74301,10 @@ var mapStateToProps = function mapStateToProps(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Categories/index.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Categories/index.js ***!
-  \*****************************************************/
+/***/ "./resources/js/components/Categories/category.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Categories/category.js ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -74084,10 +74316,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/categoriesActions */ "./resources/js/actions/categoriesActions.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
 /* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
-/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_General_Fatal__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Categories/Table.js");
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/index.css */ "./resources/js/components/Categories/styles/index.css");
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+
+var Category = function Category(props) {
+  //componentDidMount
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!props.categories.length) props.get();
+  }, []);
+
+  var renderTable = function renderTable() {
+    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: props.error
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      isCategories: true
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "body Categories flex justifyc alignc"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "title"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Category")));
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var categoriesReducer = _ref.categoriesReducer;
+  return categoriesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_2__)(Category));
+
+/***/ }),
+
+/***/ "./resources/js/components/Categories/index.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Categories/index.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/categoriesActions */ "./resources/js/actions/categoriesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Categories/Table.js");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/index.css */ "./resources/js/components/Categories/styles/index.css");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -74103,11 +74394,11 @@ var Categories = function Categories(props) {
   }, []);
 
   var renderTable = function renderTable() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_3__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
       message: props.error
     });
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_6__["default"], {
       isCategories: true
     });
   };
@@ -74115,8 +74406,11 @@ var Categories = function Categories(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "body Categories flex justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "title"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Categor\xEDas")), renderTable());
+    className: "title flex flex-row jutifyc alignc"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/addcategory",
+    className: "add-btn"
+  }, "Crear Categor\xEDa")), renderTable());
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -74124,7 +74418,37 @@ var mapStateToProps = function mapStateToProps(_ref) {
   return categoriesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_2__)(Categories));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__)(Categories));
+
+/***/ }),
+
+/***/ "./resources/js/components/Categories/styles/CategoryForm.css":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/Categories/styles/CategoryForm.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./CategoryForm.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Categories/styles/CategoryForm.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -74192,10 +74516,20 @@ if(false) {}
 /*!**************************************************!*\
   !*** ./resources/js/components/General/Fatal.js ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
+var Fatal = function Fatal(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, props.message);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Fatal);
 
 /***/ }),
 
@@ -74401,7 +74735,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   categories: [],
   loading: false,
-  error: ''
+  error: '',
+  catName: '',
+  goBack: false
 };
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
@@ -74412,7 +74748,8 @@ var INITIAL_STATE = {
       return _objectSpread({}, state, {
         categories: action.payload,
         loading: false,
-        error: ''
+        error: '',
+        goBack: false
       });
 
     case _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
@@ -74424,6 +74761,21 @@ var INITIAL_STATE = {
       return _objectSpread({}, state, {
         error: action.payload,
         loading: false
+      });
+
+    case _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_0__["CHANGE_NAME"]:
+      return _objectSpread({}, state, {
+        catName: action.payload
+      });
+
+    case _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_0__["ADD"]:
+      return _objectSpread({}, state, {
+        categories: {},
+        //Reseteo las tareas para buscarlas nuevamente
+        loading: false,
+        error: '',
+        catName: '',
+        goBack: true
       });
 
     default:
@@ -74456,7 +74808,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./resources/js/types/categoriesTypes.js ***!
   \***********************************************/
-/*! exports provided: GET, LOADING, ERROR */
+/*! exports provided: GET, LOADING, ERROR, CHANGE_NAME, ADD */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74464,9 +74816,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET", function() { return GET; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHANGE_NAME", function() { return CHANGE_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD", function() { return ADD; });
 var GET = 'categories_get';
 var LOADING = 'categories_loading';
 var ERROR = 'categories_error';
+var CHANGE_NAME = 'categories_change_name';
+var ADD = 'categories_add';
 
 /***/ }),
 
