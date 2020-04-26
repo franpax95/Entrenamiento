@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET, LOADING, ERROR, CHANGE_NAME, ADD } from '../types/categoriesTypes';
+import { GET, LOADING, ERROR, CHANGE_NAME, SAVE, RESET } from '../types/categoriesTypes';
 
 export const get = () => async (dispatch) => {
     dispatch({ 
@@ -56,7 +56,7 @@ export const addCategory = (category) => async (dispatch) => {
         await axios.post('/api/categories', category);
 
         dispatch({
-            type: ADD
+            type: SAVE
         });
     }catch(error){
         dispatch({
@@ -64,4 +64,28 @@ export const addCategory = (category) => async (dispatch) => {
             payload: 'No se puedo agregar la categoría.'
         })
     }
+}
+
+export const editCategory = (category) => async (dispatch) => {
+    dispatch({
+        type: LOADING
+    });
+
+    try{
+        await axios.put(`/api/categories/${category.id}`, category);
+        dispatch({
+            type: SAVE
+        });
+    }catch(error){
+        dispatch({
+            type: ERROR,
+            payload: 'No se pudo editar la categoría: ' + error
+        });
+    }
+}
+
+export const resetForm = () => (dispatch) => {
+    dispatch({
+        type: RESET
+    });
 }

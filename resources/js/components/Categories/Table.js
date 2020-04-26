@@ -23,7 +23,11 @@ const Table = (props) => {
                 {cat.name}
             </Link>
             <div className="edit flex justifyc alignc">
-                <button className="edit-btn">Editar</button>
+                <button className="edit-btn">
+                    <Link to={`/editcategory/${cat.id}`} >
+                        Editar
+                    </Link>
+                </button>
             </div>
             <div className="delete flex justifyc alignc">
                 <button className="delete-btn" onClick={() => props.erase(cat.id)}>

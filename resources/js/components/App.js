@@ -16,7 +16,6 @@ import NotFound from './General/NotFound';
 import Categories from './Categories';
 import Category from './Categories/category';
 import CategoryForm from './Categories/CategoryForm';
-// import EditCategory from './Categories/EditCategory';
 
 // import Exercises from './Exercises/Exercises';
 // import Exercise from './Exercises/Exercise';
@@ -34,10 +33,10 @@ const App = (props) => (
 
             <Route exact path='/categories' component={Categories} />
             <Route exact path='/categories/:id' component={Category} />
-            <Route exact path='/addcategory' component={ () => <CategoryForm title={'Añadir Categoría'} /> } />
-            {/* <Route exact path='/editcategory/:id' component={EditCategory} />
+            <Route exact path='/addcategory' component={ (props) => <CategoryForm {...props} title={'Añadir Categoría'} /> } />
+            <Route exact path='/editcategory/:id' component={ (props) => <CategoryForm {...props} title={'Editar Categoría'} /> } />
 
-            <Route exact path='/exercises' component={Exercises} />
+            {/* <Route exact path='/exercises' component={Exercises} />
             <Route exact path='/exercise/:id' component={Exercise} />
             <Route exact path='/addexercise' component={AddExercise} />
 

@@ -59,6 +59,7 @@ button{ cursor: pointer; }
     border: solid 1.5px darkgray; 
     color: darkgray; 
 }
+.edit-btn a{ color: inherit; }
 
 .delete-btn{
     outline: none;

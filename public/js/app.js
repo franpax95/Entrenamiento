@@ -6546,7 +6546,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\nhtml, body, #app{ height: 100%; }\r\n.body{ height: 90%; }\r\n.Navbar{ height: 10%; }\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */\r\n\r\n\r\n/* general buttons */\r\n.add-btn{\r\n    padding: 4px 8px;\r\n    background-color: white;\r\n    color: green;\r\n    border: solid 1.5px green;\r\n    border-radius: 5px;\r\n\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    font-size: 1.2em;\r\n}\r\n.add-btn:hover{\r\n    border: solid 1.5px lightgreen;\r\n    color: lightgreen; \r\n}\r\n\r\n.edit-btn{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.edit-btn:hover{ \r\n    border: solid 1.5px darkgray; \r\n    color: darkgray; \r\n}\r\n\r\n.delete-btn{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.delete-btn:hover{ \r\n    border: solid 1.5px salmon; \r\n    color: salmon; \r\n}", ""]);
+exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\nhtml, body, #app{ height: 100%; }\r\n.body{ height: 90%; }\r\n.Navbar{ height: 10%; }\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */\r\n\r\n\r\n/* general buttons */\r\n.add-btn{\r\n    padding: 4px 8px;\r\n    background-color: white;\r\n    color: green;\r\n    border: solid 1.5px green;\r\n    border-radius: 5px;\r\n\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    font-size: 1.2em;\r\n}\r\n.add-btn:hover{\r\n    border: solid 1.5px lightgreen;\r\n    color: lightgreen; \r\n}\r\n\r\n.edit-btn{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.edit-btn:hover{ \r\n    border: solid 1.5px darkgray; \r\n    color: darkgray; \r\n}\r\n.edit-btn a{ color: inherit; }\r\n\r\n.delete-btn{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.delete-btn:hover{ \r\n    border: solid 1.5px salmon; \r\n    color: salmon; \r\n}", ""]);
 
 // exports
 
@@ -73787,7 +73787,7 @@ module.exports = function(module) {
 /*!***************************************************!*\
   !*** ./resources/js/actions/categoriesActions.js ***!
   \***************************************************/
-/*! exports provided: get, erase, changeName, addCategory */
+/*! exports provided: get, erase, changeName, addCategory, editCategory, resetForm */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73796,6 +73796,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "erase", function() { return erase; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeName", function() { return changeName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCategory", function() { return addCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editCategory", function() { return editCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetForm", function() { return resetForm; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -73922,7 +73924,7 @@ var addCategory = function addCategory(category) {
 
             case 4:
               dispatch({
-                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["ADD"]
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["SAVE"]
               });
               _context3.next = 10;
               break;
@@ -73947,6 +73949,55 @@ var addCategory = function addCategory(category) {
       return _ref3.apply(this, arguments);
     };
   }();
+};
+var editCategory = function editCategory(category) {
+  return /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context4.prev = 1;
+              _context4.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put("/api/categories/".concat(category.id), category);
+
+            case 4:
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["SAVE"]
+              });
+              _context4.next = 10;
+              break;
+
+            case 7:
+              _context4.prev = 7;
+              _context4.t0 = _context4["catch"](1);
+              dispatch({
+                type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
+                payload: 'No se pudo editar la categoría: ' + _context4.t0
+              });
+
+            case 10:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 7]]);
+    }));
+
+    return function (_x4) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+};
+var resetForm = function resetForm() {
+  return function (dispatch) {
+    dispatch({
+      type: _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_2__["RESET"]
+    });
+  };
 };
 
 /***/ }),
@@ -74076,6 +74127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Categories */ "./resources/js/components/Categories/index.js");
 /* harmony import */ var _Categories_category__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Categories/category */ "./resources/js/components/Categories/category.js");
 /* harmony import */ var _Categories_CategoryForm__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Categories/CategoryForm */ "./resources/js/components/Categories/CategoryForm.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
 
@@ -74089,8 +74141,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import EditCategory from './Categories/EditCategory';
-// import Exercises from './Exercises/Exercises';
+
+ // import Exercises from './Exercises/Exercises';
 // import Exercise from './Exercises/Exercise';
 // import AddExercise from './Exercises/AddExercise';
 // import Routines from './Routines/Routines';
@@ -74112,10 +74164,18 @@ var App = function App(props) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/addcategory",
-    component: function component() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Categories_CategoryForm__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    component: function component(props) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Categories_CategoryForm__WEBPACK_IMPORTED_MODULE_13__["default"], _extends({}, props, {
         title: 'Añadir Categoría'
-      });
+      }));
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/editcategory/:id",
+    component: function component(props) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Categories_CategoryForm__WEBPACK_IMPORTED_MODULE_13__["default"], _extends({}, props, {
+        title: 'Editar Categoría'
+      }));
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _General_NotFound__WEBPACK_IMPORTED_MODULE_10__["default"]
@@ -74160,6 +74220,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CategoryForm = function CategoryForm(props) {
+  //componentDidMount
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var id = props.match.params.id;
+
+    if (id) {
+      var category = props.categories.filter(function (cat) {
+        return cat.id == id;
+      })[0];
+      props.changeName(category.name);
+    } else {
+      props.resetForm();
+    }
+  }, []);
+
   var handleNameChange = function handleNameChange(e) {
     props.changeName(e.target.value);
   };
@@ -74168,10 +74242,23 @@ var CategoryForm = function CategoryForm(props) {
     if (!props.catName) {
       alert('Inserta un nombre antes de enviar, por favor.');
     } else {
-      var category = {
-        name: props.catName
-      };
-      props.addCategory(category);
+      var id = props.match.params.id;
+
+      if (id) {
+        var category = props.categories.filter(function (cat) {
+          return cat.id == id;
+        })[0];
+        var new_cat = {
+          id: category.id,
+          name: props.catName
+        };
+        props.editCategory(new_cat);
+      } else {
+        var _category = {
+          name: props.catName
+        };
+        props.addCategory(_category);
+      }
     }
   };
 
@@ -74252,7 +74339,9 @@ var Table = function Table(props) {
         className: "edit flex justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "edit-btn"
-      }, "Editar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/editcategory/".concat(cat.id)
+      }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
@@ -74768,7 +74857,7 @@ var INITIAL_STATE = {
         catName: action.payload
       });
 
-    case _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_0__["ADD"]:
+    case _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_0__["SAVE"]:
       return _objectSpread({}, state, {
         categories: {},
         //Reseteo las tareas para buscarlas nuevamente
@@ -74776,6 +74865,11 @@ var INITIAL_STATE = {
         error: '',
         catName: '',
         goBack: true
+      });
+
+    case _types_categoriesTypes__WEBPACK_IMPORTED_MODULE_0__["RESET"]:
+      return _objectSpread({}, state, {
+        catName: ''
       });
 
     default:
@@ -74808,7 +74902,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./resources/js/types/categoriesTypes.js ***!
   \***********************************************/
-/*! exports provided: GET, LOADING, ERROR, CHANGE_NAME, ADD */
+/*! exports provided: GET, LOADING, ERROR, CHANGE_NAME, SAVE, RESET */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74817,12 +74911,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHANGE_NAME", function() { return CHANGE_NAME; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD", function() { return ADD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE", function() { return SAVE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET", function() { return RESET; });
 var GET = 'categories_get';
 var LOADING = 'categories_loading';
 var ERROR = 'categories_error';
 var CHANGE_NAME = 'categories_change_name';
-var ADD = 'categories_add';
+var SAVE = 'categories_save';
+var RESET = 'categories_reset';
 
 /***/ }),
 

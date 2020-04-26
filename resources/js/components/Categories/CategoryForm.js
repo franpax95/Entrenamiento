@@ -11,6 +11,18 @@ import './styles/CategoryForm.css';
 
 
 const CategoryForm = (props) => {
+    //componentDidMount
+    useEffect(() => {
+        const { match: { params: { id } } } = props;
+        if(id){
+            const category = props.categories.filter(cat => cat.id == id)[0];
+            props.changeName(category.name);
+        }else{
+            props.resetForm();
+        }
+    }, []);
+
+
     const handleNameChange = (e) => {
         props.changeName(e.target.value);
     }
@@ -21,8 +33,18 @@ const CategoryForm = (props) => {
         }
         
         else{
-            const category = { name: props.catName }
-            props.addCategory(category);
+            const { match: { params: { id } } } = props;
+            if(id){
+                const category = props.categories.filter(cat => cat.id == id)[0];
+                const new_cat = {
+                    id: category.id,
+                    name: props.catName
+                };
+                props.editCategory(new_cat);
+            }else{
+                const category = { name: props.catName }
+                props.addCategory(category);
+            }
         }
     }
 
