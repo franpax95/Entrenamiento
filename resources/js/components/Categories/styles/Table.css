@@ -23,7 +23,15 @@
 
 .table-ex{ width: 90%; }
 .table-ex .elem .img{
-    width: 15%;
+    width: 130px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-ex .elem .img img{
+    max-width: 130px;
+    max-height: 110px;
 }
 .table-ex .elem .name{
     width: 55%;

@@ -23,3 +23,9 @@ Route::get('categories/{category}', 'CategoriesController@show');
 Route::post('categories', 'CategoriesController@store');
 Route::put('categories/{category}', 'CategoriesController@update');
 Route::delete('categories/{category}', 'CategoriesController@delete');
+
+Route::get('exercises', 'ExercisesController@index');
+Route::get('exercises/{exercise}', 'ExercisesController@show');
+Route::post('exercises', 'ExercisesController@store');
+Route::put('exercises/{exercise}', 'ExercisesController@update');
+Route::delete('exercises/{exercise}', 'ExercisesController@delete');

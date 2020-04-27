@@ -12,9 +12,6 @@ import './styles/index.css';
 
 
 const Category = (props) => {
-    //const id = props.match.params.id;
-    //const category = props.categories.filter(cat => cat.id == id)[0];
-
     //componentDidMount
     useEffect(() => {
         async function fetchData(){
@@ -38,8 +35,9 @@ const Category = (props) => {
 
     return(
         <div className="body Categories flex justifyc alignc">
-            <div className="title">
-                <h1>Categoría <i>{props.categories.filter(cat => cat.id == props.match.params.id)[0].name}</i></h1>
+            <div className="title flex flex-col justifyc alignc">
+                <h1>Categoría</h1>
+                <h2><i>{props.categories.filter(cat => cat.id == props.match.params.id)[0].name}</i></h2>
             </div>
 
             {renderTable()}

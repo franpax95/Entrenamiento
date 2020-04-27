@@ -49,8 +49,8 @@ const CategoryForm = (props) => {
     }
 
     const showAction = () => {
-        if(props.loading) return <Spinner />
-        if(props.error) return <Fatal message={props.error} />
+        if(props.loading) return <Spinner />;
+        if(props.error) return <Fatal message={props.error} />;
     }
 
 

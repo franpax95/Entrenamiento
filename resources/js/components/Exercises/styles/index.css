@@ -1,0 +1,17 @@
+.Exercises{
+    width: 100%;
+    padding: 5%;
+}
+
+.Exercises .title{
+    width: 80%;
+}
+
+.Exercises .title h1{
+    text-align: center;
+    margin: auto;
+}
+.Exercises .title a{
+    float: right;
+    margin-left: auto;
+}

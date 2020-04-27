@@ -34,3 +34,10 @@
       transform: rotate(360deg);
     }
 }
+.small-spinner{
+  margin-bottom: 32px;
+}
+.small-spinner div{
+  width:32px;
+  height: 32px;
+}

@@ -10,16 +10,10 @@ import Fatal from '../General/Fatal';
 import './styles/Table.css';
 
 const Table = (props) => {
-    //componentDidMount
-    // useEffect(() => {
-    //     if((!props.categories.length)) props.get();
-    //     //console.log(props.categories);
-    // }, [props]);
-
     useEffect(() => {
         function fetchData(){
             /* en caso de eliminar una categoría, las busco de nuevo */
-            if(!props.categories.length)  props.get();
+            if(!props.categories.length) props.get();
 
             /* en caso de eliminar algún ejercicio... se buscaría de nuevo */
             // if((props.catId) && (!props.exercises.length)){
@@ -65,7 +59,7 @@ const Table = (props) => {
         return(
             <div className="elem flex flex-row justifyc alignc" key={ex.id}>
                 <div className="img">
-                    {(ex.img) ? <img src={ex.img} alt={ex.name} /> : ''}
+                    {(ex.image) ? <img src={`/storage/${ex.image}`} alt={ex.name} /> : ''}
                 </div>
                 <Link to="" className="name">
                     {ex.name}
