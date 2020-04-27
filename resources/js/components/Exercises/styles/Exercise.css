@@ -1,0 +1,22 @@
+.Exercise .content{
+    padding: 10% 20%;
+}
+
+.Exercise .content h1{
+    font-size: 2em;
+    text-align: center;
+    text-decoration: underline;
+}
+.Exercise .content h3{ text-align: center; }
+.Exercise .content h3 .category{ font-size: 1.3em; }
+.Exercise .content h3 i{ font-size: 1em; font-weight: lighter; }
+
+.Exercise .content p{
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.Exercise .content img{
+    max-height: 300px;
+    max-width: 400px;
+}

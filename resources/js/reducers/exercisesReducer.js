@@ -1,8 +1,8 @@
-import { GET, LOADING, ERROR, CHANGE_NAME, CHANGE_CATEGORY, CHANGE_DESCRIPTION, CHANGE_IMAGE, SAVE } from '../types/exercisesTypes';
+import { GET, LOADING, ERROR, CHANGE_NAME, CHANGE_CATEGORY, CHANGE_DESCRIPTION, CHANGE_IMAGE, SAVE, SHOW } from '../types/exercisesTypes';
 
 const INITIAL_STATE = {
     exercises: [],
-    exercise: [],
+    exercise: {},
     loading: false,
     error: '',
     exName: '',
@@ -21,6 +21,14 @@ export default (state = INITIAL_STATE, action) => {
                 loading: false,
                 error: '',
                 goBack: false
+            }
+        
+        case SHOW:
+            return {
+                ...state,
+                exercise: action.payload,
+                loading: false,
+                error: ''
             }
 
         case LOADING:

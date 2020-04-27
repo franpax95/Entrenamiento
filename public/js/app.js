@@ -6610,6 +6610,25 @@ exports.push([module.i, ".Categories{\r\n    width: 100%;\r\n    display: flex;\
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Exercises/styles/Exercise.css":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Exercises/styles/Exercise.css ***!
+  \***********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Exercise .content{\r\n    padding: 10% 20%;\r\n}\r\n\r\n.Exercise .content h1{\r\n    font-size: 2em;\r\n    text-align: center;\r\n    text-decoration: underline;\r\n}\r\n.Exercise .content h3{ text-align: center; }\r\n.Exercise .content h3 .category{ font-size: 1.3em; }\r\n.Exercise .content h3 i{ font-size: 1em; font-weight: lighter; }\r\n\r\n.Exercise .content p{\r\n    margin-top: 20px;\r\n    font-size: 1.2em;\r\n}\r\n\r\n.Exercise .content img{\r\n    max-height: 300px;\r\n    max-width: 400px;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Exercises/styles/ExerciseForm.css":
 /*!***************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Exercises/styles/ExerciseForm.css ***!
@@ -74110,12 +74129,13 @@ var erase = function erase(category_id) {
 /*!**************************************************!*\
   !*** ./resources/js/actions/exercisesActions.js ***!
   \**************************************************/
-/*! exports provided: get, changeName, changeCategory, changeDescription, changeImage, addExercise */
+/*! exports provided: get, show, changeName, changeCategory, changeDescription, changeImage, addExercise */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "get", function() { return get; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "show", function() { return show; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeName", function() { return changeName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeCategory", function() { return changeCategory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeDescription", function() { return changeDescription; });
@@ -74180,6 +74200,52 @@ var get = function get() {
     };
   }();
 };
+var show = function show(exercise) {
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              dispatch({
+                type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context2.prev = 1;
+              _context2.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/exercises/".concat(exercise.id));
+
+            case 4:
+              response = _context2.sent;
+              dispatch({
+                type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["SHOW"],
+                payload: response.data
+              });
+              _context2.next = 12;
+              break;
+
+            case 8:
+              _context2.prev = 8;
+              _context2.t0 = _context2["catch"](1);
+              console.log(_context2.t0.message);
+              dispatch({
+                type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
+                payload: 'No se puede acceder a este ejercicio en este momento'
+              });
+
+            case 12:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 8]]);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+};
 var changeName = function changeName(newName) {
   return function (dispatch) {
     dispatch({
@@ -74214,43 +74280,43 @@ var changeImage = function changeImage(newImg) {
 };
 var addExercise = function addExercise(formData) {
   return /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
               dispatch({
                 type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
-              _context2.prev = 1;
-              _context2.next = 4;
+              _context3.prev = 1;
+              _context3.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/exercises', formData);
 
             case 4:
               dispatch({
                 type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["SAVE"]
               });
-              _context2.next = 10;
+              _context3.next = 10;
               break;
 
             case 7:
-              _context2.prev = 7;
-              _context2.t0 = _context2["catch"](1);
+              _context3.prev = 7;
+              _context3.t0 = _context3["catch"](1);
               dispatch({
                 type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
-                payload: _context2.t0.message
+                payload: _context3.t0.message
               });
 
             case 10:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2, null, [[1, 7]]);
+      }, _callee3, null, [[1, 7]]);
     }));
 
-    return function (_x2) {
-      return _ref2.apply(this, arguments);
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
     };
   }();
 };
@@ -74383,7 +74449,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Categories_category__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Categories/category */ "./resources/js/components/Categories/category.js");
 /* harmony import */ var _Categories_CategoryForm__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Categories/CategoryForm */ "./resources/js/components/Categories/CategoryForm.js");
 /* harmony import */ var _Exercises__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Exercises */ "./resources/js/components/Exercises/index.js");
-/* harmony import */ var _Exercises_ExerciseForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Exercises/ExerciseForm */ "./resources/js/components/Exercises/ExerciseForm.js");
+/* harmony import */ var _Exercises_exercise__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Exercises/exercise */ "./resources/js/components/Exercises/exercise.js");
+/* harmony import */ var _Exercises_ExerciseForm__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Exercises/ExerciseForm */ "./resources/js/components/Exercises/ExerciseForm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
@@ -74400,7 +74467,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
- // import Exercise from './Exercises/Exercise';
+
 
  // import Routines from './Routines/Routines';
 // import AddRoutine from './Routines/AddRoutine';
@@ -74442,14 +74509,14 @@ var App = function App(props) {
     exact: true,
     path: "/addexercise",
     component: function component(props) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Exercises_ExerciseForm__WEBPACK_IMPORTED_MODULE_15__["default"], _extends({}, props, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Exercises_ExerciseForm__WEBPACK_IMPORTED_MODULE_16__["default"], _extends({}, props, {
         title: 'Añadir Ejercicio'
       }));
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/exercise/:id",
-    component: Exercise
+    component: _Exercises_exercise__WEBPACK_IMPORTED_MODULE_15__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _General_NotFound__WEBPACK_IMPORTED_MODULE_10__["default"]
   })));
@@ -74655,7 +74722,7 @@ var Table = function Table(props) {
         src: "/storage/".concat(ex.image),
         alt: ex.name
       }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "",
+        to: "/exercise/".concat(ex.id),
         className: "name"
       }, ex.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit flex justifyc alignc"
@@ -75199,7 +75266,7 @@ var Table = function Table(props) {
         className: "elem flex flex-row justifyc alignc",
         key: ex.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "",
+        to: "/exercise/".concat(ex.id),
         className: "content flex flex-row justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "img"
@@ -75245,6 +75312,129 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_3__)(Table));
+
+/***/ }),
+
+/***/ "./resources/js/components/Exercises/exercise.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Exercises/exercise.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/exercisesActions */ "./resources/js/actions/exercisesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _styles_Exercise_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/Exercise.css */ "./resources/js/components/Exercises/styles/Exercise.css");
+/* harmony import */ var _styles_Exercise_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_Exercise_css__WEBPACK_IMPORTED_MODULE_6__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+var Exercise = function Exercise(props) {
+  //componentDidMount
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    function fetchData() {
+      return _fetchData.apply(this, arguments);
+    }
+
+    function _fetchData() {
+      _fetchData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var id, exercise;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                id = props.match.params.id;
+
+                if (props.exercises.length) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _context.next = 4;
+                return props.get();
+
+              case 4:
+                if (!(props.exercises.length && !props.loading && (!Object.entries(props.exercise).length || props.exercise.id != id))) {
+                  _context.next = 8;
+                  break;
+                }
+
+                exercise = props.exercises.filter(function (ex) {
+                  return ex.id == id;
+                })[0];
+                _context.next = 8;
+                return props.show(exercise);
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+      return _fetchData.apply(this, arguments);
+    }
+
+    fetchData();
+  }, [props.exercises]);
+
+  var renderImg = function renderImg() {
+    if (props.exercise.image) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        src: "/storage/".concat(props.exercise.image),
+        alt: props.exercise.name
+      });
+    }
+  };
+
+  var renderExercise = function renderExercise() {
+    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: props.error
+    });
+
+    if (Object.entries(props.exercise).length) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "content flex flex-col justifyc alignc"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, props.exercise.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-minus"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "category"
+      }, props.exercise.category.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-minus"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, props.exercise.description), renderImg());
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "body Exercise flex flex-col justifyc alignc"
+  }, renderExercise());
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var exercisesReducer = _ref.exercisesReducer;
+  return exercisesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_3__)(Exercise));
 
 /***/ }),
 
@@ -75306,6 +75496,36 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_3__)(Exercises));
+
+/***/ }),
+
+/***/ "./resources/js/components/Exercises/styles/Exercise.css":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Exercises/styles/Exercise.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./Exercise.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Exercises/styles/Exercise.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -75705,7 +75925,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var INITIAL_STATE = {
   exercises: [],
-  exercise: [],
+  exercise: {},
   loading: false,
   error: '',
   exName: '',
@@ -75725,6 +75945,13 @@ var INITIAL_STATE = {
         loading: false,
         error: '',
         goBack: false
+      });
+
+    case _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_0__["SHOW"]:
+      return _objectSpread({}, state, {
+        exercise: action.payload,
+        loading: false,
+        error: ''
       });
 
     case _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
@@ -75828,7 +76055,7 @@ var SHOW = 'categories_show';
 /*!**********************************************!*\
   !*** ./resources/js/types/exercisesTypes.js ***!
   \**********************************************/
-/*! exports provided: GET, LOADING, ERROR, CHANGE_NAME, CHANGE_CATEGORY, CHANGE_DESCRIPTION, CHANGE_IMAGE, SAVE */
+/*! exports provided: GET, LOADING, ERROR, CHANGE_NAME, CHANGE_CATEGORY, CHANGE_DESCRIPTION, CHANGE_IMAGE, SAVE, SHOW */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75841,6 +76068,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHANGE_DESCRIPTION", function() { return CHANGE_DESCRIPTION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHANGE_IMAGE", function() { return CHANGE_IMAGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE", function() { return SAVE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW", function() { return SHOW; });
 var GET = 'exercises_get';
 var LOADING = 'exercises_loading';
 var ERROR = 'exercises_error';
@@ -75849,6 +76077,7 @@ var CHANGE_CATEGORY = 'exercises_change_category';
 var CHANGE_DESCRIPTION = 'exercises_change_description';
 var CHANGE_IMAGE = 'exercises_change_image';
 var SAVE = 'exercises_save';
+var SHOW = 'exercises_show';
 
 /***/ }),
 

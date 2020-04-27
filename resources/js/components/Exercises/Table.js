@@ -22,7 +22,7 @@ const Table = (props) => {
     const renderExercises = () => props.exercises.map((ex) => {
         return(
             <div className="elem flex flex-row justifyc alignc" key={ex.id}>
-                <Link to="" className="content flex flex-row justifyc alignc">
+                <Link to={`/exercise/${ex.id}`} className="content flex flex-row justifyc alignc">
                     <div className="img">
                         {(ex.image) ? (<img src={`storage/${ex.image}`} alt={ex.name} />) : ''}
                     </div>

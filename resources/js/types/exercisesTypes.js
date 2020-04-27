@@ -6,3 +6,4 @@ export const CHANGE_CATEGORY = 'exercises_change_category';
 export const CHANGE_DESCRIPTION = 'exercises_change_description';
 export const CHANGE_IMAGE = 'exercises_change_image';
 export const SAVE = 'exercises_save';
+export const SHOW = 'exercises_show';

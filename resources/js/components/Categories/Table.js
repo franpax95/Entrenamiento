@@ -61,7 +61,7 @@ const Table = (props) => {
                 <div className="img">
                     {(ex.image) ? <img src={`/storage/${ex.image}`} alt={ex.name} /> : ''}
                 </div>
-                <Link to="" className="name">
+                <Link to={`/exercise/${ex.id}`} className="name">
                     {ex.name}
                 </Link>
                 <div className="edit flex justifyc alignc">

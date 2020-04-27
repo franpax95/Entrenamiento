@@ -18,7 +18,7 @@ import Category from './Categories/category';
 import CategoryForm from './Categories/CategoryForm';
 
 import Exercises from './Exercises';
-// import Exercise from './Exercises/Exercise';
+import Exercise from './Exercises/exercise';
 import ExerciseForm from './Exercises/ExerciseForm';
 
 // import Routines from './Routines/Routines';
