@@ -87,3 +87,22 @@ export const addExercise = (formData) => async (dispatch) => {
         })
     }
 }
+
+export const erase = (exercise_id) => async (dispatch) => {
+    dispatch({
+        type: LOADING
+    });
+
+    try{
+        await axios.delete(`/api/exercises/${exercise_id}`);
+        dispatch({
+            type: GET,
+            payload: {}
+        });
+    }catch(error){
+        dispatch({
+            type: ERROR,
+            error: error.message
+        });
+    }
+}

@@ -74129,7 +74129,7 @@ var erase = function erase(category_id) {
 /*!**************************************************!*\
   !*** ./resources/js/actions/exercisesActions.js ***!
   \**************************************************/
-/*! exports provided: get, show, changeName, changeCategory, changeDescription, changeImage, addExercise */
+/*! exports provided: get, show, changeName, changeCategory, changeDescription, changeImage, addExercise, erase */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74141,6 +74141,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeDescription", function() { return changeDescription; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeImage", function() { return changeImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addExercise", function() { return addExercise; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "erase", function() { return erase; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -74317,6 +74318,49 @@ var addExercise = function addExercise(formData) {
 
     return function (_x3) {
       return _ref3.apply(this, arguments);
+    };
+  }();
+};
+var erase = function erase(exercise_id) {
+  return /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              dispatch({
+                type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context4.prev = 1;
+              _context4.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("/api/exercises/".concat(exercise_id));
+
+            case 4:
+              dispatch({
+                type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["GET"],
+                payload: {}
+              });
+              _context4.next = 10;
+              break;
+
+            case 7:
+              _context4.prev = 7;
+              _context4.t0 = _context4["catch"](1);
+              dispatch({
+                type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
+                error: _context4.t0.message
+              });
+
+            case 10:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 7]]);
+    }));
+
+    return function (_x4) {
+      return _ref4.apply(this, arguments);
     };
   }();
 };
@@ -75286,9 +75330,10 @@ var Table = function Table(props) {
       }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "delete-btn"
-        /*onClick={() => props.erase(cat.id)}*/
-
+        className: "delete-btn",
+        onClick: function onClick() {
+          return props.erase(ex.id);
+        }
       }, "Eliminar")));
     });
   };

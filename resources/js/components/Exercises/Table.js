@@ -41,7 +41,7 @@ const Table = (props) => {
                     </button>
                 </div>
                 <div className="delete flex justifyc alignc">
-                    <button className="delete-btn" /*onClick={() => props.erase(cat.id)}*/ >
+                    <button className="delete-btn" onClick={() => props.erase(ex.id)} >
                         Eliminar
                     </button>
                 </div>
