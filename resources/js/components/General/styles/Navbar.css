@@ -37,3 +37,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
+.Navbar a.active:not(.logo){
+    text-decoration: underline;
+}

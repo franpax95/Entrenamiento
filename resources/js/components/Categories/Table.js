@@ -72,7 +72,11 @@ const Table = (props) => {
                     </button>
                 </div>
                 <div className="delete flex justifyc alignc">
-                    <button className="delete-btn" onClick={() => props.erase(cat.id)}>
+                    <button 
+                        className="delete-btn" 
+                        /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
+                        onClick={() => {alert('Deshabilitado, de momento.')}}
+                    >
                         Eliminar
                     </button>
                 </div>

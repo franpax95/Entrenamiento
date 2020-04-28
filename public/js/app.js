@@ -6641,7 +6641,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".ExerciseForm{\r\n    width: 100%;\r\n    padding: 4%;\r\n}\r\n\r\n.ExerciseForm .form{\r\n    border: solid 2px #253a46;\r\n    border-radius: 10px 10px 0 10px;\r\n\r\n    width: 80%;\r\n    height: 100%;\r\n}\r\n\r\n.ExerciseForm .form h1{\r\n    width: 100%;\r\n    padding: 20px;\r\n\r\n    border-radius: 5px 5px 0 0;\r\n    background-color: #253a46;\r\n    color: white;\r\n\r\n    text-align: center;\r\n}\r\n\r\n.ExerciseForm .form .content{\r\n    padding: 4%;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.ExerciseForm .form .content label{\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n    margin-top: 20px;\r\n}\r\n.ExerciseForm .form .content input[type=text]{ \r\n    width: 60%; \r\n    font-size: 1em;\r\n}\r\n.ExerciseForm .form .content select{\r\n    width: 60%;\r\n    font-size: 1em;\r\n}\r\n.ExerciseForm .form .content textarea{\r\n    width: 70%;\r\n    height: 150px;\r\n    min-height: 150px;\r\n    resize: none;\r\n}\r\n.ExerciseForm .form .content input[type=file]{ outline: none; }\r\n\r\n.ExerciseForm .form .content button{\r\n    padding: 4px 8px;\r\n    margin-top: 30px;\r\n\r\n    outline: none;\r\n    border: solid 1.5px #253a46;\r\n    border-radius: 5px;\r\n    color: #253a46;\r\n    \r\n    font-size: 1.1em;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n}\r\n.ExerciseForm .form .content button:hover{\r\n    border: solid 1.5px gray;\r\n    color: gray;\r\n}", ""]);
+exports.push([module.i, ".ExerciseForm{\r\n    width: 100%;\r\n    padding: 4%;\r\n}\r\n\r\n.ExerciseForm .form{\r\n    border: solid 2px #253a46;\r\n    border-radius: 10px 10px 0 10px;\r\n\r\n    width: 80%;\r\n    height: 100%;\r\n}\r\n\r\n.ExerciseForm .form h1{\r\n    width: 100%;\r\n    padding: 20px;\r\n\r\n    border-radius: 5px 5px 0 0;\r\n    background-color: #253a46;\r\n    color: white;\r\n\r\n    text-align: center;\r\n}\r\n\r\n.ExerciseForm .form .content{\r\n    padding: 4%;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.ExerciseForm .form .content label{\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n    margin-top: 20px;\r\n}\r\n.ExerciseForm .form .content input[type=text]{ \r\n    width: 60%; \r\n    font-size: 1em;\r\n}\r\n.ExerciseForm .form .content select{\r\n    width: 60%;\r\n    font-size: 1em;\r\n}\r\n.ExerciseForm .form .content textarea{\r\n    width: 70%;\r\n    height: 150px;\r\n    min-height: 150px;\r\n    resize: none;\r\n    font-size: 1em;\r\n}\r\n.ExerciseForm .form .content input[type=file]{ outline: none; }\r\n\r\n.ExerciseForm .form .content button{\r\n    padding: 4px 8px;\r\n    margin-top: 30px;\r\n\r\n    outline: none;\r\n    border: solid 1.5px #253a46;\r\n    border-radius: 5px;\r\n    color: #253a46;\r\n    \r\n    font-size: 1.1em;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n}\r\n.ExerciseForm .form .content button:hover{\r\n    border: solid 1.5px gray;\r\n    color: gray;\r\n}", ""]);
 
 // exports
 
@@ -6660,7 +6660,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".table{\r\n    border: solid 2px gray;\r\n    width: 80%;\r\n}\r\n\r\n.table .elem:hover{\r\n    background-color: lightgray;\r\n}\r\n.table .elem .content{ \r\n    width: 80%;\r\n    height: 100%;\r\n    z-index: 1; \r\n    color: black;\r\n    padding: 2%;\r\n    cursor: pointer;\r\n}\r\n.table .elem .content .img{\r\n    width: 110px;\r\n    height: 110px; \r\n    border: solid 1px lightgray;\r\n    margin-right: 5px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table .elem .content .img img{\r\n    max-width: 110px;\r\n    max-height: 110px;\r\n}\r\n.table .elem .content .name{\r\n    width: 50%;\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n}\r\n.table .elem .content .category{\r\n    width: 30%;\r\n    font-size: 0.9em;\r\n}\r\n.table .elem .edit{ width: 10%; z-index: 2; }\r\n.table .elem .delete{ width: 10%; z-index: 2; }", ""]);
+exports.push([module.i, ".table{\r\n    border: solid 2px gray;\r\n    width: 80%;\r\n}\r\n\r\n.table .elem:hover{\r\n    background-color: lightgray;\r\n}\r\n.table .elem .content{ \r\n    width: 80%;\r\n    height: 100%;\r\n    z-index: 1; \r\n    color: black;\r\n    padding: 2%;\r\n    cursor: pointer;\r\n}\r\n.table .elem .content .img{\r\n    width: 110px;\r\n    height: 110px; \r\n    border: solid 1px lightgray;\r\n    margin-right: 5px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table .elem .content .img img{\r\n    max-width: 110px;\r\n    max-height: 110px;\r\n}\r\n.table .elem .content .name{\r\n    width: 50%;\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n    text-align: center;\r\n}\r\n.table .elem .content .category{\r\n    width: 30%;\r\n    font-size: 0.9em;\r\n    text-align: center;\r\n}\r\n.table .elem .edit{ width: 10%; z-index: 2; }\r\n.table .elem .delete{ width: 10%; z-index: 2; }", ""]);
 
 // exports
 
@@ -6698,7 +6698,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".Navbar{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #253a46;\r\n}\r\n\r\n\r\n.Navbar a{\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color: white;\r\n}\r\n.Navbar a:last-of-type{ \r\n    margin-right: auto; \r\n}\r\n.Navbar a:not(.logo){\r\n    width: 20%;\r\n    font-size: 1.5em;\r\n}\r\n.Navbar a:not(.logo):hover{ \r\n    background-color: #3e6175; \r\n}\r\n\r\n\r\n.Navbar .logo{\r\n    float: left;\r\n    margin: 0 auto 0 20px;\r\n    z-index: 2;\r\n    width: 10%;\r\n\r\n    font-size: 2em;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n}", ""]);
+exports.push([module.i, ".Navbar{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #253a46;\r\n}\r\n\r\n\r\n.Navbar a{\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color: white;\r\n}\r\n.Navbar a:last-of-type{ \r\n    margin-right: auto; \r\n}\r\n.Navbar a:not(.logo){\r\n    width: 20%;\r\n    font-size: 1.5em;\r\n}\r\n.Navbar a:not(.logo):hover{ \r\n    background-color: #3e6175; \r\n}\r\n\r\n\r\n.Navbar .logo{\r\n    float: left;\r\n    margin: 0 auto 0 20px;\r\n    z-index: 2;\r\n    width: 10%;\r\n\r\n    font-size: 2em;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n}\r\n\r\n.Navbar a.active:not(.logo){\r\n    text-decoration: underline;\r\n}", ""]);
 
 // exports
 
@@ -74777,9 +74777,11 @@ var Table = function Table(props) {
       }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "delete-btn",
+        className: "delete-btn"
+        /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
+        ,
         onClick: function onClick() {
-          return props.erase(cat.id);
+          alert('Deshabilitado, de momento.');
         }
       }, "Eliminar")));
     });

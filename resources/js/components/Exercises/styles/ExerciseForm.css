@@ -46,6 +46,7 @@
     height: 150px;
     min-height: 150px;
     resize: none;
+    font-size: 1em;
 }
 .ExerciseForm .form .content input[type=file]{ outline: none; }
 

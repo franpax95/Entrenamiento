@@ -64,7 +64,6 @@ export default (state = INITIAL_STATE, action) => {
                 catName: ''
             }
 
-
         default:
             return state;
     }
