@@ -5,39 +5,49 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Routine;
 use App\Exercise;
+use App\Category;
 
 class RoutineController extends Controller
 {
+    private function exercises_Str2Arr($str){
+        $exercises = array();
+
+        $exs = explode(":", $str);
+        foreach($exs as $ex){
+            $parameters = explode(".", $ex);
+
+            $exercise = Exercise::where('id', $parameters[0])->first();
+            $category = Category::where('id', $exercise->category_id)->first();
+
+            $exercise->category = $category;
+            $exercise->nRep = $parameters[1];
+            $exercise->tOn = $parameters[2];
+            $exercise->tOff = $parameters[3];
+
+            unset($exercise->category_id);
+            
+            array_push($exercises, $exercise);
+        }
+
+        return $exercises;
+    }
+
     public function index(){
         $routines = Routine::orderBy('name', 'asc')->get();
 
-        return $routines;
+        foreach($routines as $routine){
+            $routine->exercises = $this->exercises_Str2Arr($routine->exercises);
+            //$routine->exercises = 'Fran estuvo aquí';
+        }
+
+        
+
+        return $routines->toJSON();
     }
 
     public function show(Routine $routine){
-        $return_routine['name'] = $routine->name;
-        $return_routine['description'] = $routine->description;
-        $return_routine['exercises'] = array();
-        
-
-        //Array of strings
-        $exs = explode(":", $routine->exercises);
-
-        //$ex = "id.nRep.tOn.tOff"
-        foreach($exs as $ex){
-            $parameters = explode(".", $ex);
-            $exercise = Exercise::where('id', $parameters[0])->first()->toArray();
-            $category = Category::where('id', $exercise['category_id'])->first();
-
-            $exercise['category'] = $category;
-            $exercise['nRep'] = $parameters[1];
-            $exercise['tOn'] = $parameters[2];
-            $exercise['tOff'] = $parameters[3];
-
-            array_push($return_routine['exercises'], $exercise);
-        }
-
-        return $return_routine;
+        $routine->exercises = $this->exercises_Str2Arr($routine->exercises);
+        return $routine;
     }
 
     public function store(Request $request){

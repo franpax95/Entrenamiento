@@ -14,6 +14,7 @@ class ExercisesController extends Controller
         foreach($exercises as $exercise){
             $category = Category::where('id', $exercise->category_id)->get();
             $exercise->category = $category[0];
+            unset($exercise->category_id);
         }
 
         return $exercises;
@@ -22,6 +23,7 @@ class ExercisesController extends Controller
     public function show(Exercise $exercise){
         $category = Category::where('id', $exercise->category_id)->get();
         $exercise->category = $category[0];
+        unset($exercise->category_id);
         return $exercise;
     }
 
