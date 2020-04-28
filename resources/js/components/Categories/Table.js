@@ -3,17 +3,25 @@ import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import * as categoriesActions from '../../actions/categoriesActions';
+import * as exercisesActions from '../../actions/exercisesActions';
 
 import Spinner from '../General/Spinner';
 import Fatal from '../General/Fatal';
 
 import './styles/Table.css';
 
+const { clean: cleanExercises } = exercisesActions;
+const {
+    get,
+    erase,
+} = categoriesActions;
+
 const Table = (props) => {
+    /* componentDidMount & componentDidUpdate */
     useEffect(() => {
         function fetchData(){
             /* en caso de eliminar una categoría, las busco de nuevo */
-            if(!props.categories.length) props.get();
+            if(!props.categoriesReducer.categories.length) props.get();
 
             /* en caso de eliminar algún ejercicio... se buscaría de nuevo */
             // if((props.catId) && (!props.exercises.length)){
@@ -25,10 +33,15 @@ const Table = (props) => {
         }
         
         fetchData();
-    }, [props.categories, props.exercises]);
+    }, [props.categoriesReducer.categories, props.categoriesReducer.exercises]);
+
+    const handleDeleteCategoryClick = (catId) => {
+        props.erase(catId);
+        props.cleanExercises();
+    }
     
 
-    const renderCategories = () => props.categories.map((cat) => (
+    const renderCategories = () => props.categoriesReducer.categories.map((cat) => (
         <div className="elem flex flex-row justifyc alignc" key={cat.id}>
             <Link to={`/categories/${cat.id}`} className="name">
                 {cat.name}
@@ -41,7 +54,7 @@ const Table = (props) => {
                 </button>
             </div>
             <div className="delete flex justifyc alignc">
-                <button className="delete-btn" onClick={() => props.erase(cat.id)}>
+                <button className="delete-btn" onClick={() => handleDeleteCategoryClick(cat.id)}>
                     Eliminar
                 </button>
             </div>
@@ -49,13 +62,15 @@ const Table = (props) => {
     ));
 
     const renderCategoriesTable = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={error} />;
-        if(props.categories.length) return renderCategories();
+        if(props.categoriesReducer.loading) return <Spinner />;
+        if(props.categoriesReducer.error) return <Fatal message={error} />;
+        if(props.categoriesReducer.categories.length) return renderCategories();
         
     }
 
-    const renderExercises = () => props.exercises.map((ex) => {
+
+    /**Exercises */
+    const renderExercises = () => props.categoriesReducer.exercises.map((ex) => {
         return(
             <div className="elem flex flex-row justifyc alignc" key={ex.id}>
                 <div className="img">
@@ -85,12 +100,14 @@ const Table = (props) => {
     });
 
     const renderExercisesTable = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={error} />;
-        if(props.exercises.length) return renderExercises();
+        if(props.categoriesReducer.loading) return <Spinner />;
+        if(props.categoriesReducer.error) return <Fatal message={error} />;
+        if(props.categoriesReducer.exercises.length) return renderExercises();
     }
 
 
+
+    //Main Render
     if(props.isCategories){
         return(
             <div className="table-cat scrollable">
@@ -109,5 +126,14 @@ const Table = (props) => {
     
 }
 
-const mapStateToProps = ({categoriesReducer}) => categoriesReducer;
-export default connect(mapStateToProps, categoriesActions)(Table);
+const mapStateToProps = ({exercisesReducer, categoriesReducer}) => {
+    return {exercisesReducer, categoriesReducer};
+}
+
+const mapDispatchToProps = {
+    erase,
+    get,
+    cleanExercises
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

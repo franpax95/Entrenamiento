@@ -33,7 +33,7 @@ const ExerciseForm = (props) => {
             //Nos traemos las categorías (de momento sin await)
             if(!props.categoriesReducer.categories.length) await props.categoriesGet();
 
-            //Para que inicialice con el valor de option. Si no se hace, el estado está en ''
+            //Para que inicialice el select con el valor de option. Si no se hace, el estado está en ''
             props.changeCategory(selectRef.current.value);
         }
         fetchData();

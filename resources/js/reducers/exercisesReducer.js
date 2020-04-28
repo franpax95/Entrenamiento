@@ -77,6 +77,7 @@ export default (state = INITIAL_STATE, action) => {
                 exName: '',
                 exCategory: '',
                 exDescription: '',
+                exImg: '',
                 goBack: true
             }
 

@@ -74129,7 +74129,7 @@ var erase = function erase(category_id) {
 /*!**************************************************!*\
   !*** ./resources/js/actions/exercisesActions.js ***!
   \**************************************************/
-/*! exports provided: get, show, changeName, changeCategory, changeDescription, changeImage, addExercise, erase */
+/*! exports provided: get, show, changeName, changeCategory, changeDescription, changeImage, addExercise, erase, clean */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74142,6 +74142,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeImage", function() { return changeImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addExercise", function() { return addExercise; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "erase", function() { return erase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clean", function() { return clean; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -74363,6 +74364,14 @@ var erase = function erase(exercise_id) {
       return _ref4.apply(this, arguments);
     };
   }();
+};
+var clean = function clean() {
+  return function (dispatch) {
+    dispatch({
+      type: _types_exercisesTypes__WEBPACK_IMPORTED_MODULE_2__["GET"],
+      payload: {}
+    });
+  };
 };
 
 /***/ }),
@@ -74693,10 +74702,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/categoriesActions */ "./resources/js/actions/categoriesActions.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
-/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/Table.css */ "./resources/js/components/Categories/styles/Table.css");
-/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_Table_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/exercisesActions */ "./resources/js/actions/exercisesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/Table.css */ "./resources/js/components/Categories/styles/Table.css");
+/* harmony import */ var _styles_Table_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_Table_css__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
@@ -74704,12 +74714,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+var cleanExercises = _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_4__["clean"];
+var get = _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__["get"],
+    erase = _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__["erase"];
 
 var Table = function Table(props) {
+  /* componentDidMount & componentDidUpdate */
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     function fetchData() {
       /* en caso de eliminar una categoría, las busco de nuevo */
-      if (!props.categories.length) props.get();
+      if (!props.categoriesReducer.categories.length) props.get();
       /* en caso de eliminar algún ejercicio... se buscaría de nuevo */
       // if((props.catId) && (!props.exercises.length)){
       //     const category = props.categories.filter(cat => cat.id == props.catId)[0];
@@ -74720,10 +74735,15 @@ var Table = function Table(props) {
     }
 
     fetchData();
-  }, [props.categories, props.exercises]);
+  }, [props.categoriesReducer.categories, props.categoriesReducer.exercises]);
+
+  var handleDeleteCategoryClick = function handleDeleteCategoryClick(catId) {
+    props.erase(catId);
+    props.cleanExercises();
+  };
 
   var renderCategories = function renderCategories() {
-    return props.categories.map(function (cat) {
+    return props.categoriesReducer.categories.map(function (cat) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "elem flex flex-row justifyc alignc",
         key: cat.id
@@ -74741,22 +74761,24 @@ var Table = function Table(props) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: function onClick() {
-          return props.erase(cat.id);
+          return handleDeleteCategoryClick(cat.id);
         }
       }, "Eliminar")));
     });
   };
 
   var renderCategoriesTable = function renderCategoriesTable() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    if (props.categoriesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+    if (props.categoriesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_6__["default"], {
       message: error
     });
-    if (props.categories.length) return renderCategories();
+    if (props.categoriesReducer.categories.length) return renderCategories();
   };
+  /**Exercises */
+
 
   var renderExercises = function renderExercises() {
-    return props.exercises.map(function (ex) {
+    return props.categoriesReducer.exercises.map(function (ex) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "elem flex flex-row justifyc alignc",
         key: ex.id
@@ -74788,12 +74810,13 @@ var Table = function Table(props) {
   };
 
   var renderExercisesTable = function renderExercisesTable() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    if (props.categoriesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+    if (props.categoriesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_6__["default"], {
       message: error
     });
-    if (props.exercises.length) return renderExercises();
-  };
+    if (props.categoriesReducer.exercises.length) return renderExercises();
+  }; //Main Render
+
 
   if (props.isCategories) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74809,11 +74832,20 @@ var Table = function Table(props) {
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var categoriesReducer = _ref.categoriesReducer;
-  return categoriesReducer;
+  var exercisesReducer = _ref.exercisesReducer,
+      categoriesReducer = _ref.categoriesReducer;
+  return {
+    exercisesReducer: exercisesReducer,
+    categoriesReducer: categoriesReducer
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__)(Table));
+var mapDispatchToProps = {
+  erase: erase,
+  get: get,
+  cleanExercises: cleanExercises
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Table));
 
 /***/ }),
 
@@ -75147,7 +75179,7 @@ var ExerciseForm = function ExerciseForm(props) {
                 return props.categoriesGet();
 
               case 3:
-                //Para que inicialice con el valor de option. Si no se hace, el estado está en ''
+                //Para que inicialice el select con el valor de option. Si no se hace, el estado está en ''
                 props.changeCategory(selectRef.current.value);
 
               case 4:
@@ -76040,6 +76072,7 @@ var INITIAL_STATE = {
         exName: '',
         exCategory: '',
         exDescription: '',
+        exImg: '',
         goBack: true
       });
 

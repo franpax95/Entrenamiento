@@ -1,5 +1,15 @@
 import axios from 'axios';
-import { GET, LOADING, ERROR, CHANGE_NAME, CHANGE_CATEGORY, CHANGE_DESCRIPTION, CHANGE_IMAGE, SAVE, SHOW } from '../types/exercisesTypes';
+import { 
+    GET, 
+    LOADING, 
+    ERROR, 
+    CHANGE_NAME, 
+    CHANGE_CATEGORY, 
+    CHANGE_DESCRIPTION, 
+    CHANGE_IMAGE, 
+    SAVE, 
+    SHOW
+} from '../types/exercisesTypes';
 
 export const get = () => async (dispatch) => {
     dispatch({ 
@@ -105,4 +115,11 @@ export const erase = (exercise_id) => async (dispatch) => {
             error: error.message
         });
     }
+}
+
+export const clean = () => (dispatch) => {
+    dispatch({
+        type: GET,
+        payload: {}
+    });
 }
