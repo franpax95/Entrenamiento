@@ -6724,6 +6724,25 @@ exports.push([module.i, "/* pure css loader */\r\n.lds-ring {\r\n    display: in
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/AddRoutine.css":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Routines/styles/AddRoutine.css ***!
+  \************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".AddRoutine h1{\r\n    width: 75%;\r\n    padding: 20px 0;\r\n    margin-top: 5%;\r\n\r\n    border-radius: 10px 10px 0 0;\r\n    background-color: black;\r\n    color: white;\r\n\r\n    text-align: center;\r\n}\r\n\r\n.AddRoutine .form{\r\n\r\n    width: 75%;\r\n    max-height: 80vw;\r\n    border: solid 1px black;\r\n    padding: 10px;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.AddRoutine .form .name{\r\n    width: 40%;\r\n}\r\n\r\n.AddRoutine .form .description{\r\n    resize: none;\r\n    height: 120px;\r\n    min-height: 120px;\r\n    width: 60%;\r\n}\r\n\r\n.AddRoutine .form .add{\r\n    width: 200px;\r\n    height: 40px;\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n    color: white;\r\n    background-color: black;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    outline: none;\r\n}\r\n\r\n.AddRoutine .form .exercise{\r\n    width: 100%;\r\n}\r\n\r\n.AddRoutine .form .form-group{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding: 5px;\r\n}\r\n.AddRoutine .form .form-group *{\r\n    width: 100%;\r\n}\r\n\r\n.AddRoutine .form .cat{\r\n    width: 30%;\r\n}\r\n\r\n.AddRoutine .form .ex{\r\n    width: 35%;\r\n}\r\n\r\n.AddRoutine .form .nrep{\r\n    width: 10%;\r\n}\r\n.AddRoutine .form .ton{\r\n    width: 10%;\r\n}\r\n.AddRoutine .form .toff{\r\n    width: 10%;\r\n}\r\n.AddRoutine .form .delete-btn{\r\n    width: 5%;\r\n    min-width: 25px;\r\n}\r\n\r\n.AddRoutine .form .save{\r\n    width: 200px;\r\n    font-size: 1.8em;\r\n    margin: 20px;\r\n    height: 50px;\r\n    color: white;\r\n    background-color: black;\r\n    outline: none;\r\n    border: none;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/index.css":
 /*!*******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Routines/styles/index.css ***!
@@ -74399,12 +74418,13 @@ var clean = function clean() {
 /*!*************************************************!*\
   !*** ./resources/js/actions/routinesActions.js ***!
   \*************************************************/
-/*! exports provided: get */
+/*! exports provided: get, addRoutine */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "get", function() { return get; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addRoutine", function() { return addRoutine; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -74461,6 +74481,48 @@ var get = function get() {
 
     return function (_x) {
       return _ref.apply(this, arguments);
+    };
+  }();
+};
+var addRoutine = function addRoutine(routine) {
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              dispatch({
+                type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context2.prev = 1;
+              _context2.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/routines', routine);
+
+            case 4:
+              dispatch({
+                type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["SAVE"]
+              });
+              _context2.next = 10;
+              break;
+
+            case 7:
+              _context2.prev = 7;
+              _context2.t0 = _context2["catch"](1);
+              dispatch({
+                type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
+                payload: _context2.t0.message
+              });
+
+            case 10:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 7]]);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
     };
   }();
 };
@@ -74596,6 +74658,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Exercises_exercise__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Exercises/exercise */ "./resources/js/components/Exercises/exercise.js");
 /* harmony import */ var _Exercises_ExerciseForm__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Exercises/ExerciseForm */ "./resources/js/components/Exercises/ExerciseForm.js");
 /* harmony import */ var _Routines__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Routines */ "./resources/js/components/Routines/index.js");
+/* harmony import */ var _Routines_AddRoutine__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Routines/AddRoutine */ "./resources/js/components/Routines/AddRoutine.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
@@ -74615,7 +74678,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
- // import AddRoutine from './Routines/AddRoutine';
+
+
 
 var App = function App(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Navbar__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
@@ -74666,6 +74730,10 @@ var App = function App(props) {
     exact: true,
     path: "/routines",
     component: _Routines__WEBPACK_IMPORTED_MODULE_17__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/addroutine",
+    component: _Routines_AddRoutine__WEBPACK_IMPORTED_MODULE_18__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _General_NotFound__WEBPACK_IMPORTED_MODULE_10__["default"]
   })));
@@ -75997,6 +76065,368 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/Routines/AddRoutine.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Routines/AddRoutine.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/routinesActions */ "./resources/js/actions/routinesActions.js");
+/* harmony import */ var _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/categoriesActions */ "./resources/js/actions/categoriesActions.js");
+/* harmony import */ var _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/exercisesActions */ "./resources/js/actions/exercisesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _styles_AddRoutine_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/AddRoutine.css */ "./resources/js/components/Routines/styles/AddRoutine.css");
+/* harmony import */ var _styles_AddRoutine_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styles_AddRoutine_css__WEBPACK_IMPORTED_MODULE_9__);
+
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var getRoutines = _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__["get"],
+    addRoutine = _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__["addRoutine"];
+var getExercises = _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_6__["get"];
+var getCategories = _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_5__["get"];
+
+var AddRoutine = function AddRoutine(props) {
+  var references = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])([]);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      parameters = _useState2[0],
+      setParameters = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      name = _useState4[0],
+      setName = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      description = _useState6[0],
+      setDescription = _useState6[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    function fetchData() {
+      return _fetchData.apply(this, arguments);
+    }
+
+    function _fetchData() {
+      _fetchData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (props.routinesReducer.routines.length) {
+                  _context.next = 3;
+                  break;
+                }
+
+                _context.next = 3;
+                return props.getRoutines();
+
+              case 3:
+                if (props.exercisesReducer.exercises.length) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _context.next = 6;
+                return props.getExercises();
+
+              case 6:
+                if (props.categoriesReducer.categories.length) {
+                  _context.next = 9;
+                  break;
+                }
+
+                _context.next = 9;
+                return props.getCategories();
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+      return _fetchData.apply(this, arguments);
+    }
+
+    fetchData();
+  }, []);
+
+  var save = function save() {
+    if (!name || !parameters.length) {
+      alert('¡Recuerda poner nombre a tu rutina y añadir al menos un ejercicio!');
+    } else {
+      var exercises = [],
+          tOn = [],
+          tOff = [],
+          nRep = [];
+      parameters.map(function (p) {
+        exercises.push(p.currentExercise);
+        tOn.push(p.tOn);
+        tOff.push(p.tOff);
+        nRep.push(p.nRep);
+      });
+      var routine = {
+        name: name,
+        description: description,
+        exercises: exercises,
+        nRep: nRep,
+        tOn: tOn,
+        tOff: tOff
+      };
+      props.addRoutine(routine);
+    }
+  };
+
+  var handleNameChange = function handleNameChange(e) {
+    setName(e.currentTarget.value);
+  };
+
+  var handleDescriptionChange = function handleDescriptionChange(e) {
+    setDescription(e.currentTarget.value);
+  };
+
+  var handleToffChange = function handleToffChange(e, opt_id) {
+    var new_parameters = parameters;
+    var tOff = e.currentTarget.value;
+    new_parameters[opt_id].tOff = tOff;
+    setParameters(_toConsumableArray(new_parameters));
+  };
+
+  var handleTonChange = function handleTonChange(e, opt_id) {
+    var new_parameters = parameters;
+    var tOn = e.currentTarget.value;
+    new_parameters[opt_id].tOn = tOn;
+    setParameters(_toConsumableArray(new_parameters));
+  };
+
+  var handleNrepChange = function handleNrepChange(e, opt_id) {
+    var new_parameters = parameters;
+    var nRep = e.currentTarget.value;
+    new_parameters[opt_id].nRep = nRep;
+    setParameters(_toConsumableArray(new_parameters));
+  };
+
+  var handleExerciseChange = function handleExerciseChange(e, opt_id) {
+    var new_parameters = parameters;
+    var currentExercise = e.currentTarget.value;
+    new_parameters[opt_id].currentExercise = currentExercise;
+    setParameters(_toConsumableArray(new_parameters));
+  };
+
+  var handleCategoryChange = function handleCategoryChange(e, opt_id) {
+    var new_parameters = parameters;
+    var currentCategory = e.currentTarget.value;
+    var exercises = props.exercisesReducer.exercises.filter(function (f) {
+      return f.category.id == currentCategory;
+    });
+    new_parameters[opt_id].currentCategory = "".concat(currentCategory);
+    new_parameters[opt_id].exercises = exercises;
+    new_parameters[opt_id].currentExercise = "".concat(exercises[0].id);
+    setParameters(_toConsumableArray(new_parameters));
+  };
+
+  var renderExercises = function renderExercises() {
+    return parameters.map(function (opt) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "exercise flex flex-row alignc",
+        ref: function ref(el) {
+          return references.current[opt.id] = el;
+        },
+        key: opt.id
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group cat"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Category"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
+        className: "",
+        name: "category_id",
+        onChange: function onChange(e) {
+          return handleCategoryChange(e, opt.id);
+        },
+        defaultValue: opt.currentCategory
+      }, props.categoriesReducer.categories.map(function (cat) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+          key: cat.id,
+          value: cat.id
+        }, cat.name);
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group ex"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Exercise"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
+        className: "",
+        name: "exercise_id",
+        onChange: function onChange(e) {
+          return handleExerciseChange(e, opt.id);
+        },
+        defaultValue: opt.currentExercise
+      }, opt.exercises.map(function (ex) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+          key: ex.id,
+          value: ex.id
+        }, ex.name);
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group nrep"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Nrep"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "number",
+        name: "nRep",
+        min: "0",
+        defaultValue: "0",
+        onChange: function onChange(e) {
+          return handleNrepChange(e, opt.id);
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group ton"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Ton"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "number",
+        name: "tOn",
+        min: "0",
+        defaultValue: "0",
+        onChange: function onChange(e) {
+          return handleTonChange(e, opt.id);
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group toff"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Toff"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "number",
+        name: "tOff",
+        min: "0",
+        defaultValue: "0",
+        onChange: function onChange(e) {
+          return handleToffChange(e, opt.id);
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "delete-btn",
+        onClick: function onClick() {
+          return alert('De momento inhabilitado');
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-remove"
+      })));
+    });
+  };
+
+  var addExerciseInput = function addExerciseInput() {
+    var index = parameters.length;
+    var categories = props.categoriesReducer.categories;
+    var currentCategory = categories[0].id;
+    var exercises = props.exercisesReducer.exercises.filter(function (f) {
+      return f.category.id == currentCategory;
+    });
+    var option = {
+      id: index,
+      currentCategory: "".concat(currentCategory),
+      exercises: exercises,
+      currentExercise: "".concat(exercises[0].id),
+      nRep: "0",
+      tOn: "0",
+      tOff: "0"
+    };
+    setParameters([].concat(_toConsumableArray(parameters), [option]));
+  };
+
+  var renderContent = function renderContent() {
+    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      message: props.error
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "form flex flex-col alignc scrollable"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Nombre de la Rutina *"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+      type: "text",
+      name: "name",
+      autoComplete: "off",
+      className: "name",
+      onChange: handleNameChange,
+      required: true
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Descripci\xF3n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
+      name: "description",
+      className: "description",
+      onChange: handleDescriptionChange
+    }), props.categoriesReducer.loading || props.exercisesReducer.loading || props.routinesReducer.loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      "class": 'small-spinner'
+    }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      onClick: function onClick() {
+        return addExerciseInput();
+      },
+      className: "add",
+      type: "button"
+    }, "A\xF1adir ejercicio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "exercises"
+    }, renderExercises()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: "save",
+      onClick: save
+    }, "A\xF1adir rutina"));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "body AddRoutine flex flex-col alignc"
+  }, props.routinesReducer.goBack ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+    to: "/routines"
+  }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "A\xF1adir rutina"), renderContent());
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var routinesReducer = _ref.routinesReducer,
+      exercisesReducer = _ref.exercisesReducer,
+      categoriesReducer = _ref.categoriesReducer;
+  return {
+    routinesReducer: routinesReducer,
+    exercisesReducer: exercisesReducer,
+    categoriesReducer: categoriesReducer
+  };
+};
+
+var mapDispatchToProps = {
+  getRoutines: getRoutines,
+  addRoutine: addRoutine,
+  getExercises: getExercises,
+  getCategories: getCategories
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(AddRoutine));
+
+/***/ }),
+
 /***/ "./resources/js/components/Routines/index.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/Routines/index.js ***!
@@ -76070,9 +76500,14 @@ var Routines = function Routines(props) {
     if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_6__["default"], {
       message: props.error
     });
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      className: "routines scrollable"
-    }, renderTable());
+
+    if (props.routines.length) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "routines scrollable"
+      }, renderTable());
+    }
+
+    return;
   };
 
   var renderTable = function renderTable() {
@@ -76135,6 +76570,36 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__)(Routines));
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/styles/AddRoutine.css":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Routines/styles/AddRoutine.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./AddRoutine.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/AddRoutine.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -76396,7 +76861,8 @@ var INITIAL_STATE = {
   routines: [],
   routine: {},
   loading: false,
-  error: ''
+  error: '',
+  goBack: false
 };
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
@@ -76407,12 +76873,21 @@ var INITIAL_STATE = {
       return _objectSpread({}, state, {
         routines: action.payload,
         loading: false,
-        error: ''
+        error: '',
+        goBack: false
       });
 
     case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
       return _objectSpread({}, state, {
         loading: true
+      });
+
+    case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["SAVE"]:
+      return _objectSpread({}, state, {
+        routines: {},
+        loading: false,
+        error: '',
+        goBack: true
       });
 
     case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR"]:
@@ -76488,7 +76963,7 @@ var SHOW = 'exercises_show';
 /*!*********************************************!*\
   !*** ./resources/js/types/routinesTypes.js ***!
   \*********************************************/
-/*! exports provided: GET, LOADING, ERROR */
+/*! exports provided: GET, LOADING, ERROR, SAVE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76496,9 +76971,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET", function() { return GET; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE", function() { return SAVE; });
 var GET = 'routines_get';
 var LOADING = 'routines_loading';
 var ERROR = 'routines_error';
+var SAVE = 'routines_save';
 
 /***/ }),
 

@@ -22,7 +22,7 @@ import Exercise from './Exercises/exercise';
 import ExerciseForm from './Exercises/ExerciseForm';
 
 import Routines from './Routines';
-// import AddRoutine from './Routines/AddRoutine';
+import AddRoutine from './Routines/AddRoutine';
 
 
 const App = (props) => (
@@ -42,9 +42,8 @@ const App = (props) => (
             
 
             <Route exact path='/routines' component={Routines} />
-            {/* <Route exact path='/addroutine' component={AddRoutine} />
+            <Route exact path='/addroutine' component={AddRoutine} />
 
-            <Route exact path='/prueba' component={Prueba} /> */}
 
             <Route component={NotFound} />
         </Switch>

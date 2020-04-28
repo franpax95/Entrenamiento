@@ -2,7 +2,8 @@ import axios from 'axios';
 import { 
     GET, 
     LOADING, 
-    ERROR
+    ERROR,
+    SAVE
 } from '../types/routinesTypes';
 
 export const get = () => async (dispatch) => {
@@ -22,5 +23,24 @@ export const get = () => async (dispatch) => {
             type: ERROR,
             payload: 'No es posible acceder a rutinas en este momento.'
         });
+    }
+}
+
+export const addRoutine = (routine) => async (dispatch) => {
+    dispatch({
+        type: LOADING
+    });
+
+    try{
+        await axios.post('/api/routines', routine);
+
+        dispatch({
+            type: SAVE
+        });
+    }catch(error){
+        dispatch({
+            type: ERROR,
+            payload: error.message
+        })
     }
 }

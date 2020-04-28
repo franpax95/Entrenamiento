@@ -1,10 +1,11 @@
-import { GET, LOADING, ERROR } from '../types/routinesTypes';
+import { GET, LOADING, ERROR, SAVE } from '../types/routinesTypes';
 
 const INITIAL_STATE = {
     routines: [],
     routine: {},
     loading: false,
-    error: ''
+    error: '',
+    goBack: false
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -15,12 +16,22 @@ export default (state = INITIAL_STATE, action) => {
                 routines: action.payload,
                 loading: false,
                 error: '',
+                goBack: false
             }
 
         case LOADING:
             return {
                 ...state, 
                 loading: true
+            }
+
+        case SAVE:
+            return {
+                ...state,
+                routines: {},
+                loading: false,
+                error: '',
+                goBack: true
             }
         
         case ERROR:

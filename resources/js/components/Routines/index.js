@@ -23,12 +23,15 @@ const Routines = (props) => {
     const renderContent = () => {
         if(props.loading) return <Spinner />;
         if(props.error) return <Fatal message={props.error} />
-        return(
-            <div className="routines scrollable">
-                {renderTable()}
-            </div>
-            
-        )
+        if(props.routines.length){
+            return(
+                <div className="routines scrollable">
+                    {renderTable()}
+                </div>
+                
+            )
+        }
+        return;
     };
 
     const renderTable = () => props.routines.map((rout) => {

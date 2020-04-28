@@ -57,9 +57,9 @@ class RoutineController extends Controller
 
         //Estructure exercises-> id.nRep.tOn.tOff:id.nRep.tOn.tOff:id.tOn...
         $req_exs = $request->input('exercises');
-        $req_nRep = $request->input('nrep');
-        $req_tOn = $request->input('ton');
-        $req_tOff = $request->input('toff');
+        $req_nRep = $request->input('nRep');
+        $req_tOn = $request->input('tOn');
+        $req_tOff = $request->input('tOff');
         $length = count($req_exs);
         
         $exercises = '';
