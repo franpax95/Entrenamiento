@@ -6724,6 +6724,25 @@ exports.push([module.i, "/* pure css loader */\r\n.lds-ring {\r\n    display: in
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/index.css":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Routines/styles/index.css ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Routines{\r\n    padding: 5% 15%; \r\n}\r\n\r\n.Routines .title{ width: 100%; }\r\n.Routines .title h1{\r\n    text-align: center;\r\n    /* margin-right: auto; */\r\n    margin-left: 45%;\r\n}\r\n.Routines .title a{\r\n    float: right;\r\n    margin-left: auto;\r\n}\r\n\r\n/* transition */\r\n.Routines .routines .routine .display-box{ \r\n    overflow: hidden; \r\n    transition: max-height 0.5s linear, opacity 0.5s linear; \r\n}\r\n.Routines .routines .routine .none { \r\n    max-height: 0;\r\n    opacity: 0;\r\n}\r\n.Routines .routines .routine .visible { \r\n    max-height: 300px;\r\n    opacity: 1;\r\n}\r\n\r\n\r\n\r\n.Routines .routines{\r\n    width: 100%;\r\n    background-color: #dee8ed;\r\n    border: solid 1px #3e6175;\r\n}\r\n\r\n.Routines .routines .display-btn{\r\n    width: 100%;\r\n    border: none;\r\n    outline: none;\r\n    background-color: #3e6175;\r\n    color: white;\r\n    font-size: 2em;\r\n    cursor: pointer;\r\n}\r\n.Routines .routines .display-btn:hover{ background-color: #2c4554; }\r\n\r\n.Routines .routines .routine .display-box{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.Routines .routines .routine .display-box .btn{\r\n    margin: 0 20px 20px 20px;\r\n    padding: 4px 15px;\r\n    border: none;\r\n    font-size: 1.2em;\r\n    cursor: pointer;\r\n    z-index: 4;\r\n}\r\n\r\n.Routines .routines .routine .display-box .play{\r\n    background-color: #1b61e4;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .play:hover{ background-color: cornflowerblue; }\r\n\r\n.Routines .routines .routine .display-box .edit{\r\n    background-color: gray;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .edit:hover{ background-color: darkgray; }\r\n\r\n.Routines .routines .routine .display-box .delete{\r\n    background-color: red;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .delete:hover{ background-color: salmon; }\r\n\r\n.Routines .routines .routine .display-box .description{ \r\n    padding: 3% 20% 2% 20%; \r\n    width: 100%;\r\n    text-align: center;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/lib/css-base.js":
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -74376,6 +74395,78 @@ var clean = function clean() {
 
 /***/ }),
 
+/***/ "./resources/js/actions/routinesActions.js":
+/*!*************************************************!*\
+  !*** ./resources/js/actions/routinesActions.js ***!
+  \*************************************************/
+/*! exports provided: get */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "get", function() { return get; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types/routinesTypes */ "./resources/js/types/routinesTypes.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var get = function get() {
+  return /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              dispatch({
+                type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context.prev = 1;
+              _context.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/routines');
+
+            case 4:
+              response = _context.sent;
+              dispatch({
+                type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["GET"],
+                payload: response.data
+              });
+              _context.next = 12;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](1);
+              console.log('routinesActionsError: ' + _context.t0.message);
+              dispatch({
+                type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR"],
+                payload: 'No es posible acceder a rutinas en este momento.'
+              });
+
+            case 12:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 8]]);
+    }));
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+};
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -74504,6 +74595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Exercises__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Exercises */ "./resources/js/components/Exercises/index.js");
 /* harmony import */ var _Exercises_exercise__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Exercises/exercise */ "./resources/js/components/Exercises/exercise.js");
 /* harmony import */ var _Exercises_ExerciseForm__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Exercises/ExerciseForm */ "./resources/js/components/Exercises/ExerciseForm.js");
+/* harmony import */ var _Routines__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Routines */ "./resources/js/components/Routines/index.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
@@ -74522,8 +74614,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
- // import Routines from './Routines/Routines';
-// import AddRoutine from './Routines/AddRoutine';
+
+ // import AddRoutine from './Routines/AddRoutine';
 
 var App = function App(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Navbar__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
@@ -74570,6 +74662,10 @@ var App = function App(props) {
     exact: true,
     path: "/exercise/:id",
     component: _Exercises_exercise__WEBPACK_IMPORTED_MODULE_15__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/routines",
+    component: _Routines__WEBPACK_IMPORTED_MODULE_17__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _General_NotFound__WEBPACK_IMPORTED_MODULE_10__["default"]
   })));
@@ -75880,6 +75976,177 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./Spinner.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/General/styles/Spinner.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/index.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Routines/index.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/routinesActions */ "./resources/js/actions/routinesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/index.css */ "./resources/js/components/Routines/styles/index.css");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_7__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+
+var Routines = function Routines(props) {
+  var references = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])([]);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    function fetchData() {
+      return _fetchData.apply(this, arguments);
+    }
+
+    function _fetchData() {
+      _fetchData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (props.routines.length) {
+                  _context.next = 3;
+                  break;
+                }
+
+                _context.next = 3;
+                return props.get();
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+      return _fetchData.apply(this, arguments);
+    }
+
+    fetchData();
+  }, []);
+
+  var renderContent = function renderContent() {
+    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      message: props.error
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "routines scrollable"
+    }, renderTable());
+  };
+
+  var renderTable = function renderTable() {
+    return props.routines.map(function (rout) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "routine flex flex-col justifyc alignc",
+        key: rout.id
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "display-btn",
+        onClick: function onClick() {
+          return showRoutine(rout.id);
+        }
+      }, rout.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "display-box none flex flex-col justifyc alignc",
+        ref: function ref(el) {
+          return references.current[rout.id] = el;
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "description"
+      }, rout.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "flex flex-row justifyc alignc"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/routine/".concat(rout.id),
+        className: "btn play"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-play-circle-o"
+      }), "Realizar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/editroutines/".concat(rout.id),
+        className: "btn edit"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-edit"
+      }), "Editar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        /*onClick={}*/
+        className: "btn delete",
+        id: rout.id
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-remove"
+      }), "Eliminar"))));
+    });
+  };
+
+  var showRoutine = function showRoutine(id) {
+    references.current[id].parentNode.children[1].classList.toggle("none");
+    references.current[id].parentNode.children[1].classList.toggle("visible");
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "body Routines flex flex-col justifyc alignc"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "title flex flex-row jutifyc alignc"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Rutinas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/addroutine",
+    className: "add-btn"
+  }, "Crear Rutina")), renderContent());
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var routinesReducer = _ref.routinesReducer;
+  return routinesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__)(Routines));
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/styles/index.css":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Routines/styles/index.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/index.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
