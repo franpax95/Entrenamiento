@@ -76095,13 +76095,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _categoriesReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./categoriesReducer */ "./resources/js/reducers/categoriesReducer.js");
 /* harmony import */ var _exercisesReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./exercisesReducer */ "./resources/js/reducers/exercisesReducer.js");
+/* harmony import */ var _routinesReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routinesReducer */ "./resources/js/reducers/routinesReducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   categoriesReducer: _categoriesReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  exercisesReducer: _exercisesReducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  exercisesReducer: _exercisesReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  routinesReducer: _routinesReducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
+
+/***/ }),
+
+/***/ "./resources/js/reducers/routinesReducer.js":
+/*!**************************************************!*\
+  !*** ./resources/js/reducers/routinesReducer.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/routinesTypes */ "./resources/js/types/routinesTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var INITIAL_STATE = {
+  routines: [],
+  routine: {},
+  loading: false,
+  error: ''
+};
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["GET"]:
+      return _objectSpread({}, state, {
+        routines: action.payload,
+        loading: false,
+        error: ''
+      });
+
+    case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
+      return _objectSpread({}, state, {
+        loading: true
+      });
+
+    case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR"]:
+      return _objectSpread({}, state, {
+        error: action.payload,
+        loading: false
+      });
+
+    default:
+      return state;
+  }
+});
 
 /***/ }),
 
@@ -76158,6 +76214,24 @@ var CHANGE_DESCRIPTION = 'exercises_change_description';
 var CHANGE_IMAGE = 'exercises_change_image';
 var SAVE = 'exercises_save';
 var SHOW = 'exercises_show';
+
+/***/ }),
+
+/***/ "./resources/js/types/routinesTypes.js":
+/*!*********************************************!*\
+  !*** ./resources/js/types/routinesTypes.js ***!
+  \*********************************************/
+/*! exports provided: GET, LOADING, ERROR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET", function() { return GET; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
+var GET = 'routines_get';
+var LOADING = 'routines_loading';
+var ERROR = 'routines_error';
 
 /***/ }),
 

@@ -29,3 +29,9 @@ Route::get('exercises/{exercise}', 'ExercisesController@show');
 Route::post('exercises', 'ExercisesController@store');
 Route::put('exercises/{exercise}', 'ExercisesController@update');
 Route::delete('exercises/{exercise}', 'ExercisesController@delete');
+
+Route::get('routines', 'RoutineController@index');
+Route::get('routines/{routine}', 'RoutineController@show');
+Route::post('routines', 'RoutineController@store');
+Route::put('routines/{routine}', 'RoutineController@update');
+Route::delete('routines/{routine}', 'RoutineController@delete');
