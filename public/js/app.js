@@ -75072,7 +75072,7 @@ var Category = function Category(props) {
                 return props.get();
 
               case 4:
-                if (!(!props.exercises.length || props.exercises[0].category_id != props.match.params.id)) {
+                if (!(props.categories.length && (!props.exercises.length || props.exercises[0].category_id != props.match.params.id))) {
                   _context.next = 8;
                   break;
                 }
@@ -75094,7 +75094,7 @@ var Category = function Category(props) {
     }
 
     fetchData();
-  }, []);
+  }, [props]);
 
   var renderTable = function renderTable() {
     if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
@@ -75108,13 +75108,17 @@ var Category = function Category(props) {
     return;
   };
 
+  var renderSubTitle = function renderSubTitle() {
+    if (props.categories.length) return props.categories.filter(function (cat) {
+      return cat.id == props.match.params.id;
+    })[0].name;
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "body Categories flex justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "title flex flex-col justifyc alignc"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Categor\xEDa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", null, props.categories.filter(function (cat) {
-    return cat.id == props.match.params.id;
-  })[0].name))), renderTable());
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Categor\xEDa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", null, renderSubTitle()))), renderTable());
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
