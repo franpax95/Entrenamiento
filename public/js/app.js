@@ -76869,7 +76869,7 @@ var Routine = function Routine(props) {
     }, props.routinesReducer.exercise.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "img"
     }, props.routinesReducer.exercise.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-      src: "/storage/".concat(props.routinesReducer.exercise.image),
+      src: "".concat(props.routinesReducer.exercise.image),
       alt: props.routinesReducer.exercise.name
     }) : ''), renderExerciseHelper());
   };
