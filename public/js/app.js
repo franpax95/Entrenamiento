@@ -75064,7 +75064,7 @@ var Table = function Table(props) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "img"
       }, ex.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/storage/".concat(ex.image),
+        src: "".concat(ex.image),
         alt: ex.name
       }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/exercises/".concat(ex.id),
@@ -75676,7 +75676,7 @@ var Table = function Table(props) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "img"
       }, ex.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "storage/".concat(ex.image),
+        src: "".concat(ex.image),
         alt: ex.name
       }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
@@ -75782,7 +75782,7 @@ var Exercise = function Exercise(props) {
                 return props.get();
 
               case 4:
-                if (!(props.exercisesReducer.exercises.length && !props.exercisesReducer.loading && (!Object.entries(props.exercisesReducer.exercise).length || props.exercise.id != id))) {
+                if (!(props.exercisesReducer.exercises.length && !props.exercisesReducer.loading && (!Object.entries(props.exercisesReducer.exercise).length || props.exercisesReducer.exercise.id != id))) {
                   _context.next = 8;
                   break;
                 }
@@ -75809,7 +75809,7 @@ var Exercise = function Exercise(props) {
   var renderImg = function renderImg() {
     if (props.exercisesReducer.exercise.image) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        src: "/storage/".concat(props.exercisesReducer.exercise.image),
+        src: "".concat(props.exercisesReducer.exercise.image),
         alt: props.exercisesReducer.exercise.name
       });
     }

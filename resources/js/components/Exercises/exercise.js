@@ -20,7 +20,7 @@ const Exercise = (props) => {
                 (!props.exercisesReducer.loading) && 
                 (
                     (!Object.entries(props.exercisesReducer.exercise).length) || 
-                    (props.exercise.id != id)
+                    (props.exercisesReducer.exercise.id != id)
                 )
             ){
                 const exercise = props.exercisesReducer.exercises.filter(ex => ex.id == id)[0];
@@ -33,7 +33,7 @@ const Exercise = (props) => {
     const renderImg = () => {
         if(props.exercisesReducer.exercise.image){
             return(
-                <img src={`/storage/${props.exercisesReducer.exercise.image}`} alt={props.exercisesReducer.exercise.name} />
+                <img src={`${props.exercisesReducer.exercise.image}`} alt={props.exercisesReducer.exercise.name} />
             )
         }
     }

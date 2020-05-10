@@ -80,7 +80,7 @@ const Table = (props) => {
         return(
             <div className="elem flex flex-row justifyc alignc" key={ex.id}>
                 <div className="img">
-                    {(ex.image) ? <img src={`/storage/${ex.image}`} alt={ex.name} /> : ''}
+                    {(ex.image) ? <img src={`${ex.image}`} alt={ex.name} /> : ''}
                 </div>
                 <Link to={`/exercises/${ex.id}`} className="name">
                     {ex.name}
