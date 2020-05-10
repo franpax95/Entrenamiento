@@ -14,7 +14,14 @@ import './styles/index.css';
 const Exercises = (props) => {
     //componentDidMount
     useEffect(() => {
-        if(!props.exercisesReducer.exercises.length) props.get();
+        async function fetchData(){
+            if(
+                (!props.exercisesReducer.exercises.length)
+                && (!props.exercisesReducer.loading)
+                && (!props.exercisesReducer.error)
+            ) await props.get();
+        }
+        fetchData();
     }, []);
 
     const renderTable = () => {

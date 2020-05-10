@@ -18,10 +18,17 @@ export const get = () => async (dispatch) => {
 
     try{
         const response = await axios.get('/api/exercises');
-        dispatch({
-            type: GET,
-            payload: response.data
-        });
+        if(response.data.length){
+            dispatch({
+                type: GET,
+                payload: response.data
+            });
+        }else{
+            dispatch({
+                type: ERROR,
+                payload: 'No hay ejercicios todavía.'
+            });
+        }
     }catch(error){
         console.log('exercisesActionsError: ' + error.message);
         dispatch({
