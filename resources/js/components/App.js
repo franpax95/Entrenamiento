@@ -56,17 +56,23 @@ export default App;
 
 
 
-const store = createStore(
-    reducers,
-    {},
-    applyMiddleware(reduxThunk)
-);
+
 
 if (document.getElementById('app')) {
+    const app = document.getElementById('app');
+    const props = Object.assign({}, app.dataset);
+    //console.log(props);
+
+    const store = createStore(
+        reducers,
+        {},
+        applyMiddleware(reduxThunk)
+    );
+
     ReactDOM.render(
         <Provider store={store}>
-            <App />
+            <App {...props}/>
         </Provider>, 
-        document.getElementById('app')
+        app
     );
 }

@@ -16,10 +16,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div id="app"></div>
+        @if(Auth::check())
+            <div id="app" data-user="{{ $user }}"></div>
+        @else
+            <div id="app"></div>
+        @endif
 
-        <script src="{{ mix('/js/app.js') }}">
-            let Article= "{{ 'Hola, mundo' }}";
-        </script>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>

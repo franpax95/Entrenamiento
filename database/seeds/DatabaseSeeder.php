@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use App\Category;
 use App\Exercise;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 4)->create();
-        factory(Exercise::class, 10)->create();
+        User::create([
+            'name'      => 'Francisco Javier Navarro',
+            'email'     => 'franpax95@gmail.com',
+            'password'  => bcrypt('qwerty')
+        ]);
+
+        //factory(Category::class, 4)->create();
+        //factory(Exercise::class, 10)->create();
     }
 }
