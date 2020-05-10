@@ -15,8 +15,17 @@ import './styles/index.css';
 const Categories = (props) => {
     //componentDidMount
     useEffect(() => {
-        if(!props.categoriesReducer.categories.length) props.get();
+        async function fetchData(){
+            if(
+                (!props.categoriesReducer.categories.length)
+                && (!props.categoriesReducer.loading)
+                && (!props.categoriesReducer.error)
+            ) await props.get();
+            //console.log(props.categoriesReducer.categories)
+        }
+        fetchData();
     }, []);
+    
 
     const renderTable = () => {
         if(props.categoriesReducer.loading) return <Spinner />;

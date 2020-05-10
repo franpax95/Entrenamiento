@@ -8,10 +8,17 @@ export const get = () => async (dispatch) => {
 
     try{
         const response = await axios.get('/api/categories');
-        dispatch({
-            type: GET,
-            payload: response.data
-        });
+        if(!response.data.length){
+            dispatch({
+                type: ERROR,
+                payload: 'No hay categorías todavía.'
+            });
+        }else{
+            dispatch({
+                type: GET,
+                payload: response.data
+            });
+        }
     }catch(error){
         console.log('categoriesActionsError: ' + error.message);
         dispatch({
