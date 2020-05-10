@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::create([
-        //     'name'      => 'Francisco Javier Navarro',
-        //     'email'     => 'franpax95@gmail.com',
-        //     'password'  => bcrypt('qwerty')
-        // ]);
+        User::create([
+            'name'      => 'Francisco Javier Navarro',
+            'email'     => 'franpax95@gmail.com',
+            'password'  => bcrypt('qwerty')
+        ]);
 
         Category::create([ 'name' => 'Espalda' ]);
         Category::create([ 'name' => 'Piernas' ]);

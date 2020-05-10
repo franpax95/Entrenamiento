@@ -96,7 +96,7 @@ const Routine = (props) => {
             <h3 className="subtitle">Categoría <i>{props.routinesReducer.exercise.category.name}</i></h3>
             <div className="description">{props.routinesReducer.exercise.description}</div>
             <div className="img">
-                {(props.routinesReducer.exercise.image) ? <img src={`/storage/${props.routinesReducer.exercise.image}`} alt={props.routinesReducer.exercise.name} /> : ''}
+                {(props.routinesReducer.exercise.image) ? <img src={`${props.routinesReducer.exercise.image}`} alt={props.routinesReducer.exercise.name} /> : ''}
             </div>
             {renderExerciseHelper()}
         </React.Fragment>
