@@ -46,7 +46,7 @@ const Routines = (props) => {
                         {rout.description}
                     </div>
                     <div className="flex flex-row justifyc alignc">
-                        <Link to={`/routine/${rout.id}`} className="btn play">
+                        <Link to={`/routines/${rout.id}`} className="btn play">
                             <i className="fa fa-play-circle-o"></i>Realizar
                         </Link>
                         <Link to={`/editroutines/${rout.id}`} className="btn edit">

@@ -22,6 +22,7 @@ import Exercise from './Exercises/exercise';
 import ExerciseForm from './Exercises/ExerciseForm';
 
 import Routines from './Routines';
+import Routine from './Routines/Routine';
 import AddRoutine from './Routines/AddRoutine';
 
 
@@ -38,10 +39,11 @@ const App = (props) => (
 
             <Route exact path='/exercises' component={Exercises} />
             <Route exact path='/addexercise' component={ (props) => <ExerciseForm {...props} title={'Añadir Ejercicio'} /> } />
-            <Route exact path='/exercise/:id' component={Exercise} />
+            <Route exact path='/exercises/:id' component={Exercise} />
             
 
             <Route exact path='/routines' component={Routines} />
+            <Route exact path='/routines/:id' component={Routine} />
             <Route exact path='/addroutine' component={AddRoutine} />
 
 

@@ -15,31 +15,17 @@ const Exercise = (props) => {
             const id = props.match.params.id;
             if(!props.exercises.length) await props.get();
 
-            if((props.exercises.length) && (!props.loading) && ((!Object.entries(props.exercise).length) || (props.exercise.id != id))){
+            if(
+                (props.exercises.length) && 
+                (!props.loading) && 
+                (
+                    (!Object.entries(props.exercise).length) || 
+                    (props.exercise.id != id)
+                )
+            ){
                 const exercise = props.exercises.filter(ex => ex.id == id)[0];
                 await props.show(exercise);
             }
-
-            /**
-             * if-else para tontos xD
-             */
-            // if(!Object.entries(props.exercise).length){
-            //     if((props.exercises.length) && (!props.loading)){
-            //         const exercise = props.exercises.filter(ex => ex.id == id)[0];
-            //         console.log(props.exercise);
-            //         await props.show(exercise);
-
-            //     }
-            // }
-            
-            // else {
-            //     if(props.exercise.id != id){
-            //         const exercise = props.exercises.filter(ex => ex.id == id)[0];
-            //         console.log(props.exercise);
-            //         await props.show(exercise);
-            //     }
-            // }
-            
         }
         fetchData();
     }, [props.exercises]);

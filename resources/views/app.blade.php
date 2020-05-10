@@ -18,6 +18,8 @@
     <body>
         <div id="app"></div>
 
-        <script src="{{ mix('/js/app.js') }}"></script>
+        <script src="{{ mix('/js/app.js') }}">
+            let Article= "{{ 'Hola, mundo' }}";
+        </script>
     </body>
 </html>

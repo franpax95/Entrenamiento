@@ -47,23 +47,19 @@ const AddRoutine = (props) => {
         if(!name || !parameters.length){
             alert('¡Recuerda poner nombre a tu rutina y añadir al menos un ejercicio!');
         }else{
-            const exercises=[], tOn=[], tOff=[], nRep=[];
+            const exercises=[];
             
             parameters.map((p) => {
-                exercises.push(p.currentExercise);
-                tOn.push(p.tOn);
-                tOff.push(p.tOff);
-                nRep.push(p.nRep);
+                let exercise = {
+                    id: p.currentExercise,
+                    nRep: p.nRep,
+                    tOn: p.tOn,
+                    tOff: p.tOff
+                }
+                exercises.push(exercise);
             });
 
-            const routine = {
-                name,
-                description,
-                exercises,
-                nRep,
-                tOn,
-                tOff
-            }
+            const routine = {name, description, exercises};
             props.addRoutine(routine);
         }
     }

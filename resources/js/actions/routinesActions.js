@@ -3,7 +3,9 @@ import {
     GET, 
     LOADING, 
     ERROR,
-    SAVE
+    SAVE,
+    SET,
+    SET_KEY
 } from '../types/routinesTypes';
 
 export const get = () => async (dispatch) => {
@@ -24,6 +26,23 @@ export const get = () => async (dispatch) => {
             payload: 'No es posible acceder a rutinas en este momento.'
         });
     }
+}
+
+export const setRoutine = (routine, exercise) => (dispatch) => {
+    dispatch({
+        type: SET,
+        payload: {
+            routine,
+            exercise
+        }
+    });
+}
+
+export const setCurrentKey = (key) => (dispatch) => {
+    dispatch({
+        type: SET_KEY,
+        payload: key
+    });
 }
 
 export const addRoutine = (routine) => async (dispatch) => {

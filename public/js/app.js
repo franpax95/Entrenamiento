@@ -6622,7 +6622,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".Exercise .content{\r\n    padding: 10% 20%;\r\n}\r\n\r\n.Exercise .content h1{\r\n    font-size: 2em;\r\n    text-align: center;\r\n    text-decoration: underline;\r\n}\r\n.Exercise .content h3{ text-align: center; }\r\n.Exercise .content h3 .category{ font-size: 1.3em; }\r\n.Exercise .content h3 i{ font-size: 1em; font-weight: lighter; }\r\n\r\n.Exercise .content p{\r\n    margin-top: 20px;\r\n    font-size: 1.2em;\r\n}\r\n\r\n.Exercise .content img{\r\n    max-height: 300px;\r\n    max-width: 400px;\r\n}", ""]);
+exports.push([module.i, ".Exercise .content{\r\n}\r\n\r\n.Exercise .content h1{\r\n    font-size: 2em;\r\n    text-align: center;\r\n    text-decoration: underline;\r\n}\r\n.Exercise .content h3{ text-align: center; }\r\n.Exercise .content h3 .category{ font-size: 1.3em; }\r\n.Exercise .content h3 i{ font-size: 1em; font-weight: lighter; }\r\n\r\n.Exercise .content p{\r\n    margin-top: 20px;\r\n    font-size: 1.2em;\r\n}\r\n\r\n.Exercise .content img{\r\n    max-height: 300px;\r\n    max-width: 400px;\r\n}", ""]);
 
 // exports
 
@@ -6737,6 +6737,63 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 // module
 exports.push([module.i, ".AddRoutine h1{\r\n    width: 75%;\r\n    padding: 20px 0;\r\n    margin-top: 5%;\r\n\r\n    border-radius: 10px 10px 0 0;\r\n    background-color: black;\r\n    color: white;\r\n\r\n    text-align: center;\r\n}\r\n\r\n.AddRoutine .form{\r\n\r\n    width: 75%;\r\n    max-height: 80vw;\r\n    border: solid 1px black;\r\n    padding: 10px;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.AddRoutine .form .name{\r\n    width: 40%;\r\n}\r\n\r\n.AddRoutine .form .description{\r\n    resize: none;\r\n    height: 120px;\r\n    min-height: 120px;\r\n    width: 60%;\r\n}\r\n\r\n.AddRoutine .form .add{\r\n    width: 200px;\r\n    height: 40px;\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n    color: white;\r\n    background-color: black;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    outline: none;\r\n}\r\n\r\n.AddRoutine .form .exercise{\r\n    width: 100%;\r\n}\r\n\r\n.AddRoutine .form .form-group{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding: 5px;\r\n}\r\n.AddRoutine .form .form-group *{\r\n    width: 100%;\r\n}\r\n\r\n.AddRoutine .form .cat{\r\n    width: 30%;\r\n}\r\n\r\n.AddRoutine .form .ex{\r\n    width: 35%;\r\n}\r\n\r\n.AddRoutine .form .nrep{\r\n    width: 10%;\r\n}\r\n.AddRoutine .form .ton{\r\n    width: 10%;\r\n}\r\n.AddRoutine .form .toff{\r\n    width: 10%;\r\n}\r\n.AddRoutine .form .delete-btn{\r\n    width: 5%;\r\n    min-width: 25px;\r\n}\r\n\r\n.AddRoutine .form .save{\r\n    width: 200px;\r\n    font-size: 1.8em;\r\n    margin: 20px;\r\n    height: 50px;\r\n    color: white;\r\n    background-color: black;\r\n    outline: none;\r\n    border: none;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/Counter.css":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Routines/styles/Counter.css ***!
+  \*********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Counter{\r\n    padding: 30px 60px;\r\n\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    border: solid 2px #253a46;\r\n    border-radius: 5px;\r\n    background-color: #cddce5;\r\n}\r\n\r\n.Counter .info{\r\n    padding: 30px 0;\r\n    width: 150px;\r\n\r\n    border: solid 2px #253a46;\r\n    border-radius: 5px;\r\n    background-color: whitesmoke;\r\n\r\n    font-size: 2.5em;\r\n    font-weight: bold;\r\n    text-align: center;\r\n}\r\n.Counter button{\r\n    padding: 15px 30px;\r\n    margin: 0px 10px;\r\n\r\n    border: none;\r\n    outline: none;\r\n    background-color: #253a46;\r\n    color: white;\r\n\r\n    font-size: 1.4em;\r\n}\r\n\r\n.Counter button:hover{\r\n    background-color: #355364;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/Routine.css":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Routines/styles/Routine.css ***!
+  \*********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Routine{\r\n    height: 90%;\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.Routine .sidebar{\r\n    width: 15%;\r\n    background-color: lightgray;\r\n}\r\n\r\n.Routine .sidebar .ex{\r\n    width: 100%;\r\n    padding: 10px;\r\n\r\n    cursor: pointer;\r\n    border-bottom: solid 1.5px lightgray;\r\n}\r\n.Routine .sidebar .active{\r\n    border-bottom: solid 1.5px gray;\r\n}\r\n.Routine .sidebar .ex:hover{\r\n    border-bottom: solid 1.5px gray;\r\n}\r\n.Routine .sidebar .ex:last-child{\r\n    margin-bottom: 10px;\r\n}\r\n\r\n\r\n.Routine .exercise{\r\n    width: 85%;\r\n    padding: 5%;\r\n\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.Routine .exercise .img{\r\n    width: 60%;\r\n    max-width: 300px;\r\n    max-height: 200px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Routine .exercise .img img{\r\n    width: 100%;\r\n    height: 100%;\r\n    object-fit: contain;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/Timer.css":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./resources/js/components/Routines/styles/Timer.css ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Timer{\r\n    width: 400px;\r\n    padding: 25px;\r\n\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    border: solid 2px black;\r\n    border-radius: 10px;\r\n}\r\n.Timer .info{\r\n    width: 80%;\r\n    height: 160px;\r\n    margin-bottom: 20px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Timer .mode-init{\r\n    background-color: lightgray;\r\n    color: black;\r\n    font-size: 1.2em;\r\n}\r\n.Timer .mode-ct{\r\n    background-color: yellow;\r\n    color: black;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-on{\r\n    background-color: red;\r\n    color: white;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-off{\r\n    background-color: green;\r\n    color: white;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-end{\r\n    background-color: salmon;\r\n    font-size: 1.5em;\r\n}\r\n\r\n.Timer .start{\r\n    width: 100px;\r\n    height: 50px;\r\n\r\n    outline: none;\r\n    border: none;\r\n    cursor: pointer;\r\n    background-color: green;\r\n    color: white;\r\n    \r\n    font-size: 1.5em;\r\n    text-align: center;\r\n    font-weight: bold;\r\n}\r\n.Timer .start:hover{ background-color: lightseagreen; }", ""]);
 
 // exports
 
@@ -74418,12 +74475,14 @@ var clean = function clean() {
 /*!*************************************************!*\
   !*** ./resources/js/actions/routinesActions.js ***!
   \*************************************************/
-/*! exports provided: get, addRoutine */
+/*! exports provided: get, setRoutine, setCurrentKey, addRoutine */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "get", function() { return get; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRoutine", function() { return setRoutine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCurrentKey", function() { return setCurrentKey; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addRoutine", function() { return addRoutine; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -74483,6 +74542,25 @@ var get = function get() {
       return _ref.apply(this, arguments);
     };
   }();
+};
+var setRoutine = function setRoutine(routine, exercise) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["SET"],
+      payload: {
+        routine: routine,
+        exercise: exercise
+      }
+    });
+  };
+};
+var setCurrentKey = function setCurrentKey(key) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_routinesTypes__WEBPACK_IMPORTED_MODULE_2__["SET_KEY"],
+      payload: key
+    });
+  };
 };
 var addRoutine = function addRoutine(routine) {
   return /*#__PURE__*/function () {
@@ -74658,8 +74736,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Exercises_exercise__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Exercises/exercise */ "./resources/js/components/Exercises/exercise.js");
 /* harmony import */ var _Exercises_ExerciseForm__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Exercises/ExerciseForm */ "./resources/js/components/Exercises/ExerciseForm.js");
 /* harmony import */ var _Routines__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Routines */ "./resources/js/components/Routines/index.js");
-/* harmony import */ var _Routines_AddRoutine__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Routines/AddRoutine */ "./resources/js/components/Routines/AddRoutine.js");
+/* harmony import */ var _Routines_Routine__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Routines/Routine */ "./resources/js/components/Routines/Routine.js");
+/* harmony import */ var _Routines_AddRoutine__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Routines/AddRoutine */ "./resources/js/components/Routines/AddRoutine.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -74724,7 +74804,7 @@ var App = function App(props) {
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/exercise/:id",
+    path: "/exercises/:id",
     component: _Exercises_exercise__WEBPACK_IMPORTED_MODULE_15__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
@@ -74732,8 +74812,12 @@ var App = function App(props) {
     component: _Routines__WEBPACK_IMPORTED_MODULE_17__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
+    path: "/routines/:id",
+    component: _Routines_Routine__WEBPACK_IMPORTED_MODULE_18__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
     path: "/addroutine",
-    component: _Routines_AddRoutine__WEBPACK_IMPORTED_MODULE_18__["default"]
+    component: _Routines_AddRoutine__WEBPACK_IMPORTED_MODULE_19__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _General_NotFound__WEBPACK_IMPORTED_MODULE_10__["default"]
   })));
@@ -75512,7 +75596,7 @@ var Table = function Table(props) {
         className: "elem flex flex-row justifyc alignc",
         key: ex.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/exercise/".concat(ex.id),
+        to: "/exercises/".concat(ex.id),
         className: "content flex flex-row justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "img"
@@ -76203,23 +76287,20 @@ var AddRoutine = function AddRoutine(props) {
     if (!name || !parameters.length) {
       alert('¡Recuerda poner nombre a tu rutina y añadir al menos un ejercicio!');
     } else {
-      var exercises = [],
-          tOn = [],
-          tOff = [],
-          nRep = [];
+      var exercises = [];
       parameters.map(function (p) {
-        exercises.push(p.currentExercise);
-        tOn.push(p.tOn);
-        tOff.push(p.tOff);
-        nRep.push(p.nRep);
+        var exercise = {
+          id: p.currentExercise,
+          nRep: p.nRep,
+          tOn: p.tOn,
+          tOff: p.tOff
+        };
+        exercises.push(exercise);
       });
       var routine = {
         name: name,
         description: description,
-        exercises: exercises,
-        nRep: nRep,
-        tOn: tOn,
-        tOff: tOff
+        exercises: exercises
       };
       props.addRoutine(routine);
     }
@@ -76431,6 +76512,523 @@ var mapDispatchToProps = {
 
 /***/ }),
 
+/***/ "./resources/js/components/Routines/Counter.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Routines/Counter.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_Counter_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/Counter.css */ "./resources/js/components/Routines/styles/Counter.css");
+/* harmony import */ var _styles_Counter_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_Counter_css__WEBPACK_IMPORTED_MODULE_1__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var Counter = function Counter(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      currentRep = _useState2[0],
+      setCurrentRep = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setCurrentRep(0);
+  }, [props.currentKey]);
+
+  var handleMinusButton = function handleMinusButton() {
+    if (currentRep > 0) setCurrentRep(currentRep - 1);
+  };
+
+  var handlePlusButton = function handlePlusButton() {
+    if (currentRep < props.nRep) setCurrentRep(currentRep + 1);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Counter"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: handleMinusButton
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-minus"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, currentRep), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: handlePlusButton
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-plus"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Counter);
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/Routine.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Routines/Routine.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/routinesActions */ "./resources/js/actions/routinesActions.js");
+/* harmony import */ var _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/exercisesActions */ "./resources/js/actions/exercisesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
+/* harmony import */ var _Timer2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Timer2 */ "./resources/js/components/Routines/Timer2.js");
+/* harmony import */ var _Counter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Counter */ "./resources/js/components/Routines/Counter.js");
+/* harmony import */ var _styles_Routine_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/Routine.css */ "./resources/js/components/Routines/styles/Routine.css");
+/* harmony import */ var _styles_Routine_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_Routine_css__WEBPACK_IMPORTED_MODULE_10__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+
+
+
+var getRoutines = _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__["get"],
+    setRoutine = _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__["setRoutine"],
+    setCurrentKey = _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__["setCurrentKey"];
+var getExercises = _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_5__["get"];
+
+var Routine = function Routine(props) {
+  var existsRoutine = function existsRoutine() {
+    if (Object.entries(props.routinesReducer.routine).length) return true;
+    return false;
+  };
+
+  var existsExercise = function existsExercise() {
+    if (Object.entries(props.routinesReducer.exercise).length) return true;
+    return false;
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    function fetchData() {
+      return _fetchData.apply(this, arguments);
+    }
+
+    function _fetchData() {
+      _fetchData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var id, routine, exercise;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                id = props.match.params.id;
+
+                if (props.routinesReducer.routines.length) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _context.next = 4;
+                return props.getRoutines();
+
+              case 4:
+                if (props.exercisesReducer.exercises.length) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _context.next = 7;
+                return props.getExercises();
+
+              case 7:
+                if (props.routinesReducer.routines.length && props.exercisesReducer.exercises.length) {
+                  routine = props.routinesReducer.routines.filter(function (rout) {
+                    return rout.id == id;
+                  })[0];
+                  exercise = props.exercisesReducer.exercises.filter(function (ex) {
+                    return ex.id == routine.exercises[0].id;
+                  })[0];
+
+                  if (routine && exercise) {
+                    props.setRoutine(routine, exercise);
+                    props.setCurrentKey(0);
+                  }
+                }
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+      return _fetchData.apply(this, arguments);
+    }
+
+    fetchData();
+  }, [props.routinesReducer.routines, props.exercisesReducer.exercises]);
+
+  var handleSidebarClick = function handleSidebarClick(key) {
+    props.setCurrentKey(key);
+    var newExercise = props.exercisesReducer.exercises.filter(function (ex) {
+      return ex.id == props.routinesReducer.routine.exercises[key].id;
+    })[0];
+    props.setRoutine(props.routinesReducer.routine, newExercise);
+  };
+
+  var renderSidebar = function renderSidebar() {
+    return props.routinesReducer.routine.exercises.map(function (ex, key) {
+      var exercise = props.exercisesReducer.exercises.filter(function (exercise) {
+        return exercise.id == ex.id;
+      })[0]; //let divClass = (ex.id == props.routinesReducer.exercise.id) ? "active" : "";
+
+      var divClass = key == props.routinesReducer.currentKey ? "active" : "";
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "ex ".concat(divClass),
+        key: key,
+        onClick: function onClick() {
+          return handleSidebarClick(key);
+        }
+      }, key, " - ", exercise.name);
+    });
+  };
+
+  var renderExerciseHelper = function renderExerciseHelper() {
+    var ex = props.routinesReducer.routine.exercises[props.routinesReducer.currentKey];
+
+    if (Number(ex.tOn) === 0) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Counter__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        currentKey: props.routinesReducer.currentKey,
+        nRep: Number(ex.nRep)
+      });
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Timer2__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        currentKey: props.routinesReducer.currentKey,
+        nRep: Number(ex.nRep),
+        tOn: Number(ex.tOn),
+        tOff: Number(ex.tOff)
+      });
+    }
+  };
+
+  var renderExercise = function renderExercise() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+      className: "title"
+    }, props.routinesReducer.exercise.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+      className: "subtitle"
+    }, "Categor\xEDa ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", null, props.routinesReducer.exercise.category.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "description"
+    }, props.routinesReducer.exercise.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "img"
+    }, props.routinesReducer.exercise.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+      src: "/storage/".concat(props.routinesReducer.exercise.image),
+      alt: props.routinesReducer.exercise.name
+    }) : ''), renderExerciseHelper());
+  };
+
+  var renderRoutine = function renderRoutine() {
+    if (props.routinesReducer.loading || props.exercisesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+    if (props.routinesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      message: props.routinesReducer.error
+    });
+    if (props.exercisesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      message: props.exercisesReducer.error
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "sidebar scrollable"
+    }, existsRoutine() ? renderSidebar() : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "exercise scrollable"
+    }, existsExercise() ? renderExercise() : ''));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "Routine"
+  }, renderRoutine());
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var routinesReducer = _ref.routinesReducer,
+      exercisesReducer = _ref.exercisesReducer;
+  return {
+    routinesReducer: routinesReducer,
+    exercisesReducer: exercisesReducer
+  };
+};
+
+var mapDispatchToProps = {
+  getRoutines: getRoutines,
+  getExercises: getExercises,
+  setRoutine: setRoutine,
+  setCurrentKey: setCurrentKey
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(Routine));
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/Timer2.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Routines/Timer2.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_Timer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/Timer.css */ "./resources/js/components/Routines/styles/Timer.css");
+/* harmony import */ var _styles_Timer_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_Timer_css__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Timer = /*#__PURE__*/function (_React$Component) {
+  _inherits(Timer, _React$Component);
+
+  var _super = _createSuper(Timer);
+
+  function Timer(props) {
+    var _this;
+
+    _classCallCheck(this, Timer);
+
+    _this = _super.call(this, props); //Constantes
+
+    _this.CLASS_INIT = "mode-init";
+    _this.CLASS_COUNTDOWN = "mode-ct";
+    _this.CLASS_ON = "mode-on";
+    _this.CLASS_OFF = "mode-off";
+    _this.CLASS_END = "mode-end";
+    _this.audioCountdown = new Audio("/audio/countdown1.mp3");
+    _this.audioOn = new Audio("/audio/on1.mp3");
+    _this.audioOff = new Audio("/audio/off1.mp3");
+    _this.audioEnd = new Audio("/audio/finish1.mp3");
+    _this.totalTime = (props.tOn + props.tOff) * props.nRep; //estado
+
+    _this.state = {
+      currentInfo: 'Empezar rutina',
+      currentRep: props.nRep,
+      intervalId: '',
+      timerClass: _this.CLASS_INIT
+    }; //binds
+
+    _this.handleStartButton = _this.handleStartButton.bind(_assertThisInitialized(_this));
+    _this.initialCountdown = _this.initialCountdown.bind(_assertThisInitialized(_this));
+    _this.timerOn = _this.timerOn.bind(_assertThisInitialized(_this));
+    _this.timerOff = _this.timerOff.bind(_assertThisInitialized(_this));
+    _this.timerEnd = _this.timerEnd.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Timer, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      var _this$props = this.props,
+          currentKey = _this$props.currentKey,
+          tOn = _this$props.tOn,
+          tOff = _this$props.tOff,
+          nRep = _this$props.nRep;
+
+      if (currentKey !== prevProps.currentKey) {
+        //Limpia el timer si lo hubiera
+        if (prevState.intervalId != '') clearInterval(prevState.intervalId);
+        this.setState(_objectSpread({}, prevState, {
+          currentInfo: 'Empezar rutina',
+          currentRep: nRep,
+          intervalId: '',
+          timerClass: this.CLASS_INIT
+        }));
+        this.totalTime = (tOn + tOff) * nRep;
+      }
+    }
+  }, {
+    key: "handleStartButton",
+    value: function handleStartButton() {
+      var id = setInterval(this.initialCountdown, 1000);
+      this.setState({
+        currentInfo: 3,
+        intervalId: id,
+        timerClass: this.CLASS_COUNTDOWN
+      });
+      this.audioCountdown.play();
+    }
+  }, {
+    key: "initialCountdown",
+    value: function initialCountdown() {
+      var _this$state = this.state,
+          currentInfo = _this$state.currentInfo,
+          intervalId = _this$state.intervalId;
+
+      if (currentInfo > 1) {
+        this.setState({
+          currentInfo: currentInfo - 1
+        });
+        this.audioCountdown.play();
+      } else {
+        clearInterval(intervalId);
+        var id = setInterval(this.timerOn, 1000);
+        this.setState({
+          currentInfo: this.totalTime,
+          intervalId: id,
+          timerClass: this.CLASS_ON
+        });
+        this.audioOn.play();
+      }
+    }
+  }, {
+    key: "timerOn",
+    value: function timerOn() {
+      var _this$state2 = this.state,
+          currentInfo = _this$state2.currentInfo,
+          currentRep = _this$state2.currentRep,
+          intervalId = _this$state2.intervalId;
+      var _this$props2 = this.props,
+          tOn = _this$props2.tOn,
+          tOff = _this$props2.tOff;
+      var timeToOff = currentInfo - (currentRep * (tOn + tOff) - tOn);
+
+      if (timeToOff <= 0) {
+        clearInterval(intervalId);
+        var id = setInterval(this.timerOff, 1000);
+        this.setState({
+          currentRep: currentRep - 1,
+          intervalId: id,
+          timerClass: this.CLASS_OFF
+        });
+        this.audioOff.play();
+      }
+
+      this.setState({
+        currentInfo: currentInfo - 1
+      });
+    }
+  }, {
+    key: "timerOff",
+    value: function timerOff() {
+      var _this$props3 = this.props,
+          tOn = _this$props3.tOn,
+          tOff = _this$props3.tOff;
+      var _this$state3 = this.state,
+          currentInfo = _this$state3.currentInfo,
+          currentRep = _this$state3.currentRep,
+          intervalId = _this$state3.intervalId;
+      var timeToOn = currentInfo - currentRep * (tOn + tOff); //Change background
+
+      if (timeToOn == 3 && currentRep > 0) this.setState({
+        timerClass: this.CLASS_COUNTDOWN
+      }); //Display sound
+
+      if (tOn > 3 && currentRep > 0 && timeToOn <= 3 && timeToOn > 0) this.audioCountdown.play();
+
+      if (timeToOn > 0) {
+        this.setState({
+          currentInfo: currentInfo - 1
+        });
+      } else {
+        clearInterval(intervalId);
+
+        if (currentInfo > 0) {
+          var id = setInterval(this.timerOn, 1000);
+          this.setState({
+            currentInfo: currentInfo - 1,
+            intervalId: id,
+            timerClass: this.CLASS_ON
+          });
+          this.audioOn.play();
+        } else {
+          var _id = setInterval(this.timerEnd, 5000);
+
+          this.setState({
+            currentInfo: 'FIN',
+            intervalId: _id,
+            timerClass: this.CLASS_END
+          });
+          this.audioEnd.play();
+        }
+      }
+    }
+  }, {
+    key: "timerEnd",
+    value: function timerEnd() {
+      clearInterval(this.state.intervalId);
+      this.setState(_objectSpread({}, this.state, {
+        currentInfo: 'Volver a empezar rutina',
+        currentRep: this.props.nRep,
+        intervalId: '',
+        timerClass: this.CLASS_INIT
+      }));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Timer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info ".concat(this.state.timerClass)
+      }, this.state.currentInfo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "start",
+        onClick: this.handleStartButton
+      }, "Start"));
+    }
+  }]);
+
+  return Timer;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Timer);
+
+/***/ }),
+
 /***/ "./resources/js/components/Routines/index.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/Routines/index.js ***!
@@ -76534,7 +77132,7 @@ var Routines = function Routines(props) {
       }, rout.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "flex flex-row justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/routine/".concat(rout.id),
+        to: "/routines/".concat(rout.id),
         className: "btn play"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-play-circle-o"
@@ -76586,6 +77184,96 @@ var mapStateToProps = function mapStateToProps(_ref) {
 
 
 var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./AddRoutine.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/AddRoutine.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/styles/Counter.css":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/Routines/styles/Counter.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./Counter.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/Counter.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/styles/Routine.css":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/Routines/styles/Routine.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./Routine.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/Routine.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Routines/styles/Timer.css":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Routines/styles/Timer.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--5-1!../../../../../node_modules/postcss-loader/src??ref--5-2!./Timer.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Routines/styles/Timer.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -76864,6 +77552,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   routines: [],
   routine: {},
+  exercise: {},
+  currentKey: '',
   loading: false,
   error: '',
   goBack: false
@@ -76898,6 +77588,17 @@ var INITIAL_STATE = {
       return _objectSpread({}, state, {
         error: action.payload,
         loading: false
+      });
+
+    case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["SET"]:
+      return _objectSpread({}, state, {
+        routine: action.payload.routine,
+        exercise: action.payload.exercise
+      });
+
+    case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["SET_KEY"]:
+      return _objectSpread({}, state, {
+        currentKey: action.payload
       });
 
     default:
@@ -76967,7 +77668,7 @@ var SHOW = 'exercises_show';
 /*!*********************************************!*\
   !*** ./resources/js/types/routinesTypes.js ***!
   \*********************************************/
-/*! exports provided: GET, LOADING, ERROR, SAVE */
+/*! exports provided: GET, LOADING, ERROR, SAVE, SET, SET_KEY */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76976,10 +77677,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE", function() { return SAVE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET", function() { return SET; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_KEY", function() { return SET_KEY; });
 var GET = 'routines_get';
 var LOADING = 'routines_loading';
 var ERROR = 'routines_error';
 var SAVE = 'routines_save';
+var SET = 'routines_set';
+var SET_KEY = 'routines_set_key';
 
 /***/ }),
 
