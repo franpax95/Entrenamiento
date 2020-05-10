@@ -13,13 +13,13 @@ const Table = (props) => {
     useEffect(() => {
         function fetchData(){
             /* en caso de eliminar una categoría, las busco de nuevo */
-            if(!props.exercises.length) props.get();
+            if(!props.exercisesReducer.exercises.length) props.get();
         }
         
         fetchData();
-    }, [props.exercises]);
+    }, [props.exercisesReducer.exercises]);
 
-    const renderExercises = () => props.exercises.map((ex) => {
+    const renderExercises = () => props.exercisesReducer.exercises.map((ex) => {
         return(
             <div className="elem flex flex-row justifyc alignc" key={ex.id}>
                 <Link to={`/exercises/${ex.id}`} className="content flex flex-row justifyc alignc">
@@ -34,25 +34,32 @@ const Table = (props) => {
                     </div>
                 </Link>
                 <div className="edit flex justifyc alignc">
-                    <button className="edit-btn">
-                        <Link to="" >
-                            Editar
-                        </Link>
-                    </button>
+                    {
+                        (props.usersReducer.isOn) ? 
+                            <button className="edit-btn">
+                                <Link to="" >
+                                    Editar
+                                </Link>
+                            </button> : ''
+                    }
+                    
                 </div>
                 <div className="delete flex justifyc alignc">
-                    <button className="delete-btn" onClick={() => props.erase(ex.id)} >
-                        Eliminar
-                    </button>
+                    {
+                        (props.usersReducer.isOn) ? 
+                            <button className="delete-btn" onClick={() => props.erase(ex.id)} >
+                                Eliminar
+                            </button> : ''
+                    }
                 </div>
             </div>
         )
     });
 
     const renderExercisesTable = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={error} />;
-        if(props.exercises.length) return renderExercises();
+        if(props.exercisesReducer.loading) return <Spinner />;
+        if(props.exercisesReducer.error) return <Fatal message={props.exercisesReducer.error} />;
+        if(props.exercisesReducer.exercises.length) return renderExercises();
     }
 
     return(
@@ -62,5 +69,7 @@ const Table = (props) => {
     )
 }
 
-const mapStateToProps = ({exercisesReducer}) => exercisesReducer;
+const mapStateToProps = ({exercisesReducer, usersReducer}) => {
+    return {exercisesReducer, usersReducer};
+}
 export default connect(mapStateToProps, exercisesActions)(Table);

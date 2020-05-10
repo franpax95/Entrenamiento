@@ -14,12 +14,12 @@ import './styles/index.css';
 const Exercises = (props) => {
     //componentDidMount
     useEffect(() => {
-        if(!props.exercises.length) props.get();
+        if(!props.exercisesReducer.exercises.length) props.get();
     }, []);
 
     const renderTable = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={props.error} />;
+        if(props.exercisesReducer.loading) return <Spinner />;
+        if(props.exercisesReducer.error) return <Fatal message={props.exercisesReducer.error} />;
         return(<Table />);
     }
 
@@ -27,7 +27,7 @@ const Exercises = (props) => {
         <div className="body Exercises flex flex-col justifyc alignc">
             <div className="title flex flex-row jutifyc alignc">
                 <h1>Ejercicios</h1>
-                <Link to="/addexercise" className="add-btn">Crear Ejercicio</Link>
+                { (props.usersReducer.isOn) ? <Link to="/addexercise" className="add-btn">Crear Ejercicio</Link> : '' }
             </div>
 
             {renderTable()}
@@ -35,6 +35,7 @@ const Exercises = (props) => {
     )
 }
 
-
-const mapStateToProps = ({exercisesReducer}) => exercisesReducer;
+const mapStateToProps = ({exercisesReducer, usersReducer}) => {
+    return {exercisesReducer, usersReducer};
+}
 export default connect(mapStateToProps, exercisesActions)(Exercises);

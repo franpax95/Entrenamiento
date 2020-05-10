@@ -9,32 +9,34 @@ import Fatal from '../General/Fatal';
 
 import './styles/index.css';
 
+const { 
+    get
+} = routinesActions;
+
 const Routines = (props) => {
     const references = useRef([]);
 
     useEffect(() => {
         async function fetchData(){
-            if(!props.routines.length) await props.get();
-            
+            if(!props.routinesReducer.routines.length) await props.get();
         }
         fetchData();
     }, []);
 
     const renderContent = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={props.error} />
-        if(props.routines.length){
+        if(props.routinesReducer.loading) return <Spinner />;
+        if(props.routinesReducer.error) return <Fatal message={props.routinesReducer.error} />
+        if(props.routinesReducer.routines.length){
             return(
                 <div className="routines scrollable">
                     {renderTable()}
                 </div>
-                
             )
         }
         return;
     };
 
-    const renderTable = () => props.routines.map((rout) => {
+    const renderTable = () => props.routinesReducer.routines.map((rout) => {
         return(
             <div className="routine flex flex-col justifyc alignc" key={rout.id}>
                 <button className="display-btn" onClick={() => showRoutine(rout.id)}>
@@ -70,12 +72,20 @@ const Routines = (props) => {
         <div className="body Routines flex flex-col justifyc alignc">
             <div className="title flex flex-row jutifyc alignc">
                 <h1>Rutinas</h1>
-                <Link to="/addroutine" className="add-btn">Crear Rutina</Link>
+                {
+                    (props.usersReducer.isOn) ?
+                        <Link to="/addroutine" className="add-btn">Crear Rutina</Link> : ''
+                }
             </div>
             {renderContent()}
         </div>
     )
 }
 
-const mapStateToProps = ({routinesReducer}) => routinesReducer;
-export default connect(mapStateToProps, routinesActions)(Routines);
+const mapStateToProps = ({routinesReducer, usersReducer}) => {
+    return {routinesReducer, usersReducer};
+}
+
+const mapDispatchToProps = { get }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Routines);

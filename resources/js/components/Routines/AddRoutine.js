@@ -186,7 +186,11 @@ const AddRoutine = (props) => {
 
                 <label>Descripción</label>
                 <textarea name="description" className="description" onChange={handleDescriptionChange}></textarea>
-                {((props.categoriesReducer.loading) || (props.exercisesReducer.loading) || (props.routinesReducer.loading)) ? <Spinner class={'small-spinner'}/> : <button onClick={() => addExerciseInput()} className="add" type="button">Añadir ejercicio</button>}
+                {
+                    ((props.categoriesReducer.loading) || (props.exercisesReducer.loading) || (props.routinesReducer.loading))
+                        ? <Spinner class={'small-spinner'}/>
+                        : <button onClick={() => addExerciseInput()} className="add" type="button">Añadir ejercicio</button>
+                }
                 <div className="exercises">
                     {renderExercises()}
                 </div>
@@ -204,7 +208,10 @@ const AddRoutine = (props) => {
 
     return(
         <div className="body AddRoutine flex flex-col alignc">
-            { (props.routinesReducer.goBack) ? <Redirect to='/routines' /> : '' }
+            { 
+                (props.routinesReducer.goBack || !props.usersReducer.isOn) ? 
+                    <Redirect to='/routines' /> : '' 
+            }
             <h1>Añadir rutina</h1>
             {renderContent()}
         </div>
@@ -213,8 +220,8 @@ const AddRoutine = (props) => {
 
 
 
-const mapStateToProps = ({routinesReducer, exercisesReducer, categoriesReducer}) => {
-    return {routinesReducer, exercisesReducer, categoriesReducer};
+const mapStateToProps = ({routinesReducer, exercisesReducer, categoriesReducer, usersReducer}) => {
+    return {routinesReducer, exercisesReducer, categoriesReducer, usersReducer};
 }
 
 const mapDispatchToProps = {

@@ -15,7 +15,7 @@ const CategoryForm = (props) => {
     useEffect(() => {
         const { match: { params: { id } } } = props;
         if(id){
-            const category = props.categories.filter(cat => cat.id == id)[0];
+            const category = props.categoriesReducer.categories.filter(cat => cat.id == id)[0];
             props.changeName(category.name);
         }else{
             props.resetForm();
@@ -28,49 +28,54 @@ const CategoryForm = (props) => {
     }
 
     const save = () => {
-        if(!props.catName){ 
+        if(!props.categoriesReducer.catName){ 
             alert('Inserta un nombre antes de enviar, por favor.'); 
         }
         
         else{
             const { match: { params: { id } } } = props;
             if(id){
-                const category = props.categories.filter(cat => cat.id == id)[0];
+                const category = props.categoriesReducer.categories.filter(cat => cat.id == id)[0];
                 const new_cat = {
                     id: category.id,
-                    name: props.catName
+                    name: props.categoriesReducer.catName
                 };
                 props.editCategory(new_cat);
             }else{
-                const category = { name: props.catName }
+                const category = { name: props.categoriesReducer.catName }
                 props.addCategory(category);
             }
         }
     }
 
     const showAction = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={props.error} />;
+        if(props.categoriesReducer.loading) return <Spinner />;
+        if(props.categoriesReducer.error) return <Fatal message={props.categoriesReducer.error} />;
     }
 
 
 
     return(
         <div className="body CategoryForm flex justifyc alignc">
-            { (props.goBack) ? <Redirect to='/categories' /> : '' }
+            {
+                /* Redirecting */
+                (props.categoriesReducer.goBack || (!props.usersReducer.isOn)) ? 
+                    <Redirect to='/categories' /> : '' 
+            }
+            
             <div className="form flex flex-col justifyc alignc">
-                <h1>{props.title}</h1>{/** Le pasamos el título Añadir o Editar categoría */}
+                <h1>{props.categoriesReducer.title}</h1>{/** Le pasamos el título Añadir o Editar categoría */}
 
                 <div className="content flex flex-col justifyc alignc">
                     <label>Nombre de la categoría</label>
                     <input 
                         type="text"
-                        value={props.catName}
+                        value={props.categoriesReducer.catName}
                         onChange={handleNameChange}
                     />
 
                     <button onClick={save} >
-                        {props.title}
+                        {props.categoriesReducer.title}
                     </button>
 
                     {showAction()}
@@ -81,5 +86,7 @@ const CategoryForm = (props) => {
 }
 
 
-const mapStateToProps = ({ categoriesReducer }) => categoriesReducer;
+const mapStateToProps = ({categoriesReducer, usersReducer}) => {
+    return {categoriesReducer, usersReducer};
+}
 export default connect(mapStateToProps, categoriesActions)(CategoryForm);

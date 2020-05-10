@@ -17,7 +17,7 @@
     </head>
     <body>
         @if(Auth::check())
-            <div id="app" data-user="{{ $user }}"></div>
+            <div id="app" data-user="{{ ($user) ? 'true' : 'false' }}"></div>
         @else
             <div id="app"></div>
         @endif

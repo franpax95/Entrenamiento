@@ -84,7 +84,10 @@ const ExerciseForm = (props) => {
 
     return(
         <div className="body ExerciseForm flex flex-col  alignc">
-            { (props.exercisesReducer.goBack) ? <Redirect to='/exercises' /> : '' }
+            { 
+                (props.exercisesReducer.goBack || !props.usersReducer.isOn) ?
+                    <Redirect to='/exercises' /> : '' 
+            }
             <div className="form flex flex-col justifyc alignc">
                 <h1>{props.title}</h1>
 
@@ -115,8 +118,8 @@ const ExerciseForm = (props) => {
 }
 
 
-const mapStateToProps = ({exercisesReducer, categoriesReducer}) => {
-    return {exercisesReducer, categoriesReducer};
+const mapStateToProps = ({exercisesReducer, categoriesReducer, usersReducer}) => {
+    return {exercisesReducer, categoriesReducer, usersReducer};
 }
 
 const mapDispatchToProps = {

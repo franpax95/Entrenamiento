@@ -47,16 +47,22 @@ const Table = (props) => {
                 {cat.name}
             </Link>
             <div className="edit flex justifyc alignc">
-                <button className="edit-btn">
-                    <Link to={`/editcategory/${cat.id}`} >
-                        Editar
-                    </Link>
-                </button>
+                {
+                    (props.usersReducer.isOn) ? 
+                        <button className="edit-btn">
+                            <Link to={`/editcategory/${cat.id}`} >
+                                Editar
+                            </Link>
+                        </button> : ''
+                }
             </div>
             <div className="delete flex justifyc alignc">
-                <button className="delete-btn" onClick={() => handleDeleteCategoryClick(cat.id)}>
-                    Eliminar
-                </button>
+                {
+                    (props.usersReducer.isOn) ? 
+                        <button className="delete-btn" onClick={() => handleDeleteCategoryClick(cat.id)}>
+                            Eliminar
+                        </button> : ''
+                }
             </div>
         </div>
     ));
@@ -76,24 +82,28 @@ const Table = (props) => {
                 <div className="img">
                     {(ex.image) ? <img src={`/storage/${ex.image}`} alt={ex.name} /> : ''}
                 </div>
-                <Link to={`/exercise/${ex.id}`} className="name">
+                <Link to={`/exercises/${ex.id}`} className="name">
                     {ex.name}
                 </Link>
                 <div className="edit flex justifyc alignc">
-                    <button className="edit-btn">
-                        <Link to="" >
-                            Editar
-                        </Link>
-                    </button>
+                    {
+                        (props.usersReducer.isOn) ? 
+                            <button className="edit-btn"><Link to="" >Editar</Link></button> : ''
+                    }
+                    
                 </div>
                 <div className="delete flex justifyc alignc">
-                    <button 
-                        className="delete-btn" 
-                        /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
-                        onClick={() => {alert('Deshabilitado, de momento.')}}
-                    >
-                        Eliminar
-                    </button>
+                    {
+                        (props.usersReducer.isOn) ? 
+                            <button 
+                                className="delete-btn" 
+                                /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
+                                onClick={() => {alert('Deshabilitado, de momento.')}}
+                            >
+                                Eliminar
+                            </button> : ''
+                    }
+                    
                 </div>
             </div>
         )
@@ -126,8 +136,8 @@ const Table = (props) => {
     
 }
 
-const mapStateToProps = ({exercisesReducer, categoriesReducer}) => {
-    return {exercisesReducer, categoriesReducer};
+const mapStateToProps = ({exercisesReducer, categoriesReducer, usersReducer}) => {
+    return {exercisesReducer, categoriesReducer, usersReducer};
 }
 
 const mapDispatchToProps = {

@@ -74827,12 +74827,16 @@ var App = function App(props) {
 
 if (document.getElementById('app')) {
   var app = document.getElementById('app');
-  var props = Object.assign({}, app.dataset); //console.log(props);
-
-  var store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_5__["default"], {}, Object(redux__WEBPACK_IMPORTED_MODULE_3__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_6__["default"]));
+  var props = Object.assign({}, app.dataset);
+  var isOn = props.user ? true : false;
+  var store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    usersReducer: {
+      isOn: isOn
+    }
+  }, Object(redux__WEBPACK_IMPORTED_MODULE_3__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_6__["default"]));
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
     store: store
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, props)), app);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null)), app);
 }
 
 /***/ }),
@@ -74869,7 +74873,7 @@ var CategoryForm = function CategoryForm(props) {
     var id = props.match.params.id;
 
     if (id) {
-      var category = props.categories.filter(function (cat) {
+      var category = props.categoriesReducer.categories.filter(function (cat) {
         return cat.id == id;
       })[0];
       props.changeName(category.name);
@@ -74883,23 +74887,23 @@ var CategoryForm = function CategoryForm(props) {
   };
 
   var save = function save() {
-    if (!props.catName) {
+    if (!props.categoriesReducer.catName) {
       alert('Inserta un nombre antes de enviar, por favor.');
     } else {
       var id = props.match.params.id;
 
       if (id) {
-        var category = props.categories.filter(function (cat) {
+        var category = props.categoriesReducer.categories.filter(function (cat) {
           return cat.id == id;
         })[0];
         var new_cat = {
           id: category.id,
-          name: props.catName
+          name: props.categoriesReducer.catName
         };
         props.editCategory(new_cat);
       } else {
         var _category = {
-          name: props.catName
+          name: props.categoriesReducer.catName
         };
         props.addCategory(_category);
       }
@@ -74907,32 +74911,38 @@ var CategoryForm = function CategoryForm(props) {
   };
 
   var showAction = function showAction() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      message: props.error
+    if (props.categoriesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.categoriesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: props.categoriesReducer.error
     });
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "body CategoryForm flex justifyc alignc"
-  }, props.goBack ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+  },
+  /* Redirecting */
+  props.categoriesReducer.goBack || !props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     to: "/categories"
   }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form flex flex-col justifyc alignc"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.categoriesReducer.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content flex flex-col justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Nombre de la categor\xEDa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    value: props.catName,
+    value: props.categoriesReducer.catName,
     onChange: handleNameChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: save
-  }, props.title), showAction())));
+  }, props.categoriesReducer.title), showAction())));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var categoriesReducer = _ref.categoriesReducer;
-  return categoriesReducer;
+  var categoriesReducer = _ref.categoriesReducer,
+      usersReducer = _ref.usersReducer;
+  return {
+    categoriesReducer: categoriesReducer,
+    usersReducer: usersReducer
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__)(CategoryForm));
@@ -75003,18 +75013,18 @@ var Table = function Table(props) {
         className: "name"
       }, cat.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "edit-btn"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/editcategory/".concat(cat.id)
-      }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Editar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: function onClick() {
           return handleDeleteCategoryClick(cat.id);
         }
-      }, "Eliminar")));
+      }, "Eliminar") : ''));
     });
   };
 
@@ -75039,24 +75049,24 @@ var Table = function Table(props) {
         src: "/storage/".concat(ex.image),
         alt: ex.name
       }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/exercise/".concat(ex.id),
+        to: "/exercises/".concat(ex.id),
         className: "name"
       }, ex.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "edit-btn"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: ""
-      }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Editar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn"
         /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
         ,
         onClick: function onClick() {
           alert('Deshabilitado, de momento.');
         }
-      }, "Eliminar")));
+      }, "Eliminar") : ''));
     });
   };
 
@@ -75084,10 +75094,12 @@ var Table = function Table(props) {
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var exercisesReducer = _ref.exercisesReducer,
-      categoriesReducer = _ref.categoriesReducer;
+      categoriesReducer = _ref.categoriesReducer,
+      usersReducer = _ref.usersReducer;
   return {
     exercisesReducer: exercisesReducer,
-    categoriesReducer: categoriesReducer
+    categoriesReducer: categoriesReducer,
+    usersReducer: usersReducer
   };
 };
 
@@ -75248,13 +75260,13 @@ __webpack_require__.r(__webpack_exports__);
 var Categories = function Categories(props) {
   //componentDidMount
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (!props.categories.length) props.get();
+    if (!props.categoriesReducer.categories.length) props.get();
   }, []);
 
   var renderTable = function renderTable() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      message: props.error
+    if (props.categoriesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.categoriesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: props.categoriesReducer.error
     });
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_6__["default"], {
       isCategories: true
@@ -75265,15 +75277,19 @@ var Categories = function Categories(props) {
     className: "body Categories flex justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title flex flex-row jutifyc alignc"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Categor\xEDas"), props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/addcategory",
     className: "add-btn"
-  }, "Crear Categor\xEDa")), renderTable());
+  }, "Crear Categor\xEDa") : ''), renderTable());
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var categoriesReducer = _ref.categoriesReducer;
-  return categoriesReducer;
+  var categoriesReducer = _ref.categoriesReducer,
+      usersReducer = _ref.usersReducer;
+  return {
+    categoriesReducer: categoriesReducer,
+    usersReducer: usersReducer
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_categoriesActions__WEBPACK_IMPORTED_MODULE_3__)(Categories));
@@ -75512,7 +75528,7 @@ var ExerciseForm = function ExerciseForm(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "body ExerciseForm flex flex-col  alignc"
-  }, props.exercisesReducer.goBack ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+  }, props.exercisesReducer.goBack || !props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
     to: "/exercises"
   }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "form flex flex-col justifyc alignc"
@@ -75538,10 +75554,12 @@ var ExerciseForm = function ExerciseForm(props) {
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var exercisesReducer = _ref.exercisesReducer,
-      categoriesReducer = _ref.categoriesReducer;
+      categoriesReducer = _ref.categoriesReducer,
+      usersReducer = _ref.usersReducer;
   return {
     exercisesReducer: exercisesReducer,
-    categoriesReducer: categoriesReducer
+    categoriesReducer: categoriesReducer,
+    usersReducer: usersReducer
   };
 };
 
@@ -75587,14 +75605,14 @@ var Table = function Table(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     function fetchData() {
       /* en caso de eliminar una categoría, las busco de nuevo */
-      if (!props.exercises.length) props.get();
+      if (!props.exercisesReducer.exercises.length) props.get();
     }
 
     fetchData();
-  }, [props.exercises]);
+  }, [props.exercisesReducer.exercises]);
 
   var renderExercises = function renderExercises() {
-    return props.exercises.map(function (ex) {
+    return props.exercisesReducer.exercises.map(function (ex) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "elem flex flex-row justifyc alignc",
         key: ex.id
@@ -75612,27 +75630,27 @@ var Table = function Table(props) {
         className: "category flex flex-col justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, ex.category.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "edit-btn"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: ""
-      }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Editar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: function onClick() {
           return props.erase(ex.id);
         }
-      }, "Eliminar")));
+      }, "Eliminar") : ''));
     });
   };
 
   var renderExercisesTable = function renderExercisesTable() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      message: error
+    if (props.exercisesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.exercisesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: props.exercisesReducer.error
     });
-    if (props.exercises.length) return renderExercises();
+    if (props.exercisesReducer.exercises.length) return renderExercises();
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -75641,8 +75659,12 @@ var Table = function Table(props) {
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var exercisesReducer = _ref.exercisesReducer;
-  return exercisesReducer;
+  var exercisesReducer = _ref.exercisesReducer,
+      usersReducer = _ref.usersReducer;
+  return {
+    exercisesReducer: exercisesReducer,
+    usersReducer: usersReducer
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_3__)(Table));
@@ -75697,7 +75719,7 @@ var Exercise = function Exercise(props) {
               case 0:
                 id = props.match.params.id;
 
-                if (props.exercises.length) {
+                if (props.exercisesReducer.exercises.length) {
                   _context.next = 4;
                   break;
                 }
@@ -75706,12 +75728,12 @@ var Exercise = function Exercise(props) {
                 return props.get();
 
               case 4:
-                if (!(props.exercises.length && !props.loading && (!Object.entries(props.exercise).length || props.exercise.id != id))) {
+                if (!(props.exercisesReducer.exercises.length && !props.exercisesReducer.loading && (!Object.entries(props.exercisesReducer.exercise).length || props.exercise.id != id))) {
                   _context.next = 8;
                   break;
                 }
 
-                exercise = props.exercises.filter(function (ex) {
+                exercise = props.exercisesReducer.exercises.filter(function (ex) {
                   return ex.id == id;
                 })[0];
                 _context.next = 8;
@@ -75728,33 +75750,33 @@ var Exercise = function Exercise(props) {
     }
 
     fetchData();
-  }, [props.exercises]);
+  }, [props.exercisesReducer.exercises]);
 
   var renderImg = function renderImg() {
-    if (props.exercise.image) {
+    if (props.exercisesReducer.exercise.image) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        src: "/storage/".concat(props.exercise.image),
-        alt: props.exercise.name
+        src: "/storage/".concat(props.exercisesReducer.exercise.image),
+        alt: props.exercisesReducer.exercise.name
       });
     }
   };
 
   var renderExercise = function renderExercise() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      message: props.error
+    if (props.exercisesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.exercisesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: props.exercisesReducer.error
     });
 
-    if (Object.entries(props.exercise).length) {
+    if (Object.entries(props.exercisesReducer.exercise).length) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "content flex flex-col justifyc alignc"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, props.exercise.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, props.exercisesReducer.exercise.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-minus"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "category"
-      }, props.exercise.category.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      }, props.exercisesReducer.exercise.category.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-minus"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, props.exercise.description), renderImg());
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, props.exercisesReducer.exercise.description), renderImg());
     }
   };
 
@@ -75764,8 +75786,12 @@ var Exercise = function Exercise(props) {
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var exercisesReducer = _ref.exercisesReducer;
-  return exercisesReducer;
+  var exercisesReducer = _ref.exercisesReducer,
+      usersReducer = _ref.usersReducer;
+  return {
+    exercisesReducer: exercisesReducer,
+    usersReducer: usersReducer
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_3__)(Exercise));
@@ -75803,13 +75829,13 @@ __webpack_require__.r(__webpack_exports__);
 var Exercises = function Exercises(props) {
   //componentDidMount
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (!props.exercises.length) props.get();
+    if (!props.exercisesReducer.exercises.length) props.get();
   }, []);
 
   var renderTable = function renderTable() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      message: props.error
+    if (props.exercisesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    if (props.exercisesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      message: props.exercisesReducer.error
     });
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_6__["default"], null);
   };
@@ -75818,15 +75844,19 @@ var Exercises = function Exercises(props) {
     className: "body Exercises flex flex-col justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title flex flex-row jutifyc alignc"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Ejercicios"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Ejercicios"), props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/addexercise",
     className: "add-btn"
-  }, "Crear Ejercicio")), renderTable());
+  }, "Crear Ejercicio") : ''), renderTable());
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var exercisesReducer = _ref.exercisesReducer;
-  return exercisesReducer;
+  var exercisesReducer = _ref.exercisesReducer,
+      usersReducer = _ref.usersReducer;
+  return {
+    exercisesReducer: exercisesReducer,
+    usersReducer: usersReducer
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_3__)(Exercises));
@@ -76489,7 +76519,7 @@ var AddRoutine = function AddRoutine(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "body AddRoutine flex flex-col alignc"
-  }, props.routinesReducer.goBack ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+  }, props.routinesReducer.goBack || !props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
     to: "/routines"
   }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "A\xF1adir rutina"), renderContent());
 };
@@ -76497,11 +76527,13 @@ var AddRoutine = function AddRoutine(props) {
 var mapStateToProps = function mapStateToProps(_ref) {
   var routinesReducer = _ref.routinesReducer,
       exercisesReducer = _ref.exercisesReducer,
-      categoriesReducer = _ref.categoriesReducer;
+      categoriesReducer = _ref.categoriesReducer,
+      usersReducer = _ref.usersReducer;
   return {
     routinesReducer: routinesReducer,
     exercisesReducer: exercisesReducer,
-    categoriesReducer: categoriesReducer
+    categoriesReducer: categoriesReducer,
+    usersReducer: usersReducer
   };
 };
 
@@ -77065,6 +77097,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+var get = _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__["get"];
 
 var Routines = function Routines(props) {
   var references = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])([]);
@@ -77079,7 +77112,7 @@ var Routines = function Routines(props) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                if (props.routines.length) {
+                if (props.routinesReducer.routines.length) {
                   _context.next = 3;
                   break;
                 }
@@ -77101,12 +77134,12 @@ var Routines = function Routines(props) {
   }, []);
 
   var renderContent = function renderContent() {
-    if (props.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-    if (props.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      message: props.error
+    if (props.routinesReducer.loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+    if (props.routinesReducer.error) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Fatal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      message: props.routinesReducer.error
     });
 
-    if (props.routines.length) {
+    if (props.routinesReducer.routines.length) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "routines scrollable"
       }, renderTable());
@@ -77116,7 +77149,7 @@ var Routines = function Routines(props) {
   };
 
   var renderTable = function renderTable() {
-    return props.routines.map(function (rout) {
+    return props.routinesReducer.routines.map(function (rout) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "routine flex flex-col justifyc alignc",
         key: rout.id
@@ -77163,18 +77196,25 @@ var Routines = function Routines(props) {
     className: "body Routines flex flex-col justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "title flex flex-row jutifyc alignc"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Rutinas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Rutinas"), props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/addroutine",
     className: "add-btn"
-  }, "Crear Rutina")), renderContent());
+  }, "Crear Rutina") : ''), renderContent());
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var routinesReducer = _ref.routinesReducer;
-  return routinesReducer;
+  var routinesReducer = _ref.routinesReducer,
+      usersReducer = _ref.usersReducer;
+  return {
+    routinesReducer: routinesReducer,
+    usersReducer: usersReducer
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, _actions_routinesActions__WEBPACK_IMPORTED_MODULE_4__)(Routines));
+var mapDispatchToProps = {
+  get: get
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(Routines));
 
 /***/ }),
 
@@ -77523,6 +77563,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _categoriesReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./categoriesReducer */ "./resources/js/reducers/categoriesReducer.js");
 /* harmony import */ var _exercisesReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./exercisesReducer */ "./resources/js/reducers/exercisesReducer.js");
 /* harmony import */ var _routinesReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routinesReducer */ "./resources/js/reducers/routinesReducer.js");
+/* harmony import */ var _usersReducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./usersReducer */ "./resources/js/reducers/usersReducer.js");
+
 
 
 
@@ -77530,7 +77572,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   categoriesReducer: _categoriesReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   exercisesReducer: _exercisesReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  routinesReducer: _routinesReducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  routinesReducer: _routinesReducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  usersReducer: _usersReducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 }));
 
 /***/ }),
@@ -77602,6 +77645,43 @@ var INITIAL_STATE = {
     case _types_routinesTypes__WEBPACK_IMPORTED_MODULE_0__["SET_KEY"]:
       return _objectSpread({}, state, {
         currentKey: action.payload
+      });
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/reducers/usersReducer.js":
+/*!***********************************************!*\
+  !*** ./resources/js/reducers/usersReducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types_usersTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/usersTypes */ "./resources/js/types/usersTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var INITIAL_STATE = {
+  isOn: false
+};
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _types_usersTypes__WEBPACK_IMPORTED_MODULE_0__["SET"]:
+      return _objectSpread({}, state, {
+        isOn: action.payload
       });
 
     default:
@@ -77688,6 +77768,20 @@ var ERROR = 'routines_error';
 var SAVE = 'routines_save';
 var SET = 'routines_set';
 var SET_KEY = 'routines_set_key';
+
+/***/ }),
+
+/***/ "./resources/js/types/usersTypes.js":
+/*!******************************************!*\
+  !*** ./resources/js/types/usersTypes.js ***!
+  \******************************************/
+/*! exports provided: SET */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET", function() { return SET; });
+var SET = 'users_set';
 
 /***/ }),
 

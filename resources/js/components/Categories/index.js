@@ -15,12 +15,12 @@ import './styles/index.css';
 const Categories = (props) => {
     //componentDidMount
     useEffect(() => {
-        if(!props.categories.length) props.get();
+        if(!props.categoriesReducer.categories.length) props.get();
     }, []);
 
     const renderTable = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={props.error} />
+        if(props.categoriesReducer.loading) return <Spinner />;
+        if(props.categoriesReducer.error) return <Fatal message={props.categoriesReducer.error} />
         return(<Table isCategories={true} />)
     }
 
@@ -28,7 +28,7 @@ const Categories = (props) => {
         <div className="body Categories flex justifyc alignc">
             <div className="title flex flex-row jutifyc alignc">
                 <h1>Categorías</h1>
-                <Link to="/addcategory" className="add-btn">Crear Categoría</Link>
+                { (props.usersReducer.isOn) ? <Link to="/addcategory" className="add-btn">Crear Categoría</Link> : '' }
             </div>
 
             {renderTable()}
@@ -37,5 +37,8 @@ const Categories = (props) => {
 }
 
 
-const mapStateToProps = ({categoriesReducer}) => categoriesReducer;
+const mapStateToProps = ({categoriesReducer, usersReducer}) => {
+    return {categoriesReducer, usersReducer};
+}
+
 export default connect(mapStateToProps, categoriesActions)(Categories);

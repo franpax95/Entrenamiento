@@ -13,45 +13,45 @@ const Exercise = (props) => {
     useEffect(() => {
         async function fetchData(){
             const id = props.match.params.id;
-            if(!props.exercises.length) await props.get();
+            if(!props.exercisesReducer.exercises.length) await props.get();
 
             if(
-                (props.exercises.length) && 
-                (!props.loading) && 
+                (props.exercisesReducer.exercises.length) && 
+                (!props.exercisesReducer.loading) && 
                 (
-                    (!Object.entries(props.exercise).length) || 
+                    (!Object.entries(props.exercisesReducer.exercise).length) || 
                     (props.exercise.id != id)
                 )
             ){
-                const exercise = props.exercises.filter(ex => ex.id == id)[0];
+                const exercise = props.exercisesReducer.exercises.filter(ex => ex.id == id)[0];
                 await props.show(exercise);
             }
         }
         fetchData();
-    }, [props.exercises]);
+    }, [props.exercisesReducer.exercises]);
 
     const renderImg = () => {
-        if(props.exercise.image){
+        if(props.exercisesReducer.exercise.image){
             return(
-                <img src={`/storage/${props.exercise.image}`} alt={props.exercise.name} />
+                <img src={`/storage/${props.exercisesReducer.exercise.image}`} alt={props.exercisesReducer.exercise.name} />
             )
         }
     }
 
     const renderExercise = () => {
-        if(props.loading) return <Spinner />;
-        if(props.error) return <Fatal message={props.error} />
+        if(props.exercisesReducer.loading) return <Spinner />;
+        if(props.exercisesReducer.error) return <Fatal message={props.exercisesReducer.error} />
 
-        if(Object.entries(props.exercise).length){
+        if(Object.entries(props.exercisesReducer.exercise).length){
             return(
                 <div className="content flex flex-col justifyc alignc">
-                    <h1>{props.exercise.name}</h1>
+                    <h1>{props.exercisesReducer.exercise.name}</h1>
                     <h3>
                         <i className="fa fa-minus"></i>
-                        <span className="category">{props.exercise.category.name}</span>
+                        <span className="category">{props.exercisesReducer.exercise.category.name}</span>
                         <i className="fa fa-minus"></i>
                     </h3>
-                    <p>{props.exercise.description}</p>
+                    <p>{props.exercisesReducer.exercise.description}</p>
                     {renderImg()}
                 </div>
             )
@@ -65,5 +65,7 @@ const Exercise = (props) => {
     )
 }
 
-const mapStateToProps = ({exercisesReducer}) => exercisesReducer;
+const mapStateToProps = ({exercisesReducer, usersReducer}) => {
+    return {exercisesReducer, usersReducer};
+}
 export default connect(mapStateToProps, exercisesActions)(Exercise);

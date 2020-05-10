@@ -29,6 +29,7 @@ import AddRoutine from './Routines/AddRoutine';
 const App = (props) => (
     <BrowserRouter>
         <Navbar />
+        
         <Switch>
             <Route exact path='/' component={Index} />
 
@@ -40,7 +41,7 @@ const App = (props) => (
             <Route exact path='/exercises' component={Exercises} />
             <Route exact path='/addexercise' component={ (props) => <ExerciseForm {...props} title={'Añadir Ejercicio'} /> } />
             <Route exact path='/exercises/:id' component={Exercise} />
-            
+
 
             <Route exact path='/routines' component={Routines} />
             <Route exact path='/routines/:id' component={Routine} />
@@ -50,8 +51,7 @@ const App = (props) => (
             <Route component={NotFound} />
         </Switch>
     </BrowserRouter>
-)
-
+);
 export default App;
 
 
@@ -61,17 +61,19 @@ export default App;
 if (document.getElementById('app')) {
     const app = document.getElementById('app');
     const props = Object.assign({}, app.dataset);
-    //console.log(props);
+    let isOn = (props.user) ? true : false;
 
     const store = createStore(
         reducers,
-        {},
+        {
+            usersReducer: { isOn }
+        },
         applyMiddleware(reduxThunk)
     );
 
     ReactDOM.render(
         <Provider store={store}>
-            <App {...props}/>
+            <App />
         </Provider>, 
         app
     );
