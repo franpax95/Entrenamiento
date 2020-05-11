@@ -37,26 +37,36 @@ const Routines = (props) => {
     };
 
     const renderTable = () => props.routinesReducer.routines.map((rout) => {
+        let descClass = "";
+        if(rout.description)
+            descClass = (rout.description.length > 200)
+                ? 'big'
+                : 'small';
         return(
             <div className="routine flex flex-col justifyc alignc" key={rout.id}>
                 <button className="display-btn" onClick={() => showRoutine(rout.id)}>
                     {rout.name}
                 </button>
 
-                <div className="display-box none flex flex-col justifyc alignc" ref={el => references.current[rout.id] = el}>
-                    <div className="description">
+                <div className="display-box none flex flex-col alignc" ref={el => references.current[rout.id] = el}>
+                    <div className={`description ${descClass}`}>
                         {rout.description}
                     </div>
                     <div className="flex flex-row justifyc alignc">
                         <Link to={`/routines/${rout.id}`} className="btn play">
                             <i className="fa fa-play-circle-o"></i>Realizar
                         </Link>
-                        <Link to={`/editroutines/${rout.id}`} className="btn edit">
-                            <i className="fa fa-edit"></i>Editar
-                        </Link>
-                        <button /*onClick={}*/ className="btn delete" id={rout.id}>
-                            <i className="fa fa-remove"></i>Eliminar
-                        </button>
+                        {
+                            (props.usersReducer.isOn) ?
+                                <React.Fragment>
+                                    <Link to={`/editroutines/${rout.id}`} className="btn edit">
+                                        <i className="fa fa-edit"></i>Editar
+                                    </Link>
+                                    <button /*onClick={}*/ className="btn delete" id={rout.id}>
+                                        <i className="fa fa-remove"></i>Eliminar
+                                    </button>
+                                </React.Fragment> : ''
+                        }
                     </div>
                 </div>
             </div>
@@ -70,7 +80,7 @@ const Routines = (props) => {
 
     return(
         <div className="body Routines flex flex-col justifyc alignc">
-            <div className="title flex flex-row jutifyc alignc">
+            <div className="title flex flex-row justifyc alignc">
                 <h1>Rutinas</h1>
                 {
                     (props.usersReducer.isOn) ?

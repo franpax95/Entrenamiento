@@ -3,7 +3,7 @@
     margin: 0;
     font-family: 'Baloo Paaji 2', cursive;
 }
-
+html, body, #app{ height: 100%; }
 .body{ background-color: whitesmoke; }
 a{ text-decoration: none; }
 input[type=submit]{ cursor: pointer; }
@@ -23,12 +23,6 @@ button{ cursor: pointer; }
 .scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */
 .scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */
 .scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */
-
-
-/* general buttons */
-
-
-
 
 .add-btn{
     outline: none;
@@ -70,6 +64,8 @@ button{ cursor: pointer; }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .body{ min-height: 90vh;  }
+
     .add-btn,
     .edit-btn,
     .delete-btn{
@@ -80,7 +76,6 @@ button{ cursor: pointer; }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    html, body, #app{ height: 100%; }
     .body{ height: 90%; }
 
     .add-btn{

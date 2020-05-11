@@ -65,7 +65,7 @@ const Routine = (props) => {
 
         return(
             <div className={`ex ${divClass}`} key={key} onClick={() => handleSidebarClick(key)}>
-                {key} - {exercise.name}
+                {key + 1}.-{exercise.name}
             </div>
         );
     });

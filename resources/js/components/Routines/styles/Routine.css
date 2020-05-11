@@ -1,12 +1,38 @@
+@media only screen and (max-width: 600px) {
+    .Routine{
+        flex-direction: column-reverse;
+    }
+
+    .Routine .sidebar{
+        width: 100%;
+    }
+
+    .Routine .exercise{
+        width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .Routine{
+        height: 90%;
+        flex-direction: row;
+    }
+    .Routine .sidebar{
+        width: 15%;
+    }
+    .Routine .exercise{
+        width: 85%;
+    }
+    
+}
+
 .Routine{
-    height: 90%;
     width: 100%;
     display: flex;
-    flex-direction: row;
 }
 
 .Routine .sidebar{
-    width: 15%;
     background-color: lightgray;
 }
 
@@ -29,7 +55,6 @@
 
 
 .Routine .exercise{
-    width: 85%;
     padding: 5%;
 
     display: flex;

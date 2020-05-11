@@ -6546,7 +6546,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */\r\n\r\n\r\n/* general buttons */\r\n\r\n\r\n\r\n\r\n.add-btn{\r\n    outline: none;\r\n    background-color: white;\r\n    color: green;\r\n    border: solid 1.5px green;\r\n    border-radius: 5px;\r\n    font-weight: bold;\r\n}\r\n.add-btn:hover{\r\n    border: solid 1.5px lightgreen;\r\n    color: lightgreen; \r\n}\r\n\r\n.edit-btn{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n}\r\n.edit-btn:hover{ \r\n    border: solid 1.5px darkgray; \r\n    color: darkgray; \r\n}\r\n.edit-btn a{ color: inherit; }\r\n\r\n.delete-btn{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n}\r\n.delete-btn:hover{ \r\n    border: solid 1.5px salmon; \r\n    color: salmon; \r\n}\r\n\r\n/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .add-btn,\r\n    .edit-btn,\r\n    .delete-btn{\r\n        padding: 1px;\r\n        font-size: 0.9em;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    html, body, #app{ height: 100%; }\r\n    .body{ height: 90%; }\r\n\r\n    .add-btn{\r\n        padding: 4px 8px;\r\n        font-size: 1.2em;\r\n        text-transform: uppercase;\r\n    }\r\n    .edit-btn{\r\n        font-size: 16px;\r\n        font-weight: bold;\r\n    }\r\n    .delete-btn{\r\n        font-size: 16px;\r\n        font-weight: bold;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\nhtml, body, #app{ height: 100%; }\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */\r\n\r\n.add-btn{\r\n    outline: none;\r\n    background-color: white;\r\n    color: green;\r\n    border: solid 1.5px green;\r\n    border-radius: 5px;\r\n    font-weight: bold;\r\n}\r\n.add-btn:hover{\r\n    border: solid 1.5px lightgreen;\r\n    color: lightgreen; \r\n}\r\n\r\n.edit-btn{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n}\r\n.edit-btn:hover{ \r\n    border: solid 1.5px darkgray; \r\n    color: darkgray; \r\n}\r\n.edit-btn a{ color: inherit; }\r\n\r\n.delete-btn{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n}\r\n.delete-btn:hover{ \r\n    border: solid 1.5px salmon; \r\n    color: salmon; \r\n}\r\n\r\n/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .body{ min-height: 90vh;  }\r\n\r\n    .add-btn,\r\n    .edit-btn,\r\n    .delete-btn{\r\n        padding: 1px;\r\n        font-size: 0.9em;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .body{ height: 90%; }\r\n\r\n    .add-btn{\r\n        padding: 4px 8px;\r\n        font-size: 1.2em;\r\n        text-transform: uppercase;\r\n    }\r\n    .edit-btn{\r\n        font-size: 16px;\r\n        font-weight: bold;\r\n    }\r\n    .delete-btn{\r\n        font-size: 16px;\r\n        font-weight: bold;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -6774,7 +6774,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".Routine{\r\n    height: 90%;\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.Routine .sidebar{\r\n    width: 15%;\r\n    background-color: lightgray;\r\n}\r\n\r\n.Routine .sidebar .ex{\r\n    width: 100%;\r\n    padding: 10px;\r\n\r\n    cursor: pointer;\r\n    border-bottom: solid 1.5px lightgray;\r\n}\r\n.Routine .sidebar .active{\r\n    border-bottom: solid 1.5px gray;\r\n}\r\n.Routine .sidebar .ex:hover{\r\n    border-bottom: solid 1.5px gray;\r\n}\r\n.Routine .sidebar .ex:last-child{\r\n    margin-bottom: 10px;\r\n}\r\n\r\n\r\n.Routine .exercise{\r\n    width: 85%;\r\n    padding: 5%;\r\n\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.Routine .exercise .img{\r\n    width: 60%;\r\n    max-width: 300px;\r\n    max-height: 200px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Routine .exercise .img img{\r\n    width: 100%;\r\n    height: 100%;\r\n    object-fit: contain;\r\n}\r\n", ""]);
+exports.push([module.i, "@media only screen and (max-width: 600px) {\r\n    .Routine{\r\n        flex-direction: column-reverse;\r\n    }\r\n\r\n    .Routine .sidebar{\r\n        width: 100%;\r\n    }\r\n\r\n    .Routine .exercise{\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .Routine{\r\n        height: 90%;\r\n        flex-direction: row;\r\n    }\r\n    .Routine .sidebar{\r\n        width: 15%;\r\n    }\r\n    .Routine .exercise{\r\n        width: 85%;\r\n    }\r\n    \r\n}\r\n\r\n.Routine{\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.Routine .sidebar{\r\n    background-color: lightgray;\r\n}\r\n\r\n.Routine .sidebar .ex{\r\n    width: 100%;\r\n    padding: 10px;\r\n\r\n    cursor: pointer;\r\n    border-bottom: solid 1.5px lightgray;\r\n}\r\n.Routine .sidebar .active{\r\n    border-bottom: solid 1.5px gray;\r\n}\r\n.Routine .sidebar .ex:hover{\r\n    border-bottom: solid 1.5px gray;\r\n}\r\n.Routine .sidebar .ex:last-child{\r\n    margin-bottom: 10px;\r\n}\r\n\r\n\r\n.Routine .exercise{\r\n    padding: 5%;\r\n\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.Routine .exercise .img{\r\n    width: 60%;\r\n    max-width: 300px;\r\n    max-height: 200px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Routine .exercise .img img{\r\n    width: 100%;\r\n    height: 100%;\r\n    object-fit: contain;\r\n}\r\n", ""]);
 
 // exports
 
@@ -6812,7 +6812,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".Routines{\r\n    padding: 5% 15%; \r\n}\r\n\r\n.Routines .title{ width: 100%; }\r\n.Routines .title h1{\r\n    text-align: center;\r\n    /* margin-right: auto; */\r\n    margin-left: 45%;\r\n}\r\n.Routines .title a{\r\n    float: right;\r\n    margin-left: auto;\r\n}\r\n\r\n/* transition */\r\n.Routines .routines .routine .display-box{ \r\n    overflow: hidden; \r\n    transition: max-height 0.5s linear, opacity 0.5s linear; \r\n}\r\n.Routines .routines .routine .none { \r\n    max-height: 0;\r\n    opacity: 0;\r\n}\r\n.Routines .routines .routine .visible { \r\n    max-height: 300px;\r\n    opacity: 1;\r\n}\r\n\r\n\r\n\r\n.Routines .routines{\r\n    width: 100%;\r\n    background-color: #dee8ed;\r\n    border: solid 1px #3e6175;\r\n}\r\n\r\n.Routines .routines .display-btn{\r\n    width: 100%;\r\n    border: none;\r\n    outline: none;\r\n    background-color: #3e6175;\r\n    color: white;\r\n    font-size: 2em;\r\n    cursor: pointer;\r\n}\r\n.Routines .routines .display-btn:hover{ background-color: #2c4554; }\r\n\r\n.Routines .routines .routine .display-box{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.Routines .routines .routine .display-box .btn{\r\n    margin: 0 20px 20px 20px;\r\n    padding: 4px 15px;\r\n    border: none;\r\n    font-size: 1.2em;\r\n    cursor: pointer;\r\n    z-index: 4;\r\n}\r\n\r\n.Routines .routines .routine .display-box .play{\r\n    background-color: #1b61e4;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .play:hover{ background-color: cornflowerblue; }\r\n\r\n.Routines .routines .routine .display-box .edit{\r\n    background-color: gray;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .edit:hover{ background-color: darkgray; }\r\n\r\n.Routines .routines .routine .display-box .delete{\r\n    background-color: red;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .delete:hover{ background-color: salmon; }\r\n\r\n.Routines .routines .routine .display-box .description{ \r\n    padding: 3% 20% 2% 20%; \r\n    width: 100%;\r\n    text-align: center;\r\n}", ""]);
+exports.push([module.i, "/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .Routines{ padding: 40px 20px; }\r\n\r\n    .Routines .routines .display-btn{\r\n        font-size: 1.2em;\r\n        padding: 10px;\r\n    }\r\n\r\n    .Routines .routines .routine .display-box .description.small{\r\n        font-size: 1em;\r\n    }\r\n    .Routines .routines .routine .display-box .description.big{\r\n        font-size: 0.8em;\r\n    }\r\n\r\n    .Routines .routines .routine .display-box .btn{\r\n        padding: 2px 4px;\r\n        font-size: 1em;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .Routines{ padding: 5% 15%; }\r\n\r\n    .Routines .routines .display-btn{\r\n        font-size: 2em;\r\n    }\r\n\r\n    .Routines .routines .routine .display-box .btn{\r\n        padding: 4px 15px;\r\n        font-size: 1.2em;\r\n    }\r\n}\r\n\r\n\r\n\r\n/* transition */\r\n.Routines .routines .routine .display-box{ \r\n    overflow: hidden; \r\n    transition: max-height 0.8s linear, opacity 0.5s linear; \r\n}\r\n.Routines .routines .routine .none { \r\n    max-height: 0;\r\n    opacity: 0;\r\n}\r\n.Routines .routines .routine .visible { \r\n    max-height: 600px;\r\n    opacity: 1;\r\n}\r\n\r\n\r\n\r\n.Routines .title{ width: 100%; }\r\n.Routines .title a{\r\n    float: right;\r\n    margin-left: auto;\r\n}\r\n\r\n.Routines .routines{\r\n    width: 100%;\r\n    background-color: #dee8ed;\r\n    border: solid 1px #3e6175;\r\n}\r\n\r\n.Routines .routines .display-btn{\r\n    width: 100%;\r\n\r\n    border: none;\r\n    outline: none;\r\n    background-color: #3e6175;\r\n    color: white;\r\n    cursor: pointer;\r\n}\r\n.Routines .routines .display-btn:hover{ background-color: #2c4554; }\r\n\r\n\r\n\r\n.Routines .routines .routine .display-box{ width: 100%; }\r\n\r\n.Routines .routines .routine .display-box .description{ \r\n    width: 100%;\r\n    text-align: center;\r\n}\r\n.Routines .routines .routine .display-box .description.small{\r\n    padding: 3% 20% 2% 20%;\r\n}\r\n.Routines .routines .routine .display-box .description.big{\r\n    padding: 3%;\r\n}\r\n\r\n.Routines .routines .routine .display-box .btn{\r\n    margin: 20px;\r\n    border: none;\r\n    cursor: pointer;\r\n    z-index: 4;\r\n}\r\n.Routines .routines .routine .display-box .play{\r\n    background-color: #1b61e4;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .play:hover{ background-color: cornflowerblue; }\r\n\r\n.Routines .routines .routine .display-box .edit{\r\n    background-color: gray;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .edit:hover{ background-color: darkgray; }\r\n\r\n.Routines .routines .routine .display-box .delete{\r\n    background-color: red;\r\n    color: white;\r\n}\r\n.Routines .routines .routine .display-box .delete:hover{ background-color: salmon; }", ""]);
 
 // exports
 
@@ -76840,7 +76840,7 @@ var Routine = function Routine(props) {
         onClick: function onClick() {
           return handleSidebarClick(key);
         }
-      }, key, " - ", exercise.name);
+      }, key + 1, ".-", exercise.name);
     });
   };
 
@@ -77243,6 +77243,8 @@ var Routines = function Routines(props) {
 
   var renderTable = function renderTable() {
     return props.routinesReducer.routines.map(function (rout) {
+      var descClass = "";
+      if (rout.description) descClass = rout.description.length > 200 ? 'big' : 'small';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "routine flex flex-col justifyc alignc",
         key: rout.id
@@ -77252,12 +77254,12 @@ var Routines = function Routines(props) {
           return showRoutine(rout.id);
         }
       }, rout.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "display-box none flex flex-col justifyc alignc",
+        className: "display-box none flex flex-col alignc",
         ref: function ref(el) {
           return references.current[rout.id] = el;
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "description"
+        className: "description ".concat(descClass)
       }, rout.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "flex flex-row justifyc alignc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -77265,7 +77267,7 @@ var Routines = function Routines(props) {
         className: "btn play"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-play-circle-o"
-      }), "Realizar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }), "Realizar"), props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/editroutines/".concat(rout.id),
         className: "btn edit"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
@@ -77276,7 +77278,7 @@ var Routines = function Routines(props) {
         id: rout.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-remove"
-      }), "Eliminar"))));
+      }), "Eliminar")) : '')));
     });
   };
 
@@ -77288,7 +77290,7 @@ var Routines = function Routines(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "body Routines flex flex-col justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "title flex flex-row jutifyc alignc"
+    className: "title flex flex-row justifyc alignc"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Rutinas"), props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/addroutine",
     className: "add-btn"
