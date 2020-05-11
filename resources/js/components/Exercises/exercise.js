@@ -44,7 +44,7 @@ const Exercise = (props) => {
 
         if(Object.entries(props.exercisesReducer.exercise).length){
             return(
-                <div className="content flex flex-col justifyc alignc">
+                <div className="content">
                     <h1>{props.exercisesReducer.exercise.name}</h1>
                     <h3>
                         <i className="fa fa-minus"></i>

@@ -21,8 +21,8 @@ const Table = (props) => {
 
     const renderExercises = () => props.exercisesReducer.exercises.map((ex) => {
         return(
-            <div className="elem flex flex-row justifyc alignc" key={ex.id}>
-                <Link to={`/exercises/${ex.id}`} className="content flex flex-row justifyc alignc">
+            <div className="elem" key={ex.id}>
+                <Link to={`/exercises/${ex.id}`} className="content">
                     <div className="img">
                         {(ex.image) ? (<img src={`${ex.image}`} alt={ex.name} />) : ''}
                     </div>

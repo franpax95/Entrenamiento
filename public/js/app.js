@@ -6546,7 +6546,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\nhtml, body, #app{ height: 100%; }\r\n.body{ height: 90%; }\r\n.Navbar{ height: 10%; }\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */\r\n\r\n\r\n/* general buttons */\r\n.add-btn{\r\n    padding: 4px 8px;\r\n    background-color: white;\r\n    color: green;\r\n    border: solid 1.5px green;\r\n    border-radius: 5px;\r\n\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    font-size: 1.2em;\r\n}\r\n.add-btn:hover{\r\n    border: solid 1.5px lightgreen;\r\n    color: lightgreen; \r\n}\r\n\r\n.edit-btn{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.edit-btn:hover{ \r\n    border: solid 1.5px darkgray; \r\n    color: darkgray; \r\n}\r\n.edit-btn a{ color: inherit; }\r\n\r\n.delete-btn{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.delete-btn:hover{ \r\n    border: solid 1.5px salmon; \r\n    color: salmon; \r\n}", ""]);
+exports.push([module.i, "*{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    font-family: 'Baloo Paaji 2', cursive;\r\n}\r\n\r\n.body{ background-color: whitesmoke; }\r\na{ text-decoration: none; }\r\ninput[type=submit]{ cursor: pointer; }\r\nbutton{ cursor: pointer; }\r\n\r\n.flex{ display: flex; }\r\n.flex-col{ flex-direction: column; }\r\n.flex-row{ flex-direction: row; }\r\n.justifyc{ justify-content: center; }\r\n.alignc{ align-items: center; }\r\n.bold{ font-weight: bold; }\r\n\r\n\r\n/* list scroll styles */\r\n.scrollable{ overflow-y: scroll; }\r\n.scrollable::-webkit-scrollbar { width: 15px; }\r\n.scrollable::-webkit-scrollbar-track { background: lightgray; }/* Track */\r\n.scrollable::-webkit-scrollbar-thumb { background: darkgray; }/* Handle */\r\n.scrollable::-webkit-scrollbar-thumb:hover { background: gray;  }/* Handle on hover */\r\n\r\n\r\n/* general buttons */\r\n\r\n\r\n\r\n\r\n.add-btn{\r\n    outline: none;\r\n    background-color: white;\r\n    color: green;\r\n    border: solid 1.5px green;\r\n    border-radius: 5px;\r\n    font-weight: bold;\r\n}\r\n.add-btn:hover{\r\n    border: solid 1.5px lightgreen;\r\n    color: lightgreen; \r\n}\r\n\r\n.edit-btn{\r\n    outline: none;\r\n    border: solid 1.5px gray;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: gray;\r\n}\r\n.edit-btn:hover{ \r\n    border: solid 1.5px darkgray; \r\n    color: darkgray; \r\n}\r\n.edit-btn a{ color: inherit; }\r\n\r\n.delete-btn{\r\n    outline: none;\r\n    border: solid 1.5px red;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n    color: red;\r\n}\r\n.delete-btn:hover{ \r\n    border: solid 1.5px salmon; \r\n    color: salmon; \r\n}\r\n\r\n/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .add-btn,\r\n    .edit-btn,\r\n    .delete-btn{\r\n        padding: 1px;\r\n        font-size: 0.9em;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    html, body, #app{ height: 100%; }\r\n    .body{ height: 90%; }\r\n\r\n    .add-btn{\r\n        padding: 4px 8px;\r\n        font-size: 1.2em;\r\n        text-transform: uppercase;\r\n    }\r\n    .edit-btn{\r\n        font-size: 16px;\r\n        font-weight: bold;\r\n    }\r\n    .delete-btn{\r\n        font-size: 16px;\r\n        font-weight: bold;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -6584,7 +6584,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".table-cat, .table-ex{\r\n    max-height: 90vw;\r\n    border: solid 2px gray;\r\n}\r\n\r\n.table-cat .elem:hover, .table-ex .elem:hover{\r\n    background-color: lightgray;\r\n}\r\n\r\n.table-cat{ width: 70%; }\r\n.table-cat .elem .name{ \r\n    width: 80%;\r\n    height: 100%;\r\n    z-index: 1; \r\n    color: black;\r\n    padding: 2%;\r\n    cursor: pointer;\r\n}\r\n.table-cat .elem .edit{ width: 10%; z-index: 2; }\r\n.table-cat .elem .delete{ width: 10%; z-index: 2; }\r\n\r\n\r\n\r\n.table-ex{ width: 90%; }\r\n.table-ex .elem .img{\r\n    width: 130px;\r\n    height: 110px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table-ex .elem .img img{\r\n    max-width: 130px;\r\n    max-height: 110px;\r\n}\r\n.table-ex .elem .name{\r\n    width: 55%;\r\n    height: 100%;\r\n    z-index: 1; \r\n    color: black;\r\n    padding: 2%;\r\n    cursor: pointer;\r\n}\r\n.table-ex .elem .edit{ width: 15%; z-index: 2; }\r\n.table-ex .elem .delete{ width: 15%; z-index: 2; }", ""]);
+exports.push([module.i, ".table-cat, .table-ex{ \r\n    max-height: 90vh;\r\n    border: solid 2px gray; \r\n}\r\n\r\n.table-cat .elem:hover, \r\n.table-ex .elem:hover{\r\n    background-color: lightgray;\r\n}\r\n\r\n.table-cat .elem,\r\n.table-ex .elem{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table-cat .elem .name{\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 12px 0px;\r\n    z-index: 1;\r\n\r\n    color: black;\r\n    cursor: pointer;\r\n\r\n    text-align: center;\r\n}\r\n.table-cat.admin .elem .name{ width: 70%; }\r\n.table-cat.admin .elem .edit{ width: 15%; z-index: 2; }\r\n.table-cat.admin .elem .delete{ width: 15%; z-index: 2; }\r\n\r\n\r\n\r\n.table-ex .elem .img{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table-ex .elem .name{\r\n    width: 100%;\r\n    height: 100%;\r\n\r\n    z-index: 1;\r\n    padding: 30px 0px;\r\n    margin-left: 10px;\r\n\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.table-ex.admin .elem .name{ width: 70%; }\r\n.table-ex.admin .elem .edit{ width: 15%; z-index: 2; }\r\n.table-ex.admin .elem .delete{ width: 15%; z-index: 2; }\r\n\r\n\r\n\r\n/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .table-cat,\r\n    .table-ex{\r\n        width: 90%;\r\n    }\r\n\r\n    .table-ex .elem .img{\r\n        width: 90px;\r\n        min-width: 90px;\r\n        height: 60px;\r\n        min-height: 60px;\r\n    }\r\n    .table-ex .elem .img img{\r\n        max-width: 90px;\r\n        max-height: 60px;\r\n        object-fit: contain;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .table-cat{ width: 60%; }\r\n    .table-ex{ width: 70%; }\r\n\r\n    .table-ex .elem .img{\r\n        width: 130px;\r\n        min-width: 130px;\r\n        height: 110px;\r\n        min-height: 110px;\r\n    }\r\n    .table-ex .elem .img img{\r\n        max-width: 130px;\r\n        max-height: 110px;\r\n        object-fit: contain;\r\n    }\r\n}\r\n", ""]);
 
 // exports
 
@@ -6622,7 +6622,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".Exercise .content{\r\n}\r\n\r\n.Exercise .content h1{\r\n    font-size: 2em;\r\n    text-align: center;\r\n    text-decoration: underline;\r\n}\r\n.Exercise .content h3{ text-align: center; }\r\n.Exercise .content h3 .category{ font-size: 1.3em; }\r\n.Exercise .content h3 i{ font-size: 1em; font-weight: lighter; }\r\n\r\n.Exercise .content p{\r\n    margin-top: 20px;\r\n    font-size: 1.2em;\r\n}\r\n\r\n.Exercise .content img{\r\n    max-height: 300px;\r\n    max-width: 400px;\r\n}", ""]);
+exports.push([module.i, "\r\n\r\n.Exercise .content{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n}\r\n\r\n.Exercise .content h1{\r\n    font-size: 2em;\r\n    text-align: center;\r\n    text-decoration: underline;\r\n}\r\n.Exercise .content h3{ text-align: center; }\r\n.Exercise .content h3 .category{\r\n    margin: 2px;\r\n    font-size: 1.3em; \r\n    font-style: italic; \r\n\r\n}\r\n.Exercise .content h3 i{ \r\n    font-size: 1em; \r\n    font-weight: lighter; \r\n}\r\n\r\n.Exercise .content p{\r\n    margin-top: 20px;\r\n    font-size: 1.2em;\r\n}\r\n\r\n.Exercise .content img{\r\n    max-height: 300px;\r\n    max-width: 400px;\r\n}\r\n\r\n/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .Exercise{ padding: 40px; }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .Exercise{ padding: 20%; }\r\n}", ""]);
 
 // exports
 
@@ -6660,7 +6660,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".table{\r\n    border: solid 2px gray;\r\n    width: 80%;\r\n}\r\n\r\n.table .elem:hover{\r\n    background-color: lightgray;\r\n}\r\n.table .elem .content{ \r\n    width: 80%;\r\n    height: 100%;\r\n    z-index: 1; \r\n    color: black;\r\n    padding: 2%;\r\n    cursor: pointer;\r\n}\r\n.table .elem .content .img{\r\n    width: 110px;\r\n    height: 110px; \r\n    border: solid 1px lightgray;\r\n    margin-right: 5px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table .elem .content .img img{\r\n    max-width: 110px;\r\n    max-height: 110px;\r\n}\r\n.table .elem .content .name{\r\n    width: 50%;\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n    text-align: center;\r\n}\r\n.table .elem .content .category{\r\n    width: 30%;\r\n    font-size: 0.9em;\r\n    text-align: center;\r\n}\r\n.table .elem .edit{ width: 10%; z-index: 2; }\r\n.table .elem .delete{ width: 10%; z-index: 2; }", ""]);
+exports.push([module.i, "/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .table{ width: 90%; }\r\n\r\n    .table .elem .content .img{\r\n        width: 90px;\r\n        min-width: 90px;\r\n        height: 60px;\r\n        min-height: 60px;\r\n    }\r\n    .table .elem .content .img img{\r\n        max-width: 90px;\r\n        max-height: 60px;\r\n        object-fit: contain;\r\n    }\r\n    .table .elem .content .name{\r\n        width: 100%;\r\n    }\r\n    .table .elem .content .category{\r\n        display: none;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .table{ width: 70%; }\r\n\r\n    .table .elem .content .img{\r\n        width: 130px;\r\n        min-width: 130px;\r\n        height: 110px;\r\n        min-height: 110px;\r\n    }\r\n    .table .elem .content .img img{\r\n        max-width: 130px;\r\n        max-height: 110px;\r\n        object-fit: contain;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n.table{ \r\n    max-height: 90vh;\r\n    border: solid 2px gray; \r\n}\r\n\r\n.table .elem{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table .elem:hover{ background-color: lightgray; }\r\n\r\n.table .elem .content{\r\n    width: 100%;\r\n    height: 100%;\r\n\r\n    z-index: 1; \r\n    padding: 18px 0px;\r\n\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n.table .elem .content .img{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table .elem .content .name{\r\n    margin-left: 10px;\r\n    width: 70%;\r\n\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n}\r\n.table .elem .content .category{\r\n    width: 30%;\r\n    font-size: 1em;\r\n}\r\n\r\n\r\n.table.admin .elem .content{ width: 80%; }\r\n.table.admin .elem .edit{ width: 10%; z-index: 2; }\r\n.table.admin .elem .delete{ width: 10%; z-index: 2; }", ""]);
 
 // exports
 
@@ -6698,7 +6698,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".Navbar{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #253a46;\r\n}\r\n\r\n\r\n.Navbar a{\r\n    height: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color: white;\r\n}\r\n.Navbar a:last-of-type{ \r\n    margin-right: auto; \r\n}\r\n.Navbar a:not(.logo){\r\n    width: 20%;\r\n    font-size: 1.5em;\r\n}\r\n.Navbar a:not(.logo):hover{ \r\n    background-color: #3e6175; \r\n}\r\n\r\n\r\n.Navbar .logo{\r\n    float: left;\r\n    margin: 0 auto 0 20px;\r\n    z-index: 2;\r\n    width: 10%;\r\n\r\n    font-size: 2em;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n}\r\n\r\n.Navbar a.active:not(.logo){\r\n    text-decoration: underline;\r\n}", ""]);
+exports.push([module.i, ".Navbar{\r\n    background-color: #253a46;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.Navbar a{\r\n    color: white;\r\n}\r\n.Navbar a.logo{\r\n    font-weight: bold;\r\n}\r\n.Navbar a:not(.logo):hover{ \r\n    background-color: #3e6175; \r\n}\r\n\r\n\r\n/* Extra small devices (phones, 600px and down) */\r\n@media only screen and (max-width: 600px) {\r\n    .Navbar{\r\n        flex-direction: column;\r\n        text-align: center;\r\n        height: auto;\r\n    }\r\n    .Navbar a{\r\n        width: 100%;\r\n        padding: 4px;\r\n        font-size: 16px;\r\n    }\r\n    .Navbar a.logo{ font-size: 20px; }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .Navbar{\r\n        height: 10%;\r\n        flex-direction: row;\r\n        justify-content: center;\r\n    }\r\n    \r\n    .Navbar a{\r\n        height: 100%;\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n    }\r\n    .Navbar a:last-of-type{ \r\n        margin-right: auto; \r\n    }\r\n    .Navbar a:not(.logo){\r\n        width: 20%;\r\n        font-size: 1.5em;\r\n    }\r\n    .Navbar .logo{\r\n        float: left;\r\n        margin: 0 auto 0 20px;\r\n        z-index: 2;\r\n        width: 10%;\r\n    \r\n        font-size: 2em;\r\n        font-weight: bold;\r\n        text-transform: uppercase;\r\n        letter-spacing: 2px;\r\n    }\r\n    \r\n    .Navbar a.active:not(.logo){\r\n        text-decoration: underline;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -75024,25 +75024,25 @@ var Table = function Table(props) {
   var renderCategories = function renderCategories() {
     return props.categoriesReducer.categories.map(function (cat) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "elem flex flex-row justifyc alignc",
+        className: "elem",
         key: cat.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/categories/".concat(cat.id),
         className: "name"
-      }, cat.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " ", cat.name, " "), props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit flex justifyc alignc"
-      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "edit-btn"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/editcategory/".concat(cat.id)
-      }, "Editar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
-      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: function onClick() {
           return handleDeleteCategoryClick(cat.id);
         }
-      }, "Eliminar") : ''));
+      }, "Eliminar"))) : '');
     });
   };
 
@@ -75058,33 +75058,33 @@ var Table = function Table(props) {
 
   var renderExercises = function renderExercises() {
     return props.categoriesReducer.exercises.map(function (ex) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "elem flex flex-row justifyc alignc",
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/exercises/".concat(ex.id),
+        className: "elem",
         key: ex.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "img"
       }, ex.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "".concat(ex.image),
         alt: ex.name
-      }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/exercises/".concat(ex.id),
+      }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
-      }, ex.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, ex.name), props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit flex justifyc alignc"
-      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "edit-btn"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: ""
-      }, "Editar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Editar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete flex justifyc alignc"
-      }, props.usersReducer.isOn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn"
         /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
         ,
         onClick: function onClick() {
           alert('Deshabilitado, de momento.');
         }
-      }, "Eliminar") : ''));
+      }, "Eliminar"))) : '');
     });
   };
 
@@ -75098,14 +75098,17 @@ var Table = function Table(props) {
 
 
   if (props.isCategories) {
+    var classTable = props.usersReducer.isOn ? 'admin' : '';
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "table-cat scrollable"
+      className: "table-cat scrollable ".concat(classTable)
     }, renderCategoriesTable());
   }
 
   if (props.isExercises) {
+    var _classTable = props.usersReducer.isOn ? 'admin' : '';
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "table-ex scrollable"
+      className: "table-ex scrollable ".concat(_classTable)
     }, renderExercisesTable());
   }
 };
@@ -75668,11 +75671,11 @@ var Table = function Table(props) {
   var renderExercises = function renderExercises() {
     return props.exercisesReducer.exercises.map(function (ex) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "elem flex flex-row justifyc alignc",
+        className: "elem",
         key: ex.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/exercises/".concat(ex.id),
-        className: "content flex flex-row justifyc alignc"
+        className: "content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "img"
       }, ex.image ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -75823,7 +75826,7 @@ var Exercise = function Exercise(props) {
 
     if (Object.entries(props.exercisesReducer.exercise).length) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "content flex flex-col justifyc alignc"
+        className: "content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, props.exercisesReducer.exercise.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-minus"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {

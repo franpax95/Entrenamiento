@@ -1,4 +1,11 @@
+
+
 .Exercise .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .Exercise .content h1{
@@ -7,8 +14,16 @@
     text-decoration: underline;
 }
 .Exercise .content h3{ text-align: center; }
-.Exercise .content h3 .category{ font-size: 1.3em; }
-.Exercise .content h3 i{ font-size: 1em; font-weight: lighter; }
+.Exercise .content h3 .category{
+    margin: 2px;
+    font-size: 1.3em; 
+    font-style: italic; 
+
+}
+.Exercise .content h3 i{ 
+    font-size: 1em; 
+    font-weight: lighter; 
+}
 
 .Exercise .content p{
     margin-top: 20px;
@@ -18,4 +33,14 @@
 .Exercise .content img{
     max-height: 300px;
     max-width: 400px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .Exercise{ padding: 40px; }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .Exercise{ padding: 20%; }
 }

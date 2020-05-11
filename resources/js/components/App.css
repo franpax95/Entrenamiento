@@ -3,9 +3,6 @@
     margin: 0;
     font-family: 'Baloo Paaji 2', cursive;
 }
-html, body, #app{ height: 100%; }
-.body{ height: 90%; }
-.Navbar{ height: 10%; }
 
 .body{ background-color: whitesmoke; }
 a{ text-decoration: none; }
@@ -29,16 +26,17 @@ button{ cursor: pointer; }
 
 
 /* general buttons */
+
+
+
+
 .add-btn{
-    padding: 4px 8px;
+    outline: none;
     background-color: white;
     color: green;
     border: solid 1.5px green;
     border-radius: 5px;
-
-    text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.2em;
 }
 .add-btn:hover{
     border: solid 1.5px lightgreen;
@@ -51,9 +49,6 @@ button{ cursor: pointer; }
     border-radius: 5px;
     background-color: white;
     color: gray;
-
-    font-size: 16px;
-    font-weight: bold;
 }
 .edit-btn:hover{ 
     border: solid 1.5px darkgray; 
@@ -67,11 +62,38 @@ button{ cursor: pointer; }
     border-radius: 5px;
     background-color: white;
     color: red;
-
-    font-size: 16px;
-    font-weight: bold;
 }
 .delete-btn:hover{ 
     border: solid 1.5px salmon; 
     color: salmon; 
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .add-btn,
+    .edit-btn,
+    .delete-btn{
+        padding: 1px;
+        font-size: 0.9em;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    html, body, #app{ height: 100%; }
+    .body{ height: 90%; }
+
+    .add-btn{
+        padding: 4px 8px;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+    .edit-btn{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .delete-btn{
+        font-size: 16px;
+        font-weight: bold;
+    }
 }

@@ -42,28 +42,24 @@ const Table = (props) => {
     
 
     const renderCategories = () => props.categoriesReducer.categories.map((cat) => (
-        <div className="elem flex flex-row justifyc alignc" key={cat.id}>
-            <Link to={`/categories/${cat.id}`} className="name">
-                {cat.name}
-            </Link>
-            <div className="edit flex justifyc alignc">
-                {
-                    (props.usersReducer.isOn) ? 
+        <div className="elem" key={cat.id}>
+            <Link to={`/categories/${cat.id}`} className="name"> {cat.name} </Link>
+            {
+            (props.usersReducer.isOn) ?
+                <React.Fragment>
+                    <div className="edit flex justifyc alignc">
                         <button className="edit-btn">
-                            <Link to={`/editcategory/${cat.id}`} >
-                                Editar
-                            </Link>
-                        </button> : ''
-                }
-            </div>
-            <div className="delete flex justifyc alignc">
-                {
-                    (props.usersReducer.isOn) ? 
+                            <Link to={`/editcategory/${cat.id}`}>Editar</Link>
+                        </button>
+                    </div>
+                    <div className="delete flex justifyc alignc">
                         <button className="delete-btn" onClick={() => handleDeleteCategoryClick(cat.id)}>
                             Eliminar
-                        </button> : ''
-                }
-            </div>
+                        </button> 
+                    </div>
+                </React.Fragment>
+                : ''
+            }
         </div>
     ));
 
@@ -71,41 +67,40 @@ const Table = (props) => {
         if(props.categoriesReducer.loading) return <Spinner />;
         if(props.categoriesReducer.error) return <Fatal message={error} />;
         if(props.categoriesReducer.categories.length) return renderCategories();
-        
     }
 
 
     /**Exercises */
     const renderExercises = () => props.categoriesReducer.exercises.map((ex) => {
         return(
-            <div className="elem flex flex-row justifyc alignc" key={ex.id}>
+            <Link to={`/exercises/${ex.id}`} className="elem" key={ex.id}>
                 <div className="img">
                     {(ex.image) ? <img src={`${ex.image}`} alt={ex.name} /> : ''}
                 </div>
-                <Link to={`/exercises/${ex.id}`} className="name">
+                <div className="name">
                     {ex.name}
-                </Link>
-                <div className="edit flex justifyc alignc">
-                    {
-                        (props.usersReducer.isOn) ? 
-                            <button className="edit-btn"><Link to="" >Editar</Link></button> : ''
-                    }
-                    
                 </div>
-                <div className="delete flex justifyc alignc">
-                    {
-                        (props.usersReducer.isOn) ? 
-                            <button 
-                                className="delete-btn" 
-                                /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
-                                onClick={() => {alert('Deshabilitado, de momento.')}}
-                            >
-                                Eliminar
-                            </button> : ''
-                    }
-                    
-                </div>
-            </div>
+                {
+                    (props.usersReducer.isOn) ? 
+                        <React.Fragment>
+                            <div className="edit flex justifyc alignc">
+                                <button className="edit-btn">
+                                    {/*Hacer con redirect*/}
+                                    <Link to="">Editar</Link>
+                                </button>
+                            </div>
+                            <div className="delete flex justifyc alignc">
+                                <button 
+                                    className="delete-btn" 
+                                    /*onClick={() => props.erase(ex.id) CUIDADO! AHORA MISMO BORRARÍA LA CATEGORÍA id=ex.id, es decir, cualquiera} */
+                                    onClick={() => {alert('Deshabilitado, de momento.')}}
+                                >
+                                    Eliminar
+                                </button>
+                            </div>
+                        </React.Fragment> : ''
+                }
+            </Link>
         )
     });
 
@@ -119,16 +114,18 @@ const Table = (props) => {
 
     //Main Render
     if(props.isCategories){
+        let classTable = (props.usersReducer.isOn) ? 'admin' : '';
         return(
-            <div className="table-cat scrollable">
+            <div className={`table-cat scrollable ${classTable}`}>
                 {renderCategoriesTable()}
             </div>
         )
     }
 
     if(props.isExercises){
+        let classTable = (props.usersReducer.isOn) ? 'admin' : '';
         return(
-            <div className="table-ex scrollable">
+            <div className={`table-ex scrollable ${classTable}`}>
                 {renderExercisesTable()}
             </div>
         )
