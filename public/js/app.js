@@ -6793,7 +6793,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "@media only screen and (max-width: 600px) {\r\n    .Timer .info{\r\n        height: 120px;\r\n        width: 150px;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .Timer{\r\n        width: 400px;\r\n        padding: 25px;\r\n\r\n        border: solid 2px black;\r\n        border-radius: 10px;\r\n    }\r\n    .Timer .info{\r\n        width: 80%;\r\n        height: 160px;\r\n    }\r\n}\r\n\r\n.Timer{\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Timer .info{\r\n    \r\n    margin-bottom: 20px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Timer .mode-init{\r\n    background-color: lightgray;\r\n    color: black;\r\n    font-size: 1.2em;\r\n}\r\n.Timer .mode-ct{\r\n    background-color: yellow;\r\n    color: black;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-on{\r\n    background-color: red;\r\n    color: white;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-off{\r\n    background-color: green;\r\n    color: white;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-end{\r\n    background-color: salmon;\r\n    font-size: 1.5em;\r\n}\r\n\r\n.Timer .start{\r\n    width: 100px;\r\n    height: 50px;\r\n\r\n    outline: none;\r\n    border: none;\r\n    cursor: pointer;\r\n    background-color: green;\r\n    color: white;\r\n    \r\n    font-size: 1.5em;\r\n    text-align: center;\r\n    font-weight: bold;\r\n}\r\n.Timer .start:hover{ background-color: lightseagreen; }", ""]);
+exports.push([module.i, "@media only screen and (max-width: 600px) {\r\n    .Timer .info{\r\n        height: 120px;\r\n        width: 150px;\r\n    }\r\n    .Timer .start,\r\n    .Timer .stop{\r\n        font-size: 1.2em;\r\n    }\r\n}\r\n\r\n/* Small devices (portrait tablets and large phones, 600px and up) */\r\n@media only screen and (min-width: 600px) {\r\n    .Timer{\r\n        width: 400px;\r\n        padding: 25px;\r\n\r\n        border: solid 2px black;\r\n        border-radius: 10px;\r\n    }\r\n    .Timer .info{\r\n        width: 80%;\r\n        height: 160px;\r\n    }\r\n    .Timer .start,\r\n    .Timer .stop{\r\n        font-size: 1.5em;\r\n    }\r\n}\r\n\r\n.Timer{\r\n    display: grid;\r\n    grid-template-columns: 50% 50%;\r\n    grid-template-rows: 70% 10% 20%;\r\n    grid-template-areas: \r\n        'info info'\r\n        'reps reps'\r\n        'start stop';\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.Timer .reps{\r\n    grid-area: reps;\r\n    width: 100%;\r\n    margin-bottom: 20px;\r\n\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.Timer .reps .rep{\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0 5px;\r\n\r\n    \r\n    border: solid 1.5px black;\r\n    border-radius: 50px;\r\n}\r\n.Timer .reps .rep.red{\r\n    background-color: red;\r\n}\r\n.Timer .reps .rep.green{\r\n    background-color: green;\r\n}\r\n\r\n.Timer .info{\r\n    margin: auto;\r\n    grid-area: info;\r\n    margin-bottom: 20px;\r\n\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    text-align: center;\r\n}\r\n.Timer .mode-init{\r\n    background-color: lightgray;\r\n    color: black;\r\n    font-size: 1.2em;\r\n}\r\n.Timer .mode-ct{\r\n    background-color: yellow;\r\n    color: black;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-on{\r\n    background-color: red;\r\n    color: white;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-off{\r\n    background-color: green;\r\n    color: white;\r\n    font-size: 3em;\r\n}\r\n.Timer .mode-end{\r\n    background-color: salmon;\r\n    font-size: 1.5em;\r\n}\r\n\r\n.Timer .start{\r\n    grid-area: start;\r\n    width: 100px;\r\n    height: 50px;\r\n    margin: auto;\r\n\r\n    outline: none;\r\n    border: none;\r\n    cursor: pointer;\r\n    background-color: green;\r\n    color: white;\r\n    \r\n    text-align: center;\r\n    font-weight: bold;\r\n}\r\n.Timer .start:hover{ background-color: lightseagreen; }\r\n\r\n.Timer .stop{\r\n    grid-area: stop;\r\n    width: 100px;\r\n    height: 50px;\r\n    margin: auto;\r\n\r\n    outline: none;\r\n    border: none;\r\n    cursor: pointer;\r\n    background-color: red;\r\n    color: white;\r\n    \r\n    text-align: center;\r\n    font-weight: bold;\r\n}\r\n.Timer .stop:hover{ background-color: orangered; }", ""]);
 
 // exports
 
@@ -76724,7 +76724,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_exercisesActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/exercisesActions */ "./resources/js/actions/exercisesActions.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
 /* harmony import */ var _General_Fatal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Fatal */ "./resources/js/components/General/Fatal.js");
-/* harmony import */ var _Timer2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Timer2 */ "./resources/js/components/Routines/Timer2.js");
+/* harmony import */ var _Timer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Timer */ "./resources/js/components/Routines/Timer.js");
 /* harmony import */ var _Counter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Counter */ "./resources/js/components/Routines/Counter.js");
 /* harmony import */ var _styles_Routine_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/Routine.css */ "./resources/js/components/Routines/styles/Routine.css");
 /* harmony import */ var _styles_Routine_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_Routine_css__WEBPACK_IMPORTED_MODULE_10__);
@@ -76853,7 +76853,7 @@ var Routine = function Routine(props) {
         nRep: Number(ex.nRep)
       });
     } else {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Timer2__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Timer__WEBPACK_IMPORTED_MODULE_8__["default"], {
         currentKey: props.routinesReducer.currentKey,
         nRep: Number(ex.nRep),
         tOn: Number(ex.tOn),
@@ -76916,10 +76916,10 @@ var mapDispatchToProps = {
 
 /***/ }),
 
-/***/ "./resources/js/components/Routines/Timer2.js":
-/*!****************************************************!*\
-  !*** ./resources/js/components/Routines/Timer2.js ***!
-  \****************************************************/
+/***/ "./resources/js/components/Routines/Timer.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Routines/Timer.js ***!
+  \***************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -76981,7 +76981,8 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     _this.audioOn = new Audio("/audio/on1.mp3");
     _this.audioOff = new Audio("/audio/off1.mp3");
     _this.audioEnd = new Audio("/audio/finish1.mp3");
-    _this.totalTime = (props.tOn + props.tOff) * props.nRep; //estado
+    _this.totalTime = (props.tOn + props.tOff) * props.nRep;
+    _this.repsRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef(); //estado
 
     _this.state = {
       currentInfo: 'Empezar rutina',
@@ -76990,7 +76991,10 @@ var Timer = /*#__PURE__*/function (_React$Component) {
       timerClass: _this.CLASS_INIT
     }; //binds
 
+    _this.renderRep = _this.renderRep.bind(_assertThisInitialized(_this));
+    _this.renderRepsDivs = _this.renderRepsDivs.bind(_assertThisInitialized(_this));
     _this.handleStartButton = _this.handleStartButton.bind(_assertThisInitialized(_this));
+    _this.handleStopButton = _this.handleStopButton.bind(_assertThisInitialized(_this));
     _this.initialCountdown = _this.initialCountdown.bind(_assertThisInitialized(_this));
     _this.timerOn = _this.timerOn.bind(_assertThisInitialized(_this));
     _this.timerOff = _this.timerOff.bind(_assertThisInitialized(_this));
@@ -77062,12 +77066,16 @@ var Timer = /*#__PURE__*/function (_React$Component) {
           intervalId = _this$state2.intervalId;
       var _this$props2 = this.props,
           tOn = _this$props2.tOn,
-          tOff = _this$props2.tOff;
+          tOff = _this$props2.tOff,
+          nRep = _this$props2.nRep;
       var timeToOff = currentInfo - (currentRep * (tOn + tOff) - tOn);
 
       if (timeToOff <= 0) {
         clearInterval(intervalId);
         var id = setInterval(this.timerOff, 1000);
+        var repKey = nRep - currentRep;
+        this.repsRef.current.children[repKey].classList.toggle("red");
+        this.repsRef.current.children[repKey].classList.toggle("green");
         this.setState({
           currentRep: currentRep - 1,
           intervalId: id,
@@ -77129,13 +77137,50 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     key: "timerEnd",
     value: function timerEnd() {
       clearInterval(this.state.intervalId);
-      this.setState(_objectSpread({}, this.state, {
+      this.setState({
         currentInfo: 'Volver a empezar rutina',
         currentRep: this.props.nRep,
         intervalId: '',
         timerClass: this.CLASS_INIT
-      }));
+      });
+
+      for (var i = 0; i < this.props.nRep; i++) {
+        this.repsRef.current.children[i].classList.toggle("red");
+        this.repsRef.current.children[i].classList.toggle("green");
+      }
     }
+  }, {
+    key: "handleStopButton",
+    value: function handleStopButton() {
+      //Limpia el timer si lo hubiera
+      if (this.state.intervalId != '') clearInterval(this.state.intervalId);
+      this.setState({
+        currentInfo: 'Volver a empezar rutina',
+        currentRep: this.props.nRep,
+        intervalId: '',
+        timerClass: this.CLASS_INIT
+      });
+      this.audioEnd.play();
+    }
+  }, {
+    key: "renderRepsDivs",
+    value: function renderRepsDivs() {
+      var divs = [];
+
+      for (var i = 0; i < this.props.nRep; i++) {
+        divs.push(i);
+      }
+
+      return divs.map(function (i) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "rep red",
+          key: i
+        });
+      });
+    }
+  }, {
+    key: "renderRep",
+    value: function renderRep(i) {}
   }, {
     key: "render",
     value: function render() {
@@ -77143,10 +77188,16 @@ var Timer = /*#__PURE__*/function (_React$Component) {
         className: "Timer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "info ".concat(this.state.timerClass)
-      }, this.state.currentInfo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.state.currentInfo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reps",
+        ref: this.repsRef
+      }, this.renderRepsDivs()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "start",
         onClick: this.handleStartButton
-      }, "Start"));
+      }, "Start"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "stop",
+        onClick: this.handleStopButton
+      }, "Stop"));
     }
   }]);
 

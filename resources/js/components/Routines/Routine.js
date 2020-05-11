@@ -7,7 +7,7 @@ import * as exercisesActions from '../../actions/exercisesActions';
 
 import Spinner from '../General/Spinner';
 import Fatal from '../General/Fatal';
-import Timer from './Timer2';
+import Timer from './Timer';
 import Counter from './Counter';
 
 import './styles/Routine.css';

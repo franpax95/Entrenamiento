@@ -3,6 +3,10 @@
         height: 120px;
         width: 150px;
     }
+    .Timer .start,
+    .Timer .stop{
+        font-size: 1.2em;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -18,21 +22,60 @@
         width: 80%;
         height: 160px;
     }
+    .Timer .start,
+    .Timer .stop{
+        font-size: 1.5em;
+    }
 }
 
 .Timer{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 70% 10% 20%;
+    grid-template-areas: 
+        'info info'
+        'reps reps'
+        'start stop';
     justify-content: center;
     align-items: center;
 }
-.Timer .info{
+
+.Timer .reps{
+    grid-area: reps;
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.Timer .reps .rep{
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+
     
+    border: solid 1.5px black;
+    border-radius: 50px;
+}
+.Timer .reps .rep.red{
+    background-color: red;
+}
+.Timer .reps .rep.green{
+    background-color: green;
+}
+
+.Timer .info{
+    margin: auto;
+    grid-area: info;
     margin-bottom: 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    text-align: center;
 }
 .Timer .mode-init{
     background-color: lightgray;
@@ -60,8 +103,10 @@
 }
 
 .Timer .start{
+    grid-area: start;
     width: 100px;
     height: 50px;
+    margin: auto;
 
     outline: none;
     border: none;
@@ -69,8 +114,24 @@
     background-color: green;
     color: white;
     
-    font-size: 1.5em;
     text-align: center;
     font-weight: bold;
 }
 .Timer .start:hover{ background-color: lightseagreen; }
+
+.Timer .stop{
+    grid-area: stop;
+    width: 100px;
+    height: 50px;
+    margin: auto;
+
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    
+    text-align: center;
+    font-weight: bold;
+}
+.Timer .stop:hover{ background-color: orangered; }

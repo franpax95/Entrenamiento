@@ -1,168 +1,225 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './styles/Timer.css';
 
-const Timer = (props) => {
-    const usePreciseTimer = (handler, periodInMilliseconds, activityFlag) => {
-        const [timeDelay, setTimeDelay] = useState(1);
-        const savedCallback = useRef();
-        const initialTime = useRef();
-      
-        useEffect(() => {
-          savedCallback.current = handler;
-        }, [handler]);
-      
-        useEffect(() => {
-          if (activityFlag) {
-            initialTime.current = new Date().getTime();
-            const id = setInterval(() => {
-              const currentTime = new Date().getTime();
-              const delay = currentTime - initialTime.current;
-              initialTime.current = currentTime;
-              setTimeDelay(delay / 1000);
-              savedCallback.current(timeDelay);
-            }, periodInMilliseconds);
-      
-            return () => {
-              clearInterval(id);
-            };
-          }
-        }, [periodInMilliseconds, activityFlag, timeDelay]);
-      };
-      
-    const CLASS_INIT = "mode-init";
-    const CLASS_COUNTDOWN = "mode-ct";
-    const CLASS_ON = "mode-on";
-    const CLASS_OFF = "mode-off";
-    const CLASS_END = "mode-end";
+class Timer extends React.Component {
+    constructor(props){
+        super(props);
+
+        //Constantes
+        this.CLASS_INIT = "mode-init";
+        this.CLASS_COUNTDOWN = "mode-ct";
+        this.CLASS_ON = "mode-on";
+        this.CLASS_OFF = "mode-off";
+        this.CLASS_END = "mode-end";
+
+        this.audioCountdown = new Audio("/audio/countdown1.mp3");
+        this.audioOn = new Audio("/audio/on1.mp3");
+        this.audioOff = new Audio("/audio/off1.mp3");
+        this.audioEnd = new Audio("/audio/finish1.mp3");
+
+        this.totalTime = (props.tOn + props.tOff) * props.nRep;
+        this.repsRef = React.createRef();
+
+        //estado
+        this.state = {
+            currentInfo: 'Empezar rutina',
+            currentRep: props.nRep,
+            intervalId: '',
+            timerClass: this.CLASS_INIT
+        }
+        
+
+        //binds
+        this.renderRep = this.renderRep.bind(this);
+        this.renderRepsDivs = this.renderRepsDivs.bind(this);
+        this.handleStartButton = this.handleStartButton.bind(this);
+        this.handleStopButton = this.handleStopButton.bind(this);
+        this.initialCountdown = this.initialCountdown.bind(this);
+        this.timerOn = this.timerOn.bind(this);
+        this.timerOff = this.timerOff.bind(this);
+        this.timerEnd = this.timerEnd.bind(this);
+    }
+
+
     
+    componentDidUpdate(prevProps, prevState){
+        let {currentKey, tOn, tOff, nRep} = this.props;
 
-    /* timer parameters */
-    const totalTime = (props.tOn + props.tOff) * props.nRep + 3;
-    const [currentInfo, setCurrentInfo] = useState(0);
-    const [currentRep, setCurrentRep] = useState(props.nRep);
-    const [intervalId, setIntervalId] = useState('');
-    const [timerClass, setTimerClass] = useState(CLASS_INIT);
+        if(currentKey !== prevProps.currentKey){
+            //Limpia el timer si lo hubiera
+            if(prevState.intervalId != '')
+                clearInterval(prevState.intervalId);
 
-    const [isActive, setIsActive] = useState(false);
+            this.setState({
+                ...prevState,
+                currentInfo: 'Empezar rutina',
+                currentRep: nRep,
+                intervalId: '',
+                timerClass: this.CLASS_INIT
+            });
 
-    /* Reset effect, if u change exercise */
-    // useEffect(() => {
-    //     setCurrentInfo(0);
-    //     setCurrentRep(props.nRep);
-    //     setIntervalId('');
-    //     setTimerClass(CLASS_INIT);
-    // }, []);
-
-    const init = () => {
-        setCurrentInfo(5);
-        setIsActive(true);
-        setTimerClass(CLASS_COUNTDOWN);
-        usePreciseTimer(preciseTimer, 1000, true);
-    }
-
-    const preciseTimer = () => {
-        setCurrentInfo(currentInfo - 1);
-        if(currentInfo == 0){
-            setIsActive(false);
+            this.totalTime = (tOn + tOff) * nRep;
         }
     }
 
-    const initialCountdown = () => {
-        console.log(typeof(currentInfo));
-        console.log(currentInfo);
-        let ci, tc;
-        if(currentInfo > 0){
-            console.log('currentInfo > 0')
-            ci = currentInfo - 1;
-            tc = CLASS_COUNTDOWN;
+    handleStartButton(){
+        let id = setInterval(this.initialCountdown, 1000);
+        this.setState({
+            currentInfo: 3,
+            intervalId: id,
+            timerClass: this.CLASS_COUNTDOWN
+        });
+        this.audioCountdown.play();
+    }
+
+    initialCountdown(){
+        let { currentInfo, intervalId } = this.state;
+
+        if(currentInfo > 1){
+            this.setState({ currentInfo: currentInfo - 1 });
+            this.audioCountdown.play();
         }else{
-            console.log('else')
             clearInterval(intervalId);
-            //Sound-here
+            let id = setInterval(this.timerOn, 1000);
 
-            //setIntervalId(setInterval(timerOn, 1000));
-            ci = totalTime;
-            tc = CLASS_ON;
+            this.setState({
+                currentInfo: this.totalTime,
+                intervalId: id,
+                timerClass: this.CLASS_ON
+            });
+
+            this.audioOn.play();
         }
-        setCurrentInfo(ci);
-        setTimerClass(tc);
     }
 
-    const timerOn = () => {
-        console.log('timerOn');
-        let timeToOff = currentInfo - ((currentRep * (props.tOn + props.tOff)) - props.tOn);
+    timerOn(){
+        const { currentInfo, currentRep, intervalId } = this.state;
+        const { tOn, tOff, nRep } = this.props;
+        let timeToOff = currentInfo - ((currentRep * (tOn + tOff)) - tOn);
 
-        //Change to Off
         if(timeToOff <= 0){
             clearInterval(intervalId);
-            //Sound-here
-            setCurrentRep(currentRep - 1);
-            setTimerClass(CLASS_OFF);
-            setIntervalId(setInterval(timerOff, 1000));
+            let id = setInterval(this.timerOff, 1000);
+
+            let repKey = nRep - currentRep;
+            this.repsRef.current.children[repKey].classList.toggle("red");
+            this.repsRef.current.children[repKey].classList.toggle("green");
+
+            this.setState({
+                currentRep: currentRep - 1,
+                intervalId: id,
+                timerClass: this.CLASS_OFF
+            });
+
+            this.audioOff.play();
         }
-        setCurrentInfo(currentInfo - 1);
+
+        this.setState({ currentInfo: currentInfo - 1 });
     }
 
-    const timerOff = () => {
-        console.log('timerOff');
-        let ci, tc;
-        let timeToOn = currentInfo - (currentRep * (props.tOn + props.tOff));
+    timerOff(){
+        const { tOn, tOff } = this.props;
+        const { currentInfo, currentRep, intervalId } = this.state;
+        let timeToOn = currentInfo - (currentRep * (tOn + tOff));
 
-        //Continue
-        if(timeToOn > 3){
-            ci = currentInfo - 1;
-            tc = CLASS_OFF;
-        }
-        
-        //Begin Countdown to On
-        else if(timeToOn > 0){
-            //Sound-here
-            ci = currentInfo - 1;
-            tc = CLASS_COUNTDOWN;
-        }
-        
-        //Change to On or change to End
-        else{
+        //Change background
+        if((timeToOn == 3) && (currentRep > 0))
+            this.setState({ timerClass: this.CLASS_COUNTDOWN });
+
+        //Display sound
+        if((tOn > 3) && (currentRep > 0) && ((timeToOn <= 3) && (timeToOn > 0)))
+            this.audioCountdown.play();
+
+
+
+        if(timeToOn > 0){
+            this.setState({ currentInfo: currentInfo - 1 });
+        }else{
             clearInterval(intervalId);
-            let id;
 
-            //Change to On
             if(currentInfo > 0){
-                //Sound-here
-                ci = currentInfo - 1;
-                tc = CLASS_ON;
-                id = setInterval(timerOn, 1000);
+                let id = setInterval(this.timerOn, 1000);
+                this.setState({
+                    currentInfo: currentInfo - 1,
+                    intervalId: id,
+                    timerClass: this.CLASS_ON
+                });
+                this.audioOn.play();
             }
-            
-            //Change to End
+
             else{
-                //Sound-here
-                ci = 0;
-                tc = CLASS_END;
-                id = setInterval(timerEnd, 5000);
+                let id = setInterval(this.timerEnd, 5000);
+                this.setState({
+                    currentInfo: 'FIN',
+                    intervalId: id,
+                    timerClass: this.CLASS_END
+                });
+                this.audioEnd.play();
             }
-            setIntervalId(id);
         }
-        setCurrentInfo(ci);
-        setTimerClass(tc);
     }
 
-    const timerEnd = () => {
-        console.log('timerEnd');
-        clearInterval(intervalId);
+    timerEnd(){
+        clearInterval(this.state.intervalId);
+        this.setState({
+            currentInfo: 'Volver a empezar rutina',
+            currentRep: this.props.nRep,
+            intervalId: '',
+            timerClass: this.CLASS_INIT
+        });
 
-        setCurrentInfo('Volver a realizar Rutina');
-        setCurrentRep(props.nRep);
-        setIntervalId('');
-        setTimerClass(CLASS_INIT);
+        for(let i=0; i<this.props.nRep; i++){
+            this.repsRef.current.children[i].classList.toggle("red");
+            this.repsRef.current.children[i].classList.toggle("green");
+        }
     }
 
-    return (
-        <div className="timer">
-            <div className={timerClass}>{currentInfo}</div>
-            <button onClick={init}>Realizar rutina</button>
-        </div>
-    );
+    handleStopButton(){
+        //Limpia el timer si lo hubiera
+        if(this.state.intervalId != '')
+            clearInterval(this.state.intervalId);
+
+        this.setState({
+            currentInfo: 'Volver a empezar rutina',
+            currentRep: this.props.nRep,
+            intervalId: '',
+            timerClass: this.CLASS_INIT
+        });
+        this.audioEnd.play();
+    }
+
+    renderRepsDivs(){
+        let divs = [];
+        for(let i=0; i<this.props.nRep; i++)
+            divs.push(i);
+
+        return divs.map((i) => (
+            <div className="rep red" key={i}></div>
+        ));
+    }
+
+    renderRep(i){
+        
+    }
+
+    render(){
+        return(
+            <div className="Timer">
+                <div className={`info ${this.state.timerClass}`}>
+                    {this.state.currentInfo}
+                </div>
+                <div className="reps" ref={this.repsRef}>
+                    {this.renderRepsDivs()}
+                </div>
+                <button className="start" onClick={this.handleStartButton}>
+                    Start
+                </button>
+                <button className="stop" onClick={this.handleStopButton}>
+                    Stop
+                </button>
+            </div>
+        )
+    }
 }
 
 export default Timer;
